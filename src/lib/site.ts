@@ -4,8 +4,8 @@ export const SITE = {
   tagline: '把大学四年的信息差，提前补给你。',
   description:
     '以信息差消除为核心的大学生全景式导航与决策平台：校园门道、社会支持、信息差工具三层，外加一个把群消息变成待办的本机雷达；条目全部回官方原文核对。',
-  owner: '', // TODO: GitHub 用户名，如 saffee666
-  repo: '', // TODO: 仓库名
+  owner: 'saffee666',
+  repo: 'daxuemen',
   url: (import.meta.env.SITE_URL as string | undefined) || 'https://daxue.beichen.help',
 };
 
