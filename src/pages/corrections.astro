@@ -1,0 +1,144 @@
+---
+// M1 公开纠错日志：build 时拉 GitHub issues（labels=纠错, state=closed）成「已修复」账本。
+// 三态（state-design partial 态纪律）：未配置/接口失败 → 降级为「通道就绪，日志上线后展示」；
+// 有账本 → 列表；空账本 → 「暂无已修复记录，通道在线」。构建期一次请求，公开仓免鉴权。
+import Layout from '../layouts/Layout.astro';
+import { SITE } from '../lib/site';
+import { url } from '../lib/url';
+
+type Item = { title: string; number: number; closedAt: string; htmlUrl: string };
+let items: Item[] | null = null;
+let state: 'live' | 'empty' | 'degraded' = 'degraded';
+
+if (SITE.owner && SITE.repo) {
+  try {
+    const res = await fetch(
+      `https://api.github.com/repos/${SITE.owner}/${SITE.repo}/issues?labels=%E7%BA%A0%E9%94%99&state=closed&per_page=50`,
+      { headers: { Accept: 'application/vnd.github+json' } }
+    );
+    if (res.ok) {
+      const all: any[] = await res.json();
+      // List issues 会混入 PR：按 pull_request 字段过滤（官方文档行为，实弹验证点）
+      items = all
+        .filter((i) => !i.pull_request)
+        .map((i) => ({ title: i.title, number: i.number, closedAt: i.closed_at ?? '', htmlUrl: i.html_url }));
+      state = items.length > 0 ? 'live' : 'empty';
+    } else {
+      state = 'degraded';
+    }
+  } catch {
+    state = 'degraded';
+  }
+}
+const configured = Boolean(SITE.owner && SITE.repo);
+const tipHref = configured
+  ? `https://github.com/${SITE.owner}/${SITE.repo}/issues/new?template=tip.yml&title=${encodeURIComponent('[爆料] ')}`
+  : null;
+---
+
+<Layout title="纠错与改进日志" description="本站哪里被纠过、怎么改的——纠错历史公开成账本。">
+  <div class="tool-page">
+    <p class="tool-eyebrow">纠错日志</p>
+    <h1 tabindex="-1">哪里被纠过，我们就改在哪里</h1>
+    <p class="tool-intro">
+      每条被采纳的纠错，修完页面就把记录挂在这里——<strong>纠错历史本身也该可核对</strong>。
+      {configured ? '发现错误？任意条目页有「纠错」按钮直达表单。' : '纠错入口见各条目页与关于页。'}
+    </p>
+
+    {state === 'live' && items && (
+      <ul class="corr-list">
+        {items.map((it) => (
+          <li class="corr-item">
+            <span class="corr-date">{it.closedAt.slice(0, 10)}</span>
+            <a href={it.htmlUrl} rel="noopener">#{it.number} {it.title}</a>
+            <span class="corr-fixed">已修复</span>
+          </li>
+        ))}
+      </ul>
+    )}
+
+    {state === 'empty' && (
+      <div class="corr-empty">
+        <p>暂无已修复的纠错记录——纠错通道在线，欢迎当第一个。</p>
+        <a class="btn ghost small" href={url('/about#correction')}>怎么纠错</a>
+      </div>
+    )}
+
+    {state === 'degraded' && (
+      <div class="corr-empty">
+        <p>
+          纠错通道已就绪，公开日志在站点部署到 GitHub 后自动展示（届时这里会列出每一条已修复的纠错与日期）。
+        </p>
+        <a class="btn ghost small" href={url('/about#correction')}>纠错 / 爆料入口</a>
+      </div>
+    )}
+
+    {tipHref && (
+      <p class="corr-tip">
+        手里有补贴/优惠线索，或想投稿踩坑经历？<a href={tipHref}>走爆料表单 →</a>
+      </p>
+    )}
+  </div>
+</Layout>
+
+<style>
+  .tool-page {
+    /* 基础版式见 site.css 公共件；本页窄一档 */
+    max-width: 760px;
+  }
+  .corr-list {
+    display: grid;
+    gap: 0;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    background: var(--surface);
+  }
+  .corr-item {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    padding: 12px 16px;
+    font-size: 0.9rem;
+  }
+  .corr-item + .corr-item {
+    border-top: 1px solid var(--line);
+  }
+  .corr-date {
+    font-family: var(--mono);
+    font-size: 0.78rem;
+    color: var(--ink-faint);
+    font-variant-numeric: tabular-nums;
+  }
+  .corr-item a {
+    color: var(--ink);
+    overflow-wrap: anywhere;
+  }
+  .corr-fixed {
+    margin-left: auto;
+    color: var(--accent);
+    font-size: 0.78rem;
+    white-space: nowrap;
+  }
+  .corr-empty {
+    padding: 20px;
+    border: 1px dashed var(--line-strong);
+    border-radius: var(--radius);
+    background: var(--surface-soft);
+  }
+  .corr-empty p {
+    margin: 0 0 12px;
+    color: var(--ink-soft);
+  }
+  .corr-tip {
+    margin-top: 26px;
+    color: var(--ink-soft);
+    font-size: 0.9rem;
+  }
+  .corr-tip a {
+    color: var(--accent);
+    text-decoration: underline;
+  }
+</style>

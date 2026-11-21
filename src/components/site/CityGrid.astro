@@ -1,0 +1,25 @@
+---
+import { cityPath } from '../../lib/url';
+
+interface Props {
+  cities: string[];
+  counts: Record<string, number>;
+  coming: readonly string[];
+}
+const { cities, counts, coming } = Astro.props;
+---
+
+<div class="city-grid">
+  {cities.map((city) => (
+    <a class="city-card" href={cityPath(city)}>
+      <span>{city}</span>
+      <small>{counts[city] ?? 0} 条</small>
+    </a>
+  ))}
+  {coming.map((city) => (
+    <span class="chip soon">
+      <span>{city}</span>
+      <small>整理中</small>
+    </span>
+  ))}
+</div>

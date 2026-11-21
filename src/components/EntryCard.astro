@@ -1,0 +1,58 @@
+---
+// 条目卡：钱条目/道条目通用。整卡可点；筛选所需数据放在 data-* 上。
+import type { CollectionEntry } from 'astro:content';
+import { freshness } from '../lib/freshness';
+import { ALL_PILLARS } from '../lib/pillars';
+import { entryPath } from '../lib/url';
+
+interface Props {
+  kind: 'money' | 'dao';
+  entry: CollectionEntry<'money'> | CollectionEntry<'dao'>;
+}
+const { kind, entry } = Astro.props;
+const d = entry.data as any;
+const pillar = ALL_PILLARS[d.pillar];
+const f = freshness(d.verified_date);
+const city = d.region.startsWith('城市:') ? d.region.slice(3) : '';
+const summary = kind === 'money' ? d.eligibility : d.pitfall;
+// 首字回落色块：无图站的轻量视觉方案（零件来源：_原子/学生省钱快报 logo onerror 回落），色相由 id 稳定散列
+const hue = [...String(entry.id)].reduce((acc, ch) => acc + ch.charCodeAt(0), 0) % 360;
+---
+
+<article
+  class="entry-card"
+  data-card
+  data-stage={d.stage.join(' ')}
+  data-region={d.region}
+  data-city={city}
+  data-category={d.category}
+  data-pillar={d.pillar}
+  data-status={d.status}
+>
+  <div class="badges">
+    <span class={kind === 'money' ? 'badge money' : 'badge ghost'}>{pillar?.num} {pillar?.name}</span>
+    <span class="badge">{d.region}</span>
+    <span class="badge value" title={d.value_level}>{d.value_level}</span>
+    <span class={`badge ${f.level}`}>{f.label} {d.verified_date}</span>
+    {kind === 'money' && d.difficulty && <span class="badge diff" title="申请难度（编辑评估，供排序参考）">难度 {d.difficulty}</span>}
+    {(d.risk_tags ?? []).map((t: string) => <span class="badge warn" title="风险提示">{t}</span>)}
+    {kind === 'money' && d.confidence && (
+      <span
+        class={`badge ${d.confidence === '高' ? 'ok' : 'warn'}`}
+        title="可信度=官方链接直达精度：直达具体活动/文件页为高，仅到门户为中（AGIHunt 语义）"
+      >
+        {d.confidence}可信
+      </span>
+    )}
+    {d.status !== '有效' && <span class="badge stale">{d.status}</span>}
+  </div>
+  <div class="entry-title-row">
+    <span class="entry-logo" style={`--h:${hue}`} aria-hidden="true">{d.title.slice(0, 1)}</span>
+    <h3><a href={entryPath(entry.id)}>{d.title}</a></h3>
+  </div>
+  <p class="entry-summary">{summary}</p>
+  <div class="entry-source">
+    <span>{d.source_name}</span>
+    <span>{kind === 'money' ? d.deadline_or_validity : d.key_timing || '长期适用'}</span>
+  </div>
+</article>

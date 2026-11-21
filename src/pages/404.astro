@@ -1,0 +1,130 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PagefindSearch from '../components/site/PagefindSearch.astro';
+import { MONEY_PILLARS, DAO_PILLARS } from '../lib/pillars';
+import { url } from '../lib/url';
+
+const links = [
+  ...Object.values(MONEY_PILLARS).map((p) => ({ href: url(`/money/${p.key}`), label: `${p.num} ${p.name}` })),
+  ...Object.values(DAO_PILLARS).map((p) => ({ href: url(`/dao/${p.key}`), label: `${p.num} ${p.name}` })),
+];
+---
+
+<Layout title="页面不存在" description="这个地址没有对应内容。" indexable={false} ignore>
+  <div class="notfound">
+    <p class="eyebrow">404 · 页面不存在</p>
+    <h1>这条链接没补到东西。</h1>
+    <p class="notfound-desc">
+      可能是条目改名、城市页还没建，或者链接敲错了一个字。先搜一下，或走下面两条路：
+    </p>
+
+    <div class="notfound-search">
+      <PagefindSearch />
+      <noscript><p class="notfound-noscript">搜索需启用 JavaScript；也可直接 <a href={url('/search')}>去搜索页</a>。</p></noscript>
+    </div>
+
+    <div class="notfound-grid">
+      <a class="notfound-card" href={url('/')}>
+        <span class="notfound-kicker">从头看</span>
+        <strong>回首页</strong>
+        <p>校园门道、社会支持、攻略库与信息差工具的总入口。</p>
+      </a>
+      <a class="notfound-card" href={url('/radar')}>
+        <span class="notfound-kicker">找增量</span>
+        <strong>校园信息雷达</strong>
+        <p>群消息里的截止日期，提前 7/3/1 天提醒。</p>
+      </a>
+    </div>
+
+    <div class="notfound-links">
+      <span>直接去支柱页：</span>
+      {links.map((l) => <a class="chip" href={l.href}>{l.label}</a>)}
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .notfound {
+    padding: clamp(56px, 9vw, 110px) 0 80px;
+  }
+
+  .notfound h1 {
+    margin: 6px 0 12px;
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    letter-spacing: -0.035em;
+  }
+
+  .notfound-desc {
+    max-width: 34em;
+    margin: 0 0 32px;
+    color: var(--ink-soft);
+  }
+
+  .notfound-search {
+    max-width: 620px;
+    margin-bottom: 34px;
+  }
+
+  .notfound-noscript {
+    color: var(--ink-faint);
+    font-size: 0.85rem;
+  }
+
+  .notfound-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+    max-width: 620px;
+  }
+
+  .notfound-card {
+    display: block;
+    padding: 20px;
+    border: 1px solid var(--line);
+    border-radius: var(--radius-lg);
+    background: var(--surface);
+    color: var(--ink);
+    transition: background 150ms var(--ease), border-color 150ms var(--ease);
+  }
+
+  .notfound-card:hover {
+    border-color: var(--line-strong);
+    background: var(--surface-soft);
+  }
+
+  .notfound-kicker {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--accent);
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.08em;
+  }
+
+  .notfound-card strong {
+    display: block;
+    font-size: 1.05rem;
+  }
+
+  .notfound-card p {
+    margin: 6px 0 0;
+    color: var(--ink-soft);
+    font-size: 0.84rem;
+  }
+
+  .notfound-links {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    margin-top: 34px;
+    color: var(--ink-faint);
+    font-size: 0.82rem;
+  }
+
+  @media (max-width: 640px) {
+    .notfound-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

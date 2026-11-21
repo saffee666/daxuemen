@@ -1,0 +1,40 @@
+name: 爆料 / 投稿线索
+description: 提供补贴、优惠、活动线索，或想投稿经验攻略
+title: '[爆料] '
+labels: ['爆料']
+body:
+  - type: dropdown
+    id: kind
+    attributes:
+      label: 线索类型
+      options:
+        - 补贴 / 资助政策线索（政府类）
+        - 企业优惠 / 学生价线索
+        - 平台活动 / 羊毛线索
+        - 避坑经验投稿（想写成条目或攻略）
+        - 其他
+    validations:
+      required: true
+  - type: textarea
+    id: detail
+    attributes:
+      label: 线索内容
+      description: 是什么、在哪看到、截止时间（如已知）。投稿请附上你的经历要点。
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: 来源链接
+      description: 官方公告 / 活动页 / 你看到该信息的页面
+  - type: input
+    id: city
+    attributes:
+      label: 涉及城市（如有）
+  - type: checkboxes
+    id: contact
+    attributes:
+      label: 回联方式（可选）
+      description: 勾选即同意我们通过对应渠道联系你核实线索
+      options:
+        - label: 可以在 Issue 回复里联系我（用当前 GitHub 账号）

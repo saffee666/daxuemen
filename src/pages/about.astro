@@ -1,0 +1,358 @@
+---
+import Layout from '../layouts/Layout.astro';
+import RadarMark from '../components/site/RadarMark.astro';
+import { repoUrl } from '../lib/site';
+import { loadSiteContent } from '../lib/content';
+import { url } from '../lib/url';
+
+const { counts, lastVerified, cities } = await loadSiteContent();
+const repo = repoUrl();
+---
+
+<Layout title="关于" description="以信息差消除为核心的大学生全景式导航与决策平台——条目怎么核对、雷达的边界与纠错方式。">
+  <div class="page-head">
+    <p class="eyebrow">关于 · 核对机制 · 纠错</p>
+    <h1>两条速度，一套核对标准。</h1>
+    <p class="page-desc">
+      大学补给站以<strong>消除信息差</strong>为核心：不知道有的资源、不会用的认证、会错过的截止、用不狠的叠加，按<strong>校园门道</strong>、<strong>社会支持</strong>、<strong>信息差工具</strong>三层组织。
+      条目是核对过的存量，雷达是每天滚动的增量——规矩相同：能给官方原文，就不给二手转述；能标日期，就不装作永远有效。
+    </p>
+    <div class="page-meta">
+      <span><strong>{counts.entries}</strong> 条条目</span>
+      <span><strong>{counts.guides}</strong> 篇攻略</span>
+      <span><strong>{cities.length}</strong> 个城市页</span>
+      <span>最后核对 <strong>{lastVerified}</strong></span>
+    </div>
+  </div>
+
+  <section class="about-block" aria-labelledby="dual-speed">
+    <h2 id="dual-speed">这个站是什么</h2>
+    <div class="about-duo">
+      <div class="about-panel">
+        <span class="about-tag">存量 · 条目库</span>
+        <h3>校园门道 + 社会支持</h3>
+        <p>
+          {counts.money} 条社会支持条目、{counts.dao} 条校园门道条目：谁能用、怎么认证、什么时候截止最划算、有没有坑——每条答满四问。
+          每条都带官方入口和最后核对日期，过期只标记、不删除。
+        </p>
+        <a class="about-link" href={url('/money/gov')}>从社会支持开始 →</a>
+      </div>
+      <div class="about-panel dark">
+        <div class="about-radar-wrap" aria-hidden="true">
+          <RadarMark class="about-radar-mark" />
+        </div>
+        <span class="about-tag">增量 · 雷达</span>
+        <h3>群消息里的截止日期</h3>
+        <p>
+          本机运行的小工具：读你选定的 QQ 群消息，把「什么时候截止」的句子拎成待办，提前 7/3/1 天提醒。
+          数据只留在你自己的电脑上。
+        </p>
+        <a class="about-link" href={url('/radar')}>看雷达怎么用 →</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="about-block" aria-labelledby="how-verified">
+    <h2 id="how-verified">一条信息怎么进站：核对四步</h2>
+    <ol class="about-steps">
+      <li>
+        <span class="step-num">01</span>
+        <div>
+          <h3>先找官方原文</h3>
+          <p>政策找政府部门、学校官网；价格找官方活动页；道条目找可标注类型的来源，纯经验帖必须双源印证。</p>
+        </div>
+      </li>
+      <li>
+        <span class="step-num">02</span>
+        <div>
+          <h3>人工核对，不自动抓取入库</h3>
+          <p>金额、资格、入口逐项对着原文抄；口径不一致就并列披露，不擅自取一个看起来更划算的。申请难度与风险标签是编辑评估值，只帮你排序和避坑，不替代官方条件。</p>
+        </div>
+      </li>
+      <li>
+        <span class="step-num">03</span>
+        <div>
+          <h3>标注时效</h3>
+          <p>每条写清核对年月与适用窗口。超 180 天标「待核对」，超 12 个月标「疑似过期」——徽标由构建时自动计算。</p>
+        </div>
+      </li>
+      <li>
+        <span class="step-num">04</span>
+        <div>
+          <h3>定期复检</h3>
+          <p>官方补贴按申报窗口、平台羊毛按月、道条目按学期。复检结果更新日期；失效条目标状态留档，供你回溯。</p>
+        </div>
+      </li>
+    </ol>
+  </section>
+
+  <section class="about-block" aria-labelledby="radar-boundary">
+    <h2 id="radar-boundary">雷达的边界与许可</h2>
+    <ul class="about-list">
+      <li><strong>本地运行，不是云端服务。</strong>群务台跑在你自己的 Windows 电脑上，数据存本机 SQLite，不上传任何服务器；关掉电脑就不提醒。</li>
+      <li><strong>只读群消息，不发言。</strong>雷达不自动回复、不拉人、不发广告；建议用专用号或小号降低风控风险，但无法承诺零风险。</li>
+      <li><strong>演示页是虚构数据。</strong><a href={url('/radar/demo')}>界面演示</a>里所有群名、账号、截止时间均为演示用的假数据，不连接任何真实账号。</li>
+      <li><strong>许可提示。</strong>演示所用的群务台构建基于 PolyForm 非商业许可；上游项目为 MIT。正式使用请以项目仓库的许可与说明为准，本站不托管、不再分发安装包。</li>
+    </ul>
+  </section>
+
+  <section class="about-block" aria-labelledby="not-doing">
+    <h2 id="not-doing">不做什么</h2>
+    <ul class="about-list">
+      <li>不代办、不代领、不收费，也不对申请结果做任何承诺——资格与金额以官方审核为准。</li>
+      <li>不接分销推广，不把「羊毛」写成软广；官方活动结束就标失效。</li>
+      <li>不收集你的个人信息：本站没有账号体系，雷达也不把群消息传出去。</li>
+      <li>不做「AI 替你做决定」：雷达只负责不漏，核对与判断仍然由人完成。</li>
+    </ul>
+    <p class="anti-spoof">
+      防冒充：<strong>本站不卖课、不建群、不私聊推销。</strong>如果有人冒充本站名义加你微信、拉你进群、推销课程或「内部渠道」，都是骗子——本站一切更新只通过这个域名和公开仓库发生，发现冒充欢迎<a href="#correction">举报</a>。
+    </p>
+  </section>
+
+  <section class="about-block" id="correction" aria-labelledby="correction-title">
+    <h2 id="correction-title">维护与纠错</h2>
+    <p>
+      发现金额过时、入口失效、步骤写错，或你亲测领到了／踩过坑，都欢迎反馈。一条有用的纠错请带上三样东西：
+      <strong>条目名</strong>、<strong>官方原文链接</strong>、<strong>你看到的差异</strong>（例如「2026-10 起改为线上申报」）。
+      修完的每一条都会挂进<a href={url('/corrections')}>公开纠错日志</a>。
+    </p>
+    <div class="correction-card">
+      <div>
+        <h3>纠错入口</h3>
+        {repo ? (
+          <p>
+            在 GitHub 仓库提 Issue，条目页的「纠错」按钮会自动带上条目名：
+            <a href={`${repo}/issues/new`} target="_blank" rel="noopener noreferrer">{repo.replace('https://', '')}/issues</a>
+          </p>
+        ) : (
+          <p>
+            纠错走 GitHub Issue：仓库地址公开后，条目页的「纠错」按钮会自动打开预填条目名的表单。
+            没有 GitHub 账号时，把上面三样信息交给维护者即可。
+          </p>
+        )}
+      </div>
+      <div>
+        <h3>爆料 / 投稿</h3>
+        {repo ? (
+          <p>
+            有补贴、优惠线索，或想把自己的踩坑经历写成条目？<a href={`${repo}/issues/new?template=tip.yml`} target="_blank" rel="noopener noreferrer">走爆料表单</a>——
+            采纳后署名你的 GitHub ID。
+          </p>
+        ) : (
+          <p>
+            有线索或想投稿踩坑经历？仓库地址公开后这里会有爆料表单；目前先把线索发到纠错渠道即可。
+          </p>
+        )}
+      </div>
+      <div>
+        <h3>核对节奏</h3>
+        <p>官方补贴按申报窗口、平台活动按月、道条目按学期复检；你的一条反馈通常会直接触发对应条目的提前复核。</p>
+      </div>
+    </div>
+    <p class="about-foot">
+      本站为个人维护的信息整理项目，非官方发布。政策、价格与入口一律以官方渠道为准；本站内容可自由引用，注明来源即可。
+      更多口径：<a href={url('/editorial')}>编辑政策</a> · <a href={url('/how-we-build')}>目录方法论</a> · <a href={url('/privacy')}>隐私说明</a>
+    </p>
+  </section>
+
+  <section class="about-block" aria-labelledby="credits">
+    <h2 id="credits">致谢与来源</h2>
+    <ul class="about-list">
+      <li>全国性政策底稿来自 <a href="https://www.ncss.cn/ncss/gjjdfjyzc/gj/zczcqd.shtml" target="_blank" rel="noopener noreferrer">全国高校毕业生就业创业支持政策清单（教育部）</a>；城市条目逐城采自各市人社局官网。</li>
+      <li>同类资源导航：<a href="https://github.com/ivmm/Student-resources" target="_blank" rel="noopener noreferrer">Student-resources</a>（中文学生优惠大全，取线索用）。</li>
+      <li>雷达底座上游：<a href="https://github.com/wc985732-lang/qq-live-digest" target="_blank" rel="noopener noreferrer">qq-live-digest</a>（MIT）。</li>
+    </ul>
+  </section>
+</Layout>
+
+<style>
+  .about-block {
+    padding: 34px 0;
+    border-top: 1px solid var(--line);
+  }
+
+  .about-block h2 {
+    margin: 0 0 18px;
+    font-size: clamp(1.25rem, 2.2vw, 1.6rem);
+    letter-spacing: -0.02em;
+  }
+
+  .about-block > p {
+    max-width: 46em;
+    color: var(--ink-soft);
+  }
+
+  .about-duo {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  .about-panel {
+    position: relative;
+    padding: 22px;
+    border: 1px solid var(--line);
+    border-radius: var(--radius-lg);
+    background: var(--surface);
+    overflow: hidden;
+  }
+
+  .about-panel.dark {
+    border-color: rgba(67, 201, 176, 0.24);
+    background: #0a0c12;
+    color: #e6ecf4;
+  }
+
+  .about-panel h3 {
+    margin: 10px 0 8px;
+    font-size: 1.08rem;
+  }
+
+  .about-panel p {
+    margin: 0 0 14px;
+    color: var(--ink-soft);
+    font-size: 0.9rem;
+  }
+
+  .about-panel.dark p {
+    color: #9fb0c4;
+  }
+
+  .about-tag {
+    color: var(--accent);
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.08em;
+  }
+
+  .about-panel.dark .about-tag {
+    color: #43c9b0;
+  }
+
+  .about-link {
+    font-size: 0.86rem;
+    font-weight: 600;
+  }
+
+  .about-panel.dark .about-link {
+    color: #f1bb64;
+  }
+
+  .about-radar-wrap {
+    position: absolute;
+    top: -56px;
+    right: -64px;
+    width: 220px;
+    color: #43c9b0;
+    opacity: 0.45;
+    pointer-events: none;
+  }
+
+  .about-radar-mark {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  .about-steps {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px 20px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .about-steps li {
+    display: flex;
+    gap: 14px;
+    padding: 16px 18px;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    background: var(--surface);
+  }
+
+  .step-num {
+    color: var(--accent);
+    font-family: var(--mono);
+    font-size: 0.78rem;
+  }
+
+  .about-steps h3 {
+    margin: 0 0 4px;
+    font-size: 0.98rem;
+  }
+
+  .about-steps p {
+    margin: 0;
+    color: var(--ink-soft);
+    font-size: 0.85rem;
+  }
+
+  .about-list {
+    display: grid;
+    gap: 10px;
+    max-width: 52em;
+    margin: 0;
+    padding-left: 20px;
+    color: var(--ink-soft);
+    font-size: 0.92rem;
+  }
+
+  .about-list strong {
+    color: var(--ink);
+  }
+
+  .anti-spoof {
+    margin: 14px 0 0;
+    max-width: 52em;
+    padding: 10px 14px;
+    border: 1px solid var(--warn);
+    border-radius: var(--radius);
+    background: var(--warn-soft);
+    color: var(--ink);
+    font-size: 0.88rem;
+    line-height: 1.7;
+  }
+
+  .anti-spoof a {
+    color: inherit;
+    text-decoration: underline;
+  }
+
+  .correction-card {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 18px;
+    margin-top: 16px;
+    padding: 20px;
+    border: 1px solid var(--line-strong);
+    border-radius: var(--radius-lg);
+    background: var(--surface);
+  }
+
+  .correction-card h3 {
+    margin: 0 0 6px;
+    font-size: 0.95rem;
+  }
+
+  .correction-card p {
+    margin: 0;
+    color: var(--ink-soft);
+    font-size: 0.86rem;
+  }
+
+  .about-foot {
+    margin-top: 18px;
+    color: var(--ink-faint);
+    font-size: 0.82rem;
+  }
+
+  @media (max-width: 760px) {
+    .about-duo,
+    .about-steps,
+    .correction-card {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

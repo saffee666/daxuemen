@@ -1,0 +1,21 @@
+{
+  "name": "daxue-bujizhan-site",
+  "type": "module",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "predev": "node scripts/build-radar-demo.mjs --out public/radar-demo",
+    "dev": "astro dev",
+    "prebuild": "node scripts/build-radar-demo.mjs --out public/radar-demo --clean-only && node scripts/build-calendar.mjs",
+    "build": "astro build",
+    "postbuild": "pagefind --site dist && node scripts/build-radar-demo.mjs --out dist/radar-demo",
+    "preview": "astro preview",
+    "audit": "node scripts/audit.mjs"
+  },
+  "dependencies": {
+    "@astrojs/sitemap": "^3.7.6",
+    "astro": "^5.0.0",
+    "ics": "^3.12.1",
+    "pagefind": "^1.1.0"
+  }
+}

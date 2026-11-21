@@ -1,0 +1,23 @@
+---
+import { url } from '../../lib/url';
+
+interface Item {
+  label: string;
+  href?: string;
+}
+
+interface Props {
+  items: Item[];
+}
+
+const { items } = Astro.props;
+---
+
+<nav class="breadcrumb" aria-label="面包屑">
+  {items.map((item, index) => (
+    <Fragment>
+      {index > 0 && <span class="sep" aria-hidden="true">/</span>}
+      {item.href ? <a href={url(item.href)}>{item.label}</a> : <span>{item.label}</span>}
+    </Fragment>
+  ))}
+</nav>

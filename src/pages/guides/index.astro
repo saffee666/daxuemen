@@ -1,0 +1,49 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import GuideCard from '../../components/site/GuideCard.astro';
+import { getCollection } from 'astro:content';
+import { url } from '../../lib/url';
+
+const guides = (await getCollection('guides')).sort((a, b) =>
+  b.data.updated.localeCompare(a.data.updated)
+);
+const featured = guides[0];
+const rest = guides.slice(1);
+---
+
+<Layout title="攻略库" description="跨支柱方法论长文：先读哪篇、什么时候读、怎么用。">
+  <div class="page-head">
+    <p class="eyebrow">攻略库 · {guides.length} 篇</p>
+    <h1>把零散条目串成路径</h1>
+    <p class="page-desc">
+      单条门道解决一个点，攻略解决一条线：按学期、按阶段告诉你先做什么、后做什么，哪些坑可以提前绕开。
+    </p>
+    <div class="page-meta">
+      <span><strong>{guides.length}</strong> 篇长文</span>
+      <span>跨 7 个支柱</span>
+      <span>按更新日期排序</span>
+    </div>
+  </div>
+
+  {featured && (
+    <a class="guide-feature" href={url(`/guides/${featured.id}`)}>
+      <div>
+        <span class="eyebrow">先读这篇</span>
+        <h2>{featured.data.title}</h2>
+        <p>{featured.data.summary}</p>
+      </div>
+      <div class="feature-side">
+        <strong>适合谁</strong>
+        {featured.data.stage.join(' / ')}
+        <strong style="margin-top:12px">更新时间</strong>
+        {featured.data.updated}
+      </div>
+    </a>
+  )}
+
+  {rest.length > 0 && (
+    <div class="guide-list" style="margin-top:16px">
+      {rest.map((guide) => <GuideCard guide={guide} />)}
+    </div>
+  )}
+</Layout>

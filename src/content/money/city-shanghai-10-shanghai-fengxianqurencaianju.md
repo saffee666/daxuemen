@@ -1,0 +1,37 @@
+---
+title: 奉贤区人才安居
+pillar: gov
+stage: [应届毕业, 毕业1-3年]
+region: 城市:上海
+category: 租房补贴
+value_level: 0万–2000元，每月
+eligibility: 本科/硕士/博士；需本地就业并参保
+steps:
+  - 登录上海「一网通办」平台或奉贤区人才服务专区
+  - 在线填报申请信息并上传材料
+  - 奉贤区人才服务中心受理初审（5-10个工作日）
+  - 奉贤区人社局复核（5个工作日）
+  - 审核通过后公示（5个工作日）
+  - 公示无异议后拨付至申请人银行账户
+materials:
+  - 申请表
+  - 身份证
+  - 学历学位证书
+  - 劳动合同
+  - 社保缴纳证明
+  - 购房或租房合同
+  - 无房证明
+official_url: https://www.fengxian.gov.cn/
+deadline_or_validity: 详见官方通知
+deadline_dates:
+  - 2024-01-01
+tiers: []
+confidence: 中
+source_name: 待核实｜城市补贴雷达镜像导入，官方链接继承，as-of 2026-11｜数据文件 shanghai-B65ssAoC.js
+verified_date: '2026-11'
+status: 有效
+notes: 镜像导入条目：官方链接与口径继承自城市补贴雷达镜像数据（shanghai-B65ssAoC.js），金额/材料/流程以官方渠道当期口径为准。
+---
+奉贤区人才安居属租房补贴，0万–2000元，每月。
+
+在奉贤区工作并缴纳社保满6个月以上的人才，可享受租房补贴最高2000元/月、购房补贴最高80万元。

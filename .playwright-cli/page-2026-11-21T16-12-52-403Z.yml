@@ -1,0 +1,719 @@
+- generic [active] [ref=f6e1]:
+  - link "跳到正文" [ref=f6e2] [cursor=pointer]:
+    - /url: "#main"
+  - banner [ref=f6e3]:
+    - generic [ref=f6e4]:
+      - link "大学补给站首页" [ref=f6e5] [cursor=pointer]:
+        - /url: /
+        - generic [ref=f6e12]: 大学补给站
+      - navigation "主导航" [ref=f6e13]:
+        - group [ref=f6e14]:
+          - generic "校园门道" [ref=f6e15] [cursor=pointer]
+        - group [ref=f6e18]:
+          - generic "社会支持" [ref=f6e19] [cursor=pointer]
+        - group [ref=f6e22]:
+          - generic "信息差工具" [ref=f6e23] [cursor=pointer]
+        - link "攻略" [ref=f6e26] [cursor=pointer]:
+          - /url: /guides
+        - link "关于" [ref=f6e27] [cursor=pointer]:
+          - /url: /about
+        - link "搜索全站" [ref=f6e28] [cursor=pointer]:
+          - /url: /search
+  - main [ref=f6e32]:
+    - generic [ref=f6e33]:
+      - paragraph [ref=f6e34]: 城市 · 深圳 · 2026
+      - heading "深圳的钱，只对本地生效" [level=1] [ref=f6e35]
+      - paragraph [ref=f6e36]: 本市已核对 18 条：覆盖生活补贴、人才引进、就业补贴等 6 类。 先看本市专属政策，再用全国通用条目兜底；每条都留了官方入口和核对日期。
+      - generic [ref=f6e37]:
+        - generic [ref=f6e38]:
+          - strong [ref=f6e39]: "18"
+          - text: 条本市
+        - generic [ref=f6e40]:
+          - text: 近期核对
+          - strong [ref=f6e41]: "18"
+        - generic [ref=f6e42]:
+          - text: 待核对
+          - strong [ref=f6e43]: "0"
+        - generic [ref=f6e44]:
+          - text: 疑似过期
+          - strong [ref=f6e45]: "0"
+        - generic [ref=f6e46]:
+          - text: 最后核对
+          - strong [ref=f6e47]: 2026-11
+        - link "📅 订阅本市截止日历" [ref=f6e48] [cursor=pointer]:
+          - /url: /calendars/city-%E6%B7%B1%E5%9C%B3.ics
+    - generic [ref=f6e49]:
+      - heading "深圳专属" [level=2] [ref=f6e50]
+      - generic [ref=f6e51]:
+        - article [ref=f6e52]:
+          - generic [ref=f6e53]:
+            - generic [ref=f6e54]: ① 政府的钱
+            - generic [ref=f6e55]: 城市:深圳
+            - generic "15000–3万元，一次性" [ref=f6e56]
+            - generic [ref=f6e57]: 近期核对 2026-11
+            - generic "风险提示" [ref=f6e58]: 宝安户籍（问卷仅区分是否落户深圳，无法区分具体区）
+            - generic "风险提示" [ref=f6e59]: 社保须含养老/医疗/失业/生育/工伤5个险种，不含补缴/断缴/个人缴纳
+            - generic "风险提示" [ref=f6e60]: 企业须在宝安区注册且有独立法人资格
+            - generic "风险提示" [ref=f6e61]: 机关事业单位在编人员不得享受
+            - generic "可信度=官方链接直达精度：直达具体活动/文件页为高，仅到门户为中（AGIHunt 语义）" [ref=f6e62]: 中可信
+          - generic [ref=f6e63]:
+            - generic [aria-hidden] [ref=f6e64]: 宝
+            - heading [level=3] [ref=f6e65]:
+              - link "宝安区新引进人才生活补贴" [ref=f6e66] [cursor=pointer]:
+                - /url: /entries/city-shenzhen-07-shenzhen-baoan
+          - paragraph [ref=f6e67]: 本科/硕士；院校限 QS前300/THE前300/软科前300/USNews前300；需本地就业并参保；需落户本地
+          - generic [ref=f6e68]:
+            - generic [ref=f6e69]: 《宝安区人才政策》相关实施细则｜城市补贴雷达镜像导入，官方链接继承，as-of 2026-11｜数据文件 shenzhen-C2QxfJYa.js
+            - generic [ref=f6e70]: 引进后按当年申报指南为准
+        - article [ref=f6e71]:
+          - generic [ref=f6e72]:
+            - generic [ref=f6e73]: ① 政府的钱
+            - generic [ref=f6e74]: 城市:深圳
+            - generic "2万–3万元，分两年等额发放" [ref=f6e75]
+            - generic [ref=f6e76]: 近期核对 2026-11
+            - generic "可信度=官方链接直达精度：直达具体活动/文件页为高，仅到门户为中（AGIHunt 语义）" [ref=f6e77]: 中可信
+          - generic [ref=f6e78]:
+            - generic [aria-hidden] [ref=f6e79]: 大
+            - heading [level=3] [ref=f6e80]:
+              - link "大鹏新区优秀青年人才引进补贴" [ref=f6e81] [cursor=pointer]:
+                - /url: /entries/city-shenzhen-06-shenzhen-dapeng
+          - paragraph [ref=f6e82]: 本科/硕士；院校限 985/211/双一流/QS前300/THE前300/软科前300/USNews前300；毕业 2 年内；需本地就业并参保；需落户本地
+          - generic [ref=f6e83]:
+            - generic [ref=f6e84]: 《大鹏新区人才政策》相关实施细则｜城市补贴雷达镜像导入，官方链接继承，as-of 2026-11｜数据文件 shenzhen-C2QxfJYa.js
+            - generic [ref=f6e85]: 人才引进后2年内
+        - article [ref=f6e86]:
+          - generic [ref=f6e87]:
+            - generic [ref=f6e88]: ① 政府的钱
+            - generic [ref=f6e89]: 城市:深圳
+            - generic "2万–5万元，一次性" [ref=f6e90]
+            - generic [ref=f6e91]: 近期核对 2026-11
+            - generic "风险提示" [ref=f6e92]: 首次入户福田（非市内迁移，问卷无法自动判断）
+            - generic "风险提示" [ref=f6e93]: 机关事业单位在编人员不享受（问卷无法自动判断）
+            - generic "可信度=官方链接直达精度：直达具体活动/文件页为高，仅到门户为中（AGIHunt 语义）" [ref=f6e94]: 中可信
+          - generic [ref=f6e95]:
+            - generic [aria-hidden] [ref=f6e96]: 福
+            - heading [level=3] [ref=f6e97]:
+              - link "福田英才荟新引进优秀青年入户补贴" [ref=f6e98] [cursor=pointer]:
+                - /url: /entries/city-shenzhen-09-shenzhen-futian
+          - paragraph [ref=f6e99]: 本科/硕士；院校限 QS前150/THE前150/软科前150/USNews前150；35 周岁以下；需本地就业并参保；需落户本地
+          - generic [ref=f6e100]:
+            - generic [ref=f6e101]: 《关于实施福田英才荟政策的若干措施(2025)》｜城市补贴雷达镜像导入，官方链接继承，as-of 2026-11｜数据文件 shenzhen-C2QxfJYa.js
+            - generic [ref=f6e102]: 2025年5月1日起经人才引进后按当年指南
+        - article [ref=f6e103]:
+          - generic [ref=f6e104]:
+            - generic [ref=f6e105]: ① 政府的钱
+            - generic [ref=f6e106]: 城市:深圳
+            - generic "1万–3万元，一次性" [ref=f6e107]
+            - generic [ref=f6e108]: 近期核对 2026-11
+            - generic "可信度=官方链接直达精度：直达具体活动/文件页为高，仅到门户为中（AGIHunt 语义）" [ref=f6e109]: 中可信
+          - generic [ref=f6e110]:
+            - generic [aria-hidden] [ref=f6e111]: 光
+            - heading [level=3] [ref=f6e112]:
+              - link "光明科学城名校优才就业补贴" [ref=f6e113] [cursor=pointer]:
+                - /url: /entries/city-shenzhen-02-shenzhen-guangming-jiuye
+          - paragraph [ref=f6e114]: 本科/硕士/博士；院校限 双一流/QS前300/THE前300/软科前300/USNews前300/辖区高校；35 周岁以下；毕业 2 年内；需本地就业并参保；需落户本地
+          - generic [ref=f6e115]:
+            - generic [ref=f6e116]: 《光明科学城基础性人才集聚行动方案》｜城市补贴雷达镜像导入，官方链接继承，as-of 2026-11｜数据文件 shenzhen-C2QxfJYa.js
+            - generic [ref=f6e117]: 2024-12-30至2026-09-30
+        - article [ref=f6e118]:
+          - generic [ref=f6e119]:
+            - generic [ref=f6e120]: ① 政府的钱
+            - generic [ref=f6e121]: 城市:深圳
+            - generic "2万–3万元，一次性" [ref=f6e122]
+            - generic [ref=f6e123]: 近期核对 2026-11
+            - generic "风险提示" [ref=f6e124]: 落户光明区（问卷无法区分具体区）
+            - generic "风险提示" [ref=f6e125]: 机关事业单位/国企人员不得申报
+            - generic "可信度=官方链接直达精度：直达具体活动/文件页为高，仅到门户为中（AGIHunt 语义）" [ref=f6e126]: 中可信
+          - generic [ref=f6e127]:
+            - generic [aria-hidden] [ref=f6e128]: 光
+            - heading [level=3] [ref=f6e129]:
+              - link "光明科学城名校优才生活补贴" [ref=f6e130] [cursor=pointer]:
+                - /url: /entries/city-shenzhen-01-shenzhen-guangming-shenghuo
+          - paragraph [ref=f6e131]: 本科/硕士；院校限 双一流/QS前300/THE前300/软科前300/USNews前300/辖区高校；35 周岁以下；需本地就业并参保；需落户本地
+          - generic [ref=f6e132]:
+            - generic [ref=f6e133]: 《光明科学城基础性人才集聚行动方案》｜城市补贴雷达镜像导入，官方链接继承，as-of 2026-11｜数据文件 shenzhen-C2QxfJYa.js
+            - generic [ref=f6e134]: 2024-12-30至2026-09-30
+        - article [ref=f6e135]:
+          - generic [ref=f6e136]:
+            - generic [ref=f6e137]: ① 政府的钱
+            - generic [ref=f6e138]: 城市:深圳
+            - generic "2万–5万元，分期（首发50%+续发50%）" [ref=f6e139]
+            - generic [ref=f6e140]: 近期核对 2026-11
+            - generic "风险提示" [ref=f6e141]: 龙岗区户籍（问卷仅区分是否落户深圳，无法区分具体区）
+            - generic "风险提示" [ref=f6e142]: 首发申请须在龙岗连续全职工作满1年且距首次全职工作不超过2年（问卷无法判断）
+            - generic "风险提示" [ref=f6e143]: 未曾以更高学历办理人才引进
+            - generic "风险提示" [ref=f6e144]: 机关事业单位在编人员不得享受
+            - generic "可信度=官方链接直达精度：直达具体活动/文件页为高，仅到门户为中（AGIHunt 语义）" [ref=f6e145]: 中可信
+          - generic [ref=f6e146]:
+            - generic [aria-hidden] [ref=f6e147]: 龙
+            - heading [level=3] [ref=f6e148]:
+              - link "龙岗区新引进优秀青年人才入户补贴" [ref=f6e149] [cursor=pointer]:
+                - /url: /entries/city-shenzhen-12-shenzhen-longgang
+          - paragraph [ref=f6e150]: 35 周岁以下；需本地就业并参保
+          - generic [ref=f6e151]:
+            - generic [ref=f6e152]: 《龙岗区新引进优秀青年人才和在职攻读博士学位人才相关资助申报指南》｜城市补贴雷达镜像导入，官方链接继承，as-of 2026-11｜数据文件 shenzhen-C2QxfJYa.js
+            - generic [ref=f6e153]: 以当年申报指南为准
+        - article [ref=f6e154]:
+          - generic [ref=f6e155]:
+            - generic [ref=f6e156]: ① 政府的钱
+            - generic [ref=f6e157]: 城市:深圳
+            - generic "3万–8万元，一次性" [ref=f6e158]
+            - generic [ref=f6e159]: 近期核对 2026-11
+            - generic "风险提示" [ref=f6e160]: 重点企业通道需龙华区重点企业认定（问卷无法判断）
+            - generic "风险提示" [ref=f6e161]: 落户龙华区（问卷无法区分具体区）
+            - generic "风险提示" [ref=f6e162]: 3年及以上劳动合同（问卷无法判断）
+            - generic "风险提示" [ref=f6e163]: 社保五险连续3个月以上/重点通道6个月以上
+            - generic "可信度=官方链接直达精度：直达具体活动/文件页为高，仅到门户为中（AGIHunt 语义）" [ref=f6e164]: 中可信
+          - generic [ref=f6e165]:
+            - generic [aria-hidden] [ref=f6e166]: 龙
+            - heading [level=3] [ref=f6e167]:
+              - link "龙华区优秀青年人才补贴（入户补贴/人才集聚工程）" [ref=f6e168] [cursor=pointer]:
+                - /url: /entries/city-shenzhen-11-shenzhen-longhua
+          - paragraph [ref=f6e169]: 毕业 2 年内；需本地就业并参保
+          - generic [ref=f6e170]:
+            - generic [ref=f6e171]: 龙华区人才补贴政策 / 深龙华人规〔2025〕2号｜城市补贴雷达镜像导入，官方链接继承，as-of 2026-11｜数据文件 shenzhen-C2QxfJYa.js
+            - generic [ref=f6e172]: 普通通道：每年5月1日—5月31日集中受理；重点企业通道：每年5月至6月集中受理
+        - article [ref=f6e173]:
+          - generic [ref=f6e174]:
+            - generic [ref=f6e175]: ① 政府的钱
+            - generic [ref=f6e176]: 城市:深圳
+            - generic "2万–10万元，一次性" [ref=f6e177]
+            - generic [ref=f6e178]: 近期核对 2026-11
+            - generic "风险提示" [ref=f6e179]: 落户罗湖满6个月且户籍仍在罗湖
+            - generic "风险提示" [ref=f6e180]: 1年以上劳动合同
+            - generic "风险提示" [ref=f6e181]: 机关事业单位/国企在编人员不得申报
+            - generic "风险提示" [ref=f6e182]: 青创人才需经罗湖区认定
+            - generic "可信度=官方链接直达精度：直达具体活动/文件页为高，仅到门户为中（AGIHunt 语义）" [ref=f6e183]: 中可信
+          - generic [ref=f6e184]:
+            - generic [aria-hidden] [ref=f6e185]: 罗
+            - heading [level=3] [ref=f6e186]:
+              - link "罗湖区新引进优秀青年人才补贴" [ref=f6e187] [cursor=pointer]:
+                - /url: /entries/city-shenzhen-10-shenzhen-luohu
+          - paragraph [ref=f6e188]: 需本地就业并参保
+          - generic [ref=f6e189]:
+            - generic [ref=f6e190]: 《罗湖区人才政策》相关实施细则｜城市补贴雷达镜像导入，官方链接继承，as-of 2026-11｜数据文件 shenzhen-C2QxfJYa.js
+            - generic [ref=f6e191]: 2024年10月23日起首次落户罗湖区后按当年指南
+        - article [ref=f6e192]:
+          - generic [ref=f6e193]:
+            - generic [ref=f6e194]: ① 政府的钱
+            - generic [ref=f6e195]: 城市:深圳
+            - generic "2万–5万元，分期（首发30%+续发70%，或满12个月一次性申领）" [ref=f6e196]
+            - generic [ref=f6e197]: 近期核对 2026-11
+            - generic "可信度=官方链接直达精度：直达具体活动/文件页为高，仅到门户为中（AGIHunt 语义）" [ref=f6e198]: 中可信
+          - generic [ref=f6e199]:
+            - generic [aria-hidden] [ref=f6e200]: 南
+            - heading [level=3] [ref=f6e201]:
+              - link "南山区新引进入户高校毕业生支持行动" [ref=f6e202] [cursor=pointer]:
+                - /url: /entries/city-shenzhen-04-shenzhen-nanshan
+          - paragraph [ref=f6e203]: 本科/硕士；院校限 双一流/QS前150/THE前150/软科前150/USNews前150；35 周岁以下；需本地就业并参保；需落户本地
+          - generic [ref=f6e204]:
+            - generic [ref=f6e205]: 《南山区人才政策》相关实施细则｜城市补贴雷达镜像导入，官方链接继承，as-of 2026-11｜数据文件 shenzhen-C2QxfJYa.js
+            - generic [ref=f6e206]: 2025-03-25至2027-03-25
+        - article [ref=f6e207]:
+          - generic [ref=f6e208]:
+            - generic [ref=f6e209]: ① 政府的钱
+            - generic [ref=f6e210]: 城市:深圳
+            - generic "3万–5万元，分期（两次发放）" [ref=f6e211]
+            - generic [ref=f6e212]: 近期核对 2026-11
+            - generic "可信度=官方链接直达精度：直达具体活动/文件页为高，仅到门户为中（AGIHunt 语义）" [ref=f6e213]: 中可信
+          - generic [ref=f6e214]:
+            - generic [aria-hidden] [ref=f6e215]: 坪
+            - heading [level=3] [ref=f6e216]:
+              - link "坪山区聚龙青年人才引进补贴" [ref=f6e217] [cursor=pointer]:
+                - /url: /entries/city-shenzhen-05-shenzhen-pingshan
+          - paragraph [ref=f6e218]: 本科/硕士；院校限 QS前150/THE前150/软科前150/USNews前150；35 周岁以下；需本地就业并参保
+          - generic [ref=f6e219]:
+            - generic [ref=f6e220]: 《坪山区人才政策》相关实施细则｜城市补贴雷达镜像导入，官方链接继承，as-of 2026-11｜数据文件 shenzhen-C2QxfJYa.js
+            - generic [ref=f6e221]: 详见官方通知
+        - article [ref=f6e222]:
+          - generic [ref=f6e223]:
+            - generic [ref=f6e224]: ① 政府的钱
+            - generic [ref=f6e225]: 城市:深圳
+            - generic "5000–11000元，每月" [ref=f6e226]
+            - generic [ref=f6e227]: 近期核对 2026-11
+            - generic "风险提示" [ref=f6e228]: 居住补贴（1,000元/月）需未在深圳拥有自有住房（问卷无法判断）
+            - generic "风险提示" [ref=f6e229]: 2021年7月1日后首次在前海就业创业（问卷无法判断「首次」）
+            - generic "可信度=官方链接直达精度：直达具体活动/文件页为高，仅到门户为中（AGIHunt 语义）" [ref=f6e230]: 中可信
+          - generic [ref=f6e231]:
+            - generic [aria-hidden] [ref=f6e232]: 前
+            - heading [level=3] [ref=f6e233]:
+              - link "前海港澳青年就业创业补贴（就业+居住+生活三项可叠加）" [ref=f6e234] [cursor=pointer]:
+                - /url: /entries/city-shenzhen-03-shenzhen-qianhai-gangaoqingnian
+          - paragraph [ref=f6e235]: 专科/本科/硕士/博士；45 周岁以下；需本地就业并参保
+          - generic [ref=f6e236]:
+            - generic [ref=f6e237]: 深前海规〔2024〕12号｜城市补贴雷达镜像导入，官方链接继承，as-of 2026-11｜数据文件 shenzhen-C2QxfJYa.js
+            - generic [ref=f6e238]: 首次在前海就业创业后申请
+        - article [ref=f6e239]:
+          - generic [ref=f6e240]:
+            - generic [ref=f6e241]: ① 政府的钱
+            - generic [ref=f6e242]: 城市:深圳
+            - generic "各区新引进补贴 1.5万–10万元一次性或分期；前海三项叠加最高每月1.1万；市级青年住房支持每月1250元" [ref=f6e243]
+            - generic [ref=f6e244]: 近期核对 2026-11
+            - generic "风险提示" [ref=f6e245]: 补贴按区申领，入户区与就业区不一致会直接被拒
+            - generic "风险提示" [ref=f6e246]: 部分区要求「双一流/世界前300/辖区高校」，普通院校先查当区细则
+            - generic "风险提示" [ref=f6e247]: 分期发放的续发要求持续在该区参保，中途换区会断
+            - generic "风险提示" [ref=f6e248]: 市级「秒批」入户≠自动发钱，补贴要各区另行申请
+            - generic "可信度=官方链接直达精度：直达具体活动/文件页为高，仅到门户为中（AGIHunt 语义）" [ref=f6e249]: 中可信
+          - generic [ref=f6e250]:
+            - generic [aria-hidden] [ref=f6e251]: 深
+            - heading [level=3] [ref=f6e252]:
+              - link "深圳 · 各区新引进人才补贴" [ref=f6e253] [cursor=pointer]:
+                - /url: /entries/city-shenzhen
+          - paragraph [ref=f6e254]: 全日制本科及以上学历应届/新引进毕业生（多数区限35周岁以下、双一流或世界前300院校优先级更高）；需入户深圳并在该区就业参保；部分区要求毕业2年内
+          - generic [ref=f6e255]:
+            - generic [ref=f6e256]: 深圳市各区人才引进政策汇总（含《光明科学城基础性人才集聚行动方案》、各区新引进人才补贴申报指南）｜城市补贴雷达镜像导入，官方链接继承，as-of 2026-11
+            - generic [ref=f6e257]: 各区常年受理或按年度窗口集中受理（如龙华每年5月）；市级青年人才住房支持需首次在深就业创业1年内申请
+        - article [ref=f6e258]:
+          - generic [ref=f6e259]:
+            - generic [ref=f6e260]: ① 政府的钱
+            - generic [ref=f6e261]: 城市:深圳
+            - generic "本人实际缴费额2/3且不超过600元/月，累计最长3年" [ref=f6e262]
+            - generic [ref=f6e263]: 近期核对 2026-11
+            - generic "可信度=官方链接直达精度：直达具体活动/文件页为高，仅到门户为中（AGIHunt 语义）" [ref=f6e264]: 高可信
+          - generic [ref=f6e265]:
+            - generic [aria-hidden] [ref=f6e266]: 深
+            - heading [level=3] [ref=f6e267]:
+              - link "深圳灵活就业社保补贴" [ref=f6e268] [cursor=pointer]:
+                - /url: /entries/city-agi-011-6999a6ea000000001a0235d4
+          - paragraph [ref=f6e269]: 毕业2年内高校毕业生，以个人身份在深圳连续正常缴纳社保满3个月并以灵活就业类型登记就业
+          - generic [ref=f6e270]:
+            - generic [ref=f6e271]: AGIHunt 镜像（官方链接继承，as-of 2026-11）｜深圳官方扶持政策清单明确对象和标准。
+            - generic [ref=f6e272]: 以官方来源页当期口径为准（AGIHunt 镜像未含截止日期字段）
+        - article [ref=f6e273]:
+          - generic [ref=f6e274]:
+            - generic [ref=f6e275]: ① 政府的钱
+            - generic [ref=f6e276]: 城市:深圳
+            - generic "1250元/月（税后1000元），发放期不超过24个月" [ref=f6e277]
+            - generic [ref=f6e278]: 近期核对 2026-11
+            - generic "可信度=官方链接直达精度：直达具体活动/文件页为高，仅到门户为中（AGIHunt 语义）" [ref=f6e279]: 高可信
+          - generic [ref=f6e280]:
+            - generic [aria-hidden] [ref=f6e281]: 深
+            - heading [level=3] [ref=f6e282]:
+              - link "深圳青年人才安居补贴" [ref=f6e283] [cursor=pointer]:
+                - /url: /entries/city-agi-012-6999a6ea000000001a0235d4
+          - paragraph [ref=f6e284]: 符合青年人才住房支持条件且未租住过渡性住房、已办理居住登记的青年人才
+          - generic [ref=f6e285]:
+            - generic [ref=f6e286]: AGIHunt 镜像（官方链接继承，as-of 2026-11）｜官方区级实施细则明确标准、条件和流程。
+            - generic [ref=f6e287]: 以官方来源页当期口径为准（AGIHunt 镜像未含截止日期字段）
+        - article [ref=f6e288]:
+          - generic [ref=f6e289]:
+            - generic [ref=f6e290]: ① 政府的钱
+            - generic [ref=f6e291]: 城市:深圳
+            - generic "可申请一次免费短期住宿，最长15天" [ref=f6e292]
+            - generic [ref=f6e293]: 近期核对 2026-11
+            - generic "可信度=官方链接直达精度：直达具体活动/文件页为高，仅到门户为中（AGIHunt 语义）" [ref=f6e294]: 高可信
+          - generic [ref=f6e295]:
+            - generic [aria-hidden] [ref=f6e296]: 深
+            - heading [level=3] [ref=f6e297]:
+              - link "深圳青年驿站免费住宿" [ref=f6e298] [cursor=pointer]:
+                - /url: /entries/city-agi-013-6999a6ea000000001a0235d4
+          - paragraph [ref=f6e299]: 应届高校毕业生等青年人才来深求职面试、实习见习
+          - generic [ref=f6e300]:
+            - generic [ref=f6e301]: AGIHunt 镜像（官方链接继承，as-of 2026-11）｜官方政策解读明确青年驿站短期住宿支持。
+            - generic [ref=f6e302]: 以官方来源页当期口径为准（AGIHunt 镜像未含截止日期字段）
+        - article [ref=f6e303]:
+          - generic [ref=f6e304]:
+            - generic [ref=f6e305]: ① 政府的钱
+            - generic [ref=f6e306]: 城市:深圳
+            - generic "一次性3000元/人" [ref=f6e307]
+            - generic [ref=f6e308]: 近期核对 2026-11
+            - generic "可信度=官方链接直达精度：直达具体活动/文件页为高，仅到门户为中（AGIHunt 语义）" [ref=f6e309]: 高可信
+          - generic [ref=f6e310]:
+            - generic [aria-hidden] [ref=f6e311]: 深
+            - heading [level=3] [ref=f6e312]:
+              - link "深圳求职创业补贴" [ref=f6e313] [cursor=pointer]:
+                - /url: /entries/city-agi-010-6999a6ea000000001a0235d4
+          - paragraph [ref=f6e314]: 深圳市普通高校、中等职业学校、技工院校毕业学年学生，且属困难家庭、特困、残疾或在学期间获国家助学贷款等情形
+          - generic [ref=f6e315]:
+            - generic [ref=f6e316]: AGIHunt 镜像（官方链接继承，as-of 2026-11）｜深圳人社公告明确对象、标准和学校代办流程。
+            - generic [ref=f6e317]: 以官方来源页当期口径为准（AGIHunt 镜像未含截止日期字段）
+        - article [ref=f6e318]:
+          - generic [ref=f6e319]:
+            - generic [ref=f6e320]: ① 政府的钱
+            - generic [ref=f6e321]: 城市:深圳
+            - generic "按每人每月不高于深圳最低工资标准且不高于单位实际支付工作补贴金额给予，最长12个月" [ref=f6e322]
+            - generic [ref=f6e323]: 近期核对 2026-11
+            - generic "可信度=官方链接直达精度：直达具体活动/文件页为高，仅到门户为中（AGIHunt 语义）" [ref=f6e324]: 高可信
+          - generic [ref=f6e325]:
+            - generic [aria-hidden] [ref=f6e326]: 深
+            - heading [level=3] [ref=f6e327]:
+              - link "深圳实习生活/就业见习补贴" [ref=f6e328] [cursor=pointer]:
+                - /url: /entries/city-agi-009-68c38729000000001d02560a
+          - paragraph [ref=f6e329]: 组织毕业2年内高校毕业生或16-24岁失业青年参加就业见习的用人单位（劳务派遣单位除外）
+          - generic [ref=f6e330]:
+            - generic [ref=f6e331]: AGIHunt 镜像（官方链接继承，as-of 2026-11）｜深圳官方高校毕业生就业创业扶持政策清单明确对象、标准和渠道。
+            - generic [ref=f6e332]: 以官方来源页当期口径为准（AGIHunt 镜像未含截止日期字段）
+        - article [ref=f6e333]:
+          - generic [ref=f6e334]:
+            - generic [ref=f6e335]: ① 政府的钱
+            - generic [ref=f6e336]: 城市:深圳
+            - generic "1250元，每月（或过渡性住房）" [ref=f6e337]
+            - generic [ref=f6e338]: 近期核对 2026-11
+            - generic "可信度=官方链接直达精度：直达具体活动/文件页为高，仅到门户为中（AGIHunt 语义）" [ref=f6e339]: 中可信
+          - generic [ref=f6e340]:
+            - generic [aria-hidden] [ref=f6e341]: 深
+            - heading [level=3] [ref=f6e342]:
+              - link "深圳市青年人才认定与住房支持" [ref=f6e343] [cursor=pointer]:
+                - /url: /entries/city-shenzhen-08-shenzhen-qingnian-rencai-zhufang
+          - paragraph [ref=f6e344]: 45 周岁以下；需本地就业并参保
+          - generic [ref=f6e345]:
+            - generic [ref=f6e346]: 深人社规〔2025〕7号 / 深建规〔2025〕18号｜城市补贴雷达镜像导入，官方链接继承，as-of 2026-11｜数据文件 shenzhen-C2QxfJYa.js
+            - generic [ref=f6e347]: 首次在深就业创业之日起1年内
+    - generic [ref=f6e348]:
+      - heading "全国通用（不限城市）" [level=2] [ref=f6e349]
+      - generic [ref=f6e350]:
+        - article [ref=f6e351]:
+          - generic [ref=f6e352]:
+            - generic [ref=f6e353]: ② 企业的让利
+            - generic [ref=f6e354]: 全国
+            - generic "Creator 计划 $24/月 → 教育计划 $12/月（五折），功能几乎不阉割：多图融合、无限私有模型、模型重试 20 次" [ref=f6e355]
+            - generic [ref=f6e356]: 近期核对 2026-11
+            - generic "申请难度（编辑评估，供排序参考）" [ref=f6e357]: 难度 易
+            - generic "风险提示" [ref=f6e358]: 已订 Creator/Business 的要先取消，否则 Education 选项不出现
+            - generic "风险提示" [ref=f6e359]: 验证码邮件 15 分钟过期
+            - generic "风险提示" [ref=f6e360]: 假资格会被官方追讨减免费用，用真实学校邮箱
+            - generic "可信度=官方链接直达精度：直达具体活动/文件页为高，仅到门户为中（AGIHunt 语义）" [ref=f6e361]: 高可信
+          - generic [ref=f6e362]:
+            - generic [aria-hidden] [ref=f6e363]: H
+            - heading [level=3] [ref=f6e364]:
+              - link "Hyper3D 教育计划半价" [ref=f6e365] [cursor=pointer]:
+                - /url: /entries/benefits-int-51-hyper3d-education
+          - paragraph [ref=f6e366]: 在校学生或教育工作者，学校教育邮箱（国外 .edu 与国内 edu.cn 均可尝试）；域名不在白名单时需补学生证/成绩单/在读证明照片
+          - generic [ref=f6e367]:
+            - generic [ref=f6e368]: Hyper3D 官方站点｜学生省钱快报镜像教程（官方链接继承，as-of 2026-11）
+            - generic [ref=f6e369]: 按月订阅，资格核查通过后持续有效；官方声明虚报资格会追讨减免费用
+        - article [ref=f6e370]:
+          - generic [ref=f6e371]:
+            - generic [ref=f6e372]: ② 企业的让利
+            - generic [ref=f6e373]: 全国
+            - generic "普速硬座约半价，动车组二等座约 7.5 折（每学年 4 次家庭至院校区间）" [ref=f6e374]
+            - generic [ref=f6e375]: 近期核对 2026-10
+          - generic [ref=f6e376]:
+            - generic [aria-hidden] [ref=f6e377]: 铁
+            - heading [level=3] [ref=f6e378]:
+              - link "铁路学生票（12306 学生资质核验）" [ref=f6e379] [cursor=pointer]:
+                - /url: /entries/benefits-dom-01-tielu-xueshengpiao
+          - paragraph [ref=f6e380]: 国家教育主管部门批准学历教育的在校学生，且家庭居住地与院校不在同一城市；需在 12306 完成学生资质核验
+          - generic [ref=f6e381]:
+            - generic [ref=f6e382]: 铁路 12306 官方网站
+            - generic [ref=f6e383]: 在校期间每学年可购 4 次单程；每学年需重新核验学籍
+        - article [ref=f6e384]:
+          - generic [ref=f6e385]:
+            - generic [ref=f6e386]: ② 企业的让利
+            - generic [ref=f6e387]: 全国
+            - generic "多数政府定价景区执行学生半价档（约省 30-100 元/次）" [ref=f6e388]
+            - generic [ref=f6e389]: 近期核对 2026-10
+          - generic [ref=f6e390]:
+            - generic [aria-hidden] [ref=f6e391]: 景
+            - heading [level=3] [ref=f6e392]:
+              - link "景区学生票（半价通行）" [ref=f6e393] [cursor=pointer]:
+                - /url: /entries/benefits-dom-02-jingqu-xueshengpiao
+          - paragraph [ref=f6e394]: 全日制在校本科及以下学历学生，凭学生证现场购票（部分景区需身份证+学生证双证）
+          - generic [ref=f6e395]:
+            - generic [ref=f6e396]: 文化和旅游部官网（价格政策归口）
+            - generic [ref=f6e397]: 在校期间有效；民营景区是否给学生价由经营者自定
+        - article [ref=f6e398]:
+          - generic [ref=f6e399]:
+            - generic [ref=f6e400]: ② 企业的让利
+            - generic [ref=f6e401]: 全国
+            - generic "学生价明显低于常规年卡（以购买页当期价格为准）" [ref=f6e402]
+            - generic [ref=f6e403]: 近期核对 2026-10
+          - generic [ref=f6e404]:
+            - generic [aria-hidden] [ref=f6e405]: 优
+            - heading [level=3] [ref=f6e406]:
+              - link "优酷 VIP 学生价" [ref=f6e407] [cursor=pointer]:
+                - /url: /entries/benefits-dom-05-youku-xueshengjia
+          - paragraph [ref=f6e408]: 在校学生，App 内完成学生身份认证
+          - generic [ref=f6e409]:
+            - generic [ref=f6e410]: 优酷官网
+            - generic [ref=f6e411]: 滚动有效，以 App 内当期活动为准
+        - article [ref=f6e412]:
+          - generic [ref=f6e413]:
+            - generic [ref=f6e414]: ② 企业的让利
+            - generic [ref=f6e415]: 全国
+            - generic "单张立减或专属低价场次，通常比全价票省数元至十余元/张" [ref=f6e416]
+            - generic [ref=f6e417]: 近期核对 2026-10
+          - generic [ref=f6e418]:
+            - generic [aria-hidden] [ref=f6e419]: 电
+            - heading [level=3] [ref=f6e420]:
+              - link "电影学生价（购票 App 学生认证）" [ref=f6e421] [cursor=pointer]:
+                - /url: /entries/benefits-dom-03-dianying-xueshengjia
+          - paragraph [ref=f6e422]: 在校学生，在购票 App 内完成学生身份认证（学信网/学生证拍照等校验方式）
+          - generic [ref=f6e423]:
+            - generic [ref=f6e424]: 猫眼电影官网
+            - generic [ref=f6e425]: 滚动有效，以 App 内当期活动为准
+        - article [ref=f6e426]:
+          - generic [ref=f6e427]:
+            - generic [ref=f6e428]: ② 企业的让利
+            - generic [ref=f6e429]: 全国
+            - generic "学生价约为常规年卡一半（约百元出头/年，以购买页为准）" [ref=f6e430]
+            - generic [ref=f6e431]: 近期核对 2026-10
+          - generic [ref=f6e432]:
+            - generic [aria-hidden] [ref=f6e433]: 爱
+            - heading [level=3] [ref=f6e434]:
+              - link "爱奇艺 VIP 学生价" [ref=f6e435] [cursor=pointer]:
+                - /url: /entries/benefits-dom-04-aqy-xueshengjia
+          - paragraph [ref=f6e436]: 年龄符合条件的在校学生，通过学信网或学生证认证
+          - generic [ref=f6e437]:
+            - generic [ref=f6e438]: 爱奇艺 VIP 会员官方页面
+            - generic [ref=f6e439]: 滚动有效，以 App 内当期活动为准
+    - generic [ref=f6e440]:
+      - heading "换城市" [level=2] [ref=f6e441]
+      - generic [ref=f6e442]:
+        - link "上海" [ref=f6e443] [cursor=pointer]:
+          - /url: /city/%E4%B8%8A%E6%B5%B7
+        - link "北京" [ref=f6e444] [cursor=pointer]:
+          - /url: /city/%E5%8C%97%E4%BA%AC
+        - link "广州" [ref=f6e445] [cursor=pointer]:
+          - /url: /city/%E5%B9%BF%E5%B7%9E
+        - link "临沂" [ref=f6e446] [cursor=pointer]:
+          - /url: /city/%E4%B8%B4%E6%B2%82
+        - link "保定" [ref=f6e447] [cursor=pointer]:
+          - /url: /city/%E4%BF%9D%E5%AE%9A
+        - link "南昌" [ref=f6e448] [cursor=pointer]:
+          - /url: /city/%E5%8D%97%E6%98%8C
+        - link "南宁" [ref=f6e449] [cursor=pointer]:
+          - /url: /city/%E5%8D%97%E5%AE%81
+        - link "台州" [ref=f6e450] [cursor=pointer]:
+          - /url: /city/%E5%8F%B0%E5%B7%9E
+        - link "南通" [ref=f6e451] [cursor=pointer]:
+          - /url: /city/%E5%8D%97%E9%80%9A
+        - link "厦门" [ref=f6e452] [cursor=pointer]:
+          - /url: /city/%E5%8E%A6%E9%97%A8
+        - link "哈尔滨" [ref=f6e453] [cursor=pointer]:
+          - /url: /city/%E5%93%88%E5%B0%94%E6%BB%A8
+        - link "嘉兴" [ref=f6e454] [cursor=pointer]:
+          - /url: /city/%E5%98%89%E5%85%B4
+        - link "大连" [ref=f6e455] [cursor=pointer]:
+          - /url: /city/%E5%A4%A7%E8%BF%9E
+        - link "太原" [ref=f6e456] [cursor=pointer]:
+          - /url: /city/%E5%A4%AA%E5%8E%9F
+        - link "常州" [ref=f6e457] [cursor=pointer]:
+          - /url: /city/%E5%B8%B8%E5%B7%9E
+        - link "惠州" [ref=f6e458] [cursor=pointer]:
+          - /url: /city/%E6%83%A0%E5%B7%9E
+        - link "无锡" [ref=f6e459] [cursor=pointer]:
+          - /url: /city/%E6%97%A0%E9%94%A1
+        - link "昆明" [ref=f6e460] [cursor=pointer]:
+          - /url: /city/%E6%98%86%E6%98%8E
+        - link "泉州" [ref=f6e461] [cursor=pointer]:
+          - /url: /city/%E6%B3%89%E5%B7%9E
+        - link "济南" [ref=f6e462] [cursor=pointer]:
+          - /url: /city/%E6%B5%8E%E5%8D%97
+        - link "石家庄" [ref=f6e463] [cursor=pointer]:
+          - /url: /city/%E7%9F%B3%E5%AE%B6%E5%BA%84
+        - link "福州" [ref=f6e464] [cursor=pointer]:
+          - /url: /city/%E7%A6%8F%E5%B7%9E
+        - link "绍兴" [ref=f6e465] [cursor=pointer]:
+          - /url: /city/%E7%BB%8D%E5%85%B4
+        - link "金华" [ref=f6e466] [cursor=pointer]:
+          - /url: /city/%E9%87%91%E5%8D%8E
+        - link "贵阳" [ref=f6e467] [cursor=pointer]:
+          - /url: /city/%E8%B4%B5%E9%98%B3
+        - link "长春" [ref=f6e468] [cursor=pointer]:
+          - /url: /city/%E9%95%BF%E6%98%A5
+        - link "东莞" [ref=f6e469] [cursor=pointer]:
+          - /url: /city/%E4%B8%9C%E8%8E%9E
+        - link "南京" [ref=f6e470] [cursor=pointer]:
+          - /url: /city/%E5%8D%97%E4%BA%AC
+        - link "合肥" [ref=f6e471] [cursor=pointer]:
+          - /url: /city/%E5%90%88%E8%82%A5
+        - link "天津" [ref=f6e472] [cursor=pointer]:
+          - /url: /city/%E5%A4%A9%E6%B4%A5
+        - link "杭州" [ref=f6e473] [cursor=pointer]:
+          - /url: /city/%E6%9D%AD%E5%B7%9E
+        - link "武汉" [ref=f6e474] [cursor=pointer]:
+          - /url: /city/%E6%AD%A6%E6%B1%89
+        - link "苏州" [ref=f6e475] [cursor=pointer]:
+          - /url: /city/%E8%8B%8F%E5%B7%9E
+        - link "郑州" [ref=f6e476] [cursor=pointer]:
+          - /url: /city/%E9%83%91%E5%B7%9E
+        - link "重庆" [ref=f6e477] [cursor=pointer]:
+          - /url: /city/%E9%87%8D%E5%BA%86
+        - link "长沙" [ref=f6e478] [cursor=pointer]:
+          - /url: /city/%E9%95%BF%E6%B2%99
+        - link "青岛" [ref=f6e479] [cursor=pointer]:
+          - /url: /city/%E9%9D%92%E5%B2%9B
+        - link "安庆" [ref=f6e480] [cursor=pointer]:
+          - /url: /city/%E5%AE%89%E5%BA%86
+        - link "鞍山" [ref=f6e481] [cursor=pointer]:
+          - /url: /city/%E9%9E%8D%E5%B1%B1
+        - link "蚌埠" [ref=f6e482] [cursor=pointer]:
+          - /url: /city/%E8%9A%8C%E5%9F%A0
+        - link "亳州" [ref=f6e483] [cursor=pointer]:
+          - /url: /city/%E4%BA%B3%E5%B7%9E
+        - link "沧州" [ref=f6e484] [cursor=pointer]:
+          - /url: /city/%E6%B2%A7%E5%B7%9E
+        - link "成都" [ref=f6e485] [cursor=pointer]:
+          - /url: /city/%E6%88%90%E9%83%BD
+        - link "池州" [ref=f6e486] [cursor=pointer]:
+          - /url: /city/%E6%B1%A0%E5%B7%9E
+        - link "大庆" [ref=f6e487] [cursor=pointer]:
+          - /url: /city/%E5%A4%A7%E5%BA%86
+        - link "鄂尔多斯" [ref=f6e488] [cursor=pointer]:
+          - /url: /city/%E9%84%82%E5%B0%94%E5%A4%9A%E6%96%AF
+        - link "鄂州" [ref=f6e489] [cursor=pointer]:
+          - /url: /city/%E9%84%82%E5%B7%9E
+        - link "阜阳" [ref=f6e490] [cursor=pointer]:
+          - /url: /city/%E9%98%9C%E9%98%B3
+        - link "赣州" [ref=f6e491] [cursor=pointer]:
+          - /url: /city/%E8%B5%A3%E5%B7%9E
+        - link "桂林" [ref=f6e492] [cursor=pointer]:
+          - /url: /city/%E6%A1%82%E6%9E%97
+        - link "海口" [ref=f6e493] [cursor=pointer]:
+          - /url: /city/%E6%B5%B7%E5%8F%A3
+        - link "衡阳" [ref=f6e494] [cursor=pointer]:
+          - /url: /city/%E8%A1%A1%E9%98%B3
+        - link "淮安" [ref=f6e495] [cursor=pointer]:
+          - /url: /city/%E6%B7%AE%E5%AE%89
+        - link "淮北" [ref=f6e496] [cursor=pointer]:
+          - /url: /city/%E6%B7%AE%E5%8C%97
+        - link "淮南" [ref=f6e497] [cursor=pointer]:
+          - /url: /city/%E6%B7%AE%E5%8D%97
+        - link "黄冈" [ref=f6e498] [cursor=pointer]:
+          - /url: /city/%E9%BB%84%E5%86%88
+        - link "黄山" [ref=f6e499] [cursor=pointer]:
+          - /url: /city/%E9%BB%84%E5%B1%B1
+        - link "焦作" [ref=f6e500] [cursor=pointer]:
+          - /url: /city/%E7%84%A6%E4%BD%9C
+        - link "吉林" [ref=f6e501] [cursor=pointer]:
+          - /url: /city/%E5%90%89%E6%9E%97
+        - link "荆门" [ref=f6e502] [cursor=pointer]:
+          - /url: /city/%E8%8D%86%E9%97%A8
+        - link "荆州" [ref=f6e503] [cursor=pointer]:
+          - /url: /city/%E8%8D%86%E5%B7%9E
+        - link "济宁" [ref=f6e504] [cursor=pointer]:
+          - /url: /city/%E6%B5%8E%E5%AE%81
+        - link "九江" [ref=f6e505] [cursor=pointer]:
+          - /url: /city/%E4%B9%9D%E6%B1%9F
+        - link "开封" [ref=f6e506] [cursor=pointer]:
+          - /url: /city/%E5%BC%80%E5%B0%81
+        - link "兰州" [ref=f6e507] [cursor=pointer]:
+          - /url: /city/%E5%85%B0%E5%B7%9E
+        - link "拉萨" [ref=f6e508] [cursor=pointer]:
+          - /url: /city/%E6%8B%89%E8%90%A8
+        - link "连云港" [ref=f6e509] [cursor=pointer]:
+          - /url: /city/%E8%BF%9E%E4%BA%91%E6%B8%AF
+        - link "六安" [ref=f6e510] [cursor=pointer]:
+          - /url: /city/%E5%85%AD%E5%AE%89
+        - link "马鞍山" [ref=f6e511] [cursor=pointer]:
+          - /url: /city/%E9%A9%AC%E9%9E%8D%E5%B1%B1
+        - link "洛阳" [ref=f6e512] [cursor=pointer]:
+          - /url: /city/%E6%B4%9B%E9%98%B3
+        - link "绵阳" [ref=f6e513] [cursor=pointer]:
+          - /url: /city/%E7%BB%B5%E9%98%B3
+        - link "南阳" [ref=f6e514] [cursor=pointer]:
+          - /url: /city/%E5%8D%97%E9%98%B3
+        - link "宁波" [ref=f6e515] [cursor=pointer]:
+          - /url: /city/%E5%AE%81%E6%B3%A2
+        - link "宁德" [ref=f6e516] [cursor=pointer]:
+          - /url: /city/%E5%AE%81%E5%BE%B7
+        - link "盘锦" [ref=f6e517] [cursor=pointer]:
+          - /url: /city/%E7%9B%98%E9%94%A6
+        - link "三亚" [ref=f6e518] [cursor=pointer]:
+          - /url: /city/%E4%B8%89%E4%BA%9A
+        - link "汕头" [ref=f6e519] [cursor=pointer]:
+          - /url: /city/%E6%B1%95%E5%A4%B4
+        - link "沈阳" [ref=f6e520] [cursor=pointer]:
+          - /url: /city/%E6%B2%88%E9%98%B3
+        - link "宿迁" [ref=f6e521] [cursor=pointer]:
+          - /url: /city/%E5%AE%BF%E8%BF%81
+        - link "宿州" [ref=f6e522] [cursor=pointer]:
+          - /url: /city/%E5%AE%BF%E5%B7%9E
+        - link "泰州" [ref=f6e523] [cursor=pointer]:
+          - /url: /city/%E6%B3%B0%E5%B7%9E
+        - link "铜陵" [ref=f6e524] [cursor=pointer]:
+          - /url: /city/%E9%93%9C%E9%99%B5
+        - link "威海" [ref=f6e525] [cursor=pointer]:
+          - /url: /city/%E5%A8%81%E6%B5%B7
+        - link "温州" [ref=f6e526] [cursor=pointer]:
+          - /url: /city/%E6%B8%A9%E5%B7%9E
+        - link "乌鲁木齐" [ref=f6e527] [cursor=pointer]:
+          - /url: /city/%E4%B9%8C%E9%B2%81%E6%9C%A8%E9%BD%90
+        - link "西安" [ref=f6e528] [cursor=pointer]:
+          - /url: /city/%E8%A5%BF%E5%AE%89
+        - link "襄阳" [ref=f6e529] [cursor=pointer]:
+          - /url: /city/%E8%A5%84%E9%98%B3
+        - link "西宁" [ref=f6e530] [cursor=pointer]:
+          - /url: /city/%E8%A5%BF%E5%AE%81
+        - link "新乡" [ref=f6e531] [cursor=pointer]:
+          - /url: /city/%E6%96%B0%E4%B9%A1
+        - link "宣城" [ref=f6e532] [cursor=pointer]:
+          - /url: /city/%E5%AE%A3%E5%9F%8E
+        - link "徐州" [ref=f6e533] [cursor=pointer]:
+          - /url: /city/%E5%BE%90%E5%B7%9E
+        - link "盐城" [ref=f6e534] [cursor=pointer]:
+          - /url: /city/%E7%9B%90%E5%9F%8E
+        - link "烟台" [ref=f6e535] [cursor=pointer]:
+          - /url: /city/%E7%83%9F%E5%8F%B0
+        - link "宜昌" [ref=f6e536] [cursor=pointer]:
+          - /url: /city/%E5%AE%9C%E6%98%8C
+        - link "银川" [ref=f6e537] [cursor=pointer]:
+          - /url: /city/%E9%93%B6%E5%B7%9D
+        - link "岳阳" [ref=f6e538] [cursor=pointer]:
+          - /url: /city/%E5%B2%B3%E9%98%B3
+        - link "漳州" [ref=f6e539] [cursor=pointer]:
+          - /url: /city/%E6%BC%B3%E5%B7%9E
+        - link "湛江" [ref=f6e540] [cursor=pointer]:
+          - /url: /city/%E6%B9%9B%E6%B1%9F
+        - link "镇江" [ref=f6e541] [cursor=pointer]:
+          - /url: /city/%E9%95%87%E6%B1%9F
+        - link "中山" [ref=f6e542] [cursor=pointer]:
+          - /url: /city/%E4%B8%AD%E5%B1%B1
+        - link "周口" [ref=f6e543] [cursor=pointer]:
+          - /url: /city/%E5%91%A8%E5%8F%A3
+        - link "珠海" [ref=f6e544] [cursor=pointer]:
+          - /url: /city/%E7%8F%A0%E6%B5%B7
+        - link "株洲" [ref=f6e545] [cursor=pointer]:
+          - /url: /city/%E6%A0%AA%E6%B4%B2
+        - link "淄博" [ref=f6e546] [cursor=pointer]:
+          - /url: /city/%E6%B7%84%E5%8D%9A
+        - link "自贡" [ref=f6e547] [cursor=pointer]:
+          - /url: /city/%E8%87%AA%E8%B4%A1
+  - contentinfo [ref=f6e548]:
+    - generic [ref=f6e549]:
+      - generic [ref=f6e550]:
+        - generic [ref=f6e551]:
+          - link "大学补给站" [ref=f6e552] [cursor=pointer]:
+            - /url: /
+          - paragraph [ref=f6e558]: 把大学四年的信息差，提前补给你。
+          - paragraph [ref=f6e559]: 552 条门道 · 12 篇攻略 · 最后核对 2026-11
+        - generic [ref=f6e560]:
+          - heading "社会支持" [level=3] [ref=f6e561]
+          - link "政府的钱" [ref=f6e562] [cursor=pointer]:
+            - /url: /money/gov
+          - link "企业的让利" [ref=f6e563] [cursor=pointer]:
+            - /url: /money/corporate
+          - link "平台的预算" [ref=f6e564] [cursor=pointer]:
+            - /url: /money/platform
+        - generic [ref=f6e565]:
+          - heading "校园门道" [level=3] [ref=f6e566]
+          - link "避坑" [ref=f6e567] [cursor=pointer]:
+            - /url: /dao/pits
+          - link "学习" [ref=f6e568] [cursor=pointer]:
+            - /url: /dao/learn
+          - link "生活" [ref=f6e569] [cursor=pointer]:
+            - /url: /dao/life
+          - link "开源挣钱" [ref=f6e570] [cursor=pointer]:
+            - /url: /dao/earn
+        - generic [ref=f6e571]:
+          - heading "更多" [level=3] [ref=f6e572]
+          - link "校园信息雷达" [ref=f6e573] [cursor=pointer]:
+            - /url: /radar
+          - link "攻略库" [ref=f6e574] [cursor=pointer]:
+            - /url: /guides
+          - link "搜索全站" [ref=f6e575] [cursor=pointer]:
+            - /url: /search
+          - link "关于 · 核对机制" [ref=f6e576] [cursor=pointer]:
+            - /url: /about
+          - link "纠错日志" [ref=f6e577] [cursor=pointer]:
+            - /url: /corrections
+          - link "编辑政策" [ref=f6e578] [cursor=pointer]:
+            - /url: /editorial
+          - link "目录方法论" [ref=f6e579] [cursor=pointer]:
+            - /url: /how-we-build
+          - link "隐私说明" [ref=f6e580] [cursor=pointer]:
+            - /url: /privacy
+      - generic [ref=f6e581]:
+        - generic [ref=f6e582]: © 2026 大学补给站
+        - generic [ref=f6e583]: 非官方信息整理 · 政策与价格以官方渠道为准 · 过期条目不删除，只标记

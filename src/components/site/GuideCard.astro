@@ -1,0 +1,17 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { url } from '../../lib/url';
+
+interface Props {
+  guide: CollectionEntry<'guides'>;
+}
+const { guide } = Astro.props;
+---
+
+<a class="guide-card" href={url(`/guides/${guide.id}`)}>
+  <h3>{guide.data.title}</h3>
+  <p>{guide.data.summary}</p>
+  <span class="guide-meta">
+    {guide.data.stage.join(' / ')} · 更新 {guide.data.updated}
+  </span>
+</a>

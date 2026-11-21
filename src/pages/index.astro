@@ -1,0 +1,244 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SectionHead from '../components/site/SectionHead.astro';
+import PillarCard from '../components/site/PillarCard.astro';
+import CityGrid from '../components/site/CityGrid.astro';
+import GuideCard from '../components/site/GuideCard.astro';
+import TrustBar from '../components/site/TrustBar.astro';
+import RadarPreview from '../components/radar/RadarPreview.astro';
+import RadarMark from '../components/site/RadarMark.astro';
+import { loadSiteContent, countByPillar } from '../lib/content';
+import { MONEY_PILLARS, DAO_PILLARS, ALL_PILLARS } from '../lib/pillars';
+import { url } from '../lib/url';
+import { RADAR } from '../lib/radar';
+
+const site = await loadSiteContent();
+const moneyPillars = Object.values(MONEY_PILLARS);
+const daoPillars = Object.values(DAO_PILLARS);
+
+const guides = site.guides
+  .slice()
+  .sort((a, b) => b.data.updated.localeCompare(a.data.updated));
+const featured = guides[0];
+const restGuides = guides.slice(1, 4);
+// 城市区块：真实 TOP8（按条目数），全量走 /cities
+const topCities = Object.entries(site.cityCounts).sort((a, b) => b[1] - a[1]).slice(0, 8);
+
+const description = `${site.counts.entries} 条核对过的校园门道与社会支持条目 + ${site.counts.guides} 篇攻略，外加一个把群消息变成待办的本机雷达。`;
+---
+
+<Layout description={description}>
+  <section class="hero">
+    <div class="hero-grid">
+      <div>
+        <p class="eyebrow">大学补给站 · 消除信息差</p>
+        <h1 class="hero-title">别人不知道的，你<em>先知道</em>；<br />该拿的，一份都<em>不少拿</em>。</h1>
+        <p class="hero-sub">
+          {site.counts.entries} 条核对过的条目：不知道有的资源、不会用的认证、会错过的截止、用不狠的叠加——外加一个只在本机运行的群消息雷达，截止前提醒你。
+        </p>
+        <div class="hero-actions">
+          <a class="btn" href={url('/money/gov')}>看能拿什么 →</a>
+          <a class="btn ghost" href={url('/radar')}>装雷达 →</a>
+        </div>
+        <div class="hero-stats">
+          <span class="hero-stat"><strong>{site.counts.entries}</strong>条门道</span>
+          <span class="hero-stat"><strong>{site.counts.guides}</strong>篇攻略</span>
+          <span class="hero-stat"><strong>{site.counts.pillars}</strong>个支柱</span>
+          <span class="hero-stat">最后核对 <strong>{site.lastVerified}</strong></span>
+        </div>
+      </div>
+      <div class="hero-art">
+        <RadarMark />
+      </div>
+    </div>
+  </section>
+
+  <section aria-label="双速补给" data-reveal>
+    <div class="dual-grid">
+      <div class="dual-card">
+        <div class="dual-top">
+          <span class="dual-kicker">存量 · 条目库</span>
+          <span class="badge">{site.counts.entries} 条</span>
+        </div>
+        <h2 class="dual-title">查得到的答案</h2>
+        <p class="dual-desc">
+          奖金、补贴、学生价、避坑、升学时间线——每条都给官方入口和最后核对日期。不用再翻三十个群的历史记录。
+        </p>
+        <ul class="dual-list">
+          <li>校园门道：避坑 / 学习 / 生活 / 开源挣钱</li>
+          <li>社会支持：政府的钱 / 企业的让利 / 平台的预算</li>
+          <li>信息差工具：自查 / 认证导航 / 叠加逻辑 / 决策</li>
+          <li>按支柱、城市、阶段筛选，直接跳到可执行的步骤</li>
+        </ul>
+        <a class="btn small dual-cta" href={url('/money/gov')}>进入条目库 →</a>
+      </div>
+
+      <div class="dual-card radar">
+        <div class="dual-top">
+          <span class="dual-kicker">增量 · 雷达</span>
+          <span class="badge">{RADAR.version}</span>
+        </div>
+        <h2 class="dual-title">盯得住的提醒</h2>
+        <p class="dual-desc">
+          把群里的通知变成待办：谁发的、什么时候截止、值不值得看。工具在你自己电脑上跑，数据不上云。
+        </p>
+        <div class="mini-tasks">
+          <div class="mini-task">
+            <span class="dot"></span>
+            <span class="mini-title">国家励志奖学金材料提交</span>
+            <span class="mini-when">今天</span>
+          </div>
+          <div class="mini-task">
+            <span class="dot"></span>
+            <span class="mini-title">杭州应届生生活补贴申报</span>
+            <span class="mini-when">3 天</span>
+          </div>
+          <div class="mini-task">
+            <span class="dot"></span>
+            <span class="mini-title">互联网+ 校赛报名</span>
+            <span class="mini-when">7 天</span>
+          </div>
+        </div>
+        <p class="mock-caption">界面示意 · 数据为虚构</p>
+        <a class="btn small dual-cta" href={url('/radar')}>看它怎么工作 →</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" data-reveal>
+    <SectionHead
+      eyebrow="怎么运转"
+      title="群消息 → 待办 → 核对 → 条目"
+      note="机器负责不漏，人负责不错。门道是存量，雷达是增量，条目是沉淀。"
+    />
+    <div class="pipeline">
+      <div class="pipeline-step">
+        <span class="pipeline-num">01</span>
+        <h3 class="pipeline-title">采集</h3>
+        <p class="pipeline-body">只读你勾选的 5–10 个群，不发言、不拉人、不加好友。</p>
+        <span class="pipeline-owner machine">机器</span>
+      </div>
+      <div class="pipeline-step">
+        <span class="pipeline-num">02</span>
+        <h3 class="pipeline-title">提取</h3>
+        <p class="pipeline-body">识别通知里的截止时间、材料、适用对象，生成待办。</p>
+        <span class="pipeline-owner machine">机器</span>
+      </div>
+      <div class="pipeline-step">
+        <span class="pipeline-num">03</span>
+        <h3 class="pipeline-title">核对</h3>
+        <p class="pipeline-body">人工回官方原文核对资格、入口和日期，确认后才算数。</p>
+        <span class="pipeline-owner human">人</span>
+      </div>
+      <div class="pipeline-step">
+        <span class="pipeline-num">04</span>
+        <h3 class="pipeline-title">沉淀</h3>
+        <p class="pipeline-body">值得长期保留的，写成门道条目，标上最后核对日期。</p>
+        <span class="pipeline-owner human">人</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" data-reveal>
+    <SectionHead
+      eyebrow="社会支持 · 3 类"
+      title="先拿该拿的"
+      note="政府、企业、平台三类来源，按申报窗口排序；每个数字都回官方原文核对。"
+      linkHref={url('/money/gov')}
+      linkLabel="从政府的钱开始"
+    />
+    <div class="pillar-grid">
+      {moneyPillars.map((p) => (
+        <PillarCard
+          pillar={p}
+          count={countByPillar(site.entries, p.key)}
+          href={url(`/money/${p.key}`)}
+        />
+      ))}
+    </div>
+  </section>
+
+  <section class="section" data-reveal>
+    <SectionHead
+      eyebrow="校园门道 · 4 类"
+      title="少走弯路"
+      note="避坑、学习、生活、开源挣钱四条线；经验帖必须有双源印证才收录。"
+      linkHref={url('/dao/pits')}
+      linkLabel="先看避坑"
+    />
+    <div class="pillar-grid dao-grid">
+      {daoPillars.map((p) => (
+        <PillarCard
+          pillar={p}
+          count={countByPillar(site.entries, p.key)}
+          href={url(`/dao/${p.key}`)}
+        />
+      ))}
+    </div>
+  </section>
+
+  <RadarPreview />
+
+  <section class="section" data-reveal>
+    <SectionHead
+      eyebrow="按城市找 · 2026"
+      title="地区性的钱，只对本地生效"
+      note={`${site.cities.length} 个城市逐城核对，每城一页；本市专属条目 + 全国通用兜底，页内可订本市截止日历。`}
+      linkHref={url('/cities')}
+      linkLabel="全部城市"
+    />
+    <CityGrid cities={[...topCities.map(([c]) => c)]} counts={site.cityCounts} coming={[]} />
+  </section>
+
+  <section class="section" data-reveal>
+    <SectionHead
+      eyebrow="攻略库"
+      title="把零散条目串成路径"
+      note={`${site.counts.guides} 篇长文，按学期和阶段用；先读哪篇、什么时候读，都写清楚了。`}
+      linkHref={url('/guides')}
+      linkLabel="全部攻略"
+    />
+
+    {featured && (
+      <a class="guide-feature" href={url(`/guides/${featured.id}`)}>
+        <div>
+          <span class="eyebrow">先读这篇</span>
+          <h2>{featured.data.title}</h2>
+          <p>{featured.data.summary}</p>
+          <div class="badges" style="margin-top:14px">
+            {featured.data.stage.map((s: string) => <span class="badge">{s}</span>)}
+            <span class="badge ghost">更新 {featured.data.updated}</span>
+          </div>
+        </div>
+        <div class="feature-side">
+          <strong>适合谁</strong>
+          {featured.data.stage.join(' / ')}
+          <strong style="margin-top:12px">跨哪些支柱</strong>
+          {featured.data.pillars.map((k: string) => ALL_PILLARS[k]?.name ?? k).join(' / ') || '跨支柱'}
+        </div>
+      </a>
+    )}
+
+    {restGuides.length > 0 && (
+      <div class="guide-list" style="margin-top:14px">
+        {restGuides.map((guide) => <GuideCard guide={guide} />)}
+      </div>
+    )}
+  </section>
+
+  <section class="section" data-reveal>
+    <SectionHead
+      eyebrow="凭什么信"
+      title="每条都留了核对痕迹"
+      note="没有神秘算法，只有来源、日期和人工复核；过期条目保留，但会明确标注。"
+      linkHref={url('/about#how-verified')}
+      linkLabel="核对机制"
+    />
+    <TrustBar
+      entries={site.counts.entries}
+      guides={site.counts.guides}
+      pillars={site.counts.pillars}
+      lastVerified={site.lastVerified}
+    />
+  </section>
+</Layout>

@@ -1,0 +1,52 @@
+---
+import PhoneFrame from './PhoneFrame.astro';
+import RadarMockCard from './RadarMockCard.astro';
+import { RADAR } from '../../lib/radar';
+import { url } from '../../lib/url';
+---
+
+<section class="radar-band">
+  <div class="container radar-band-grid">
+    <div>
+      <p class="radar-kicker">增量 · {RADAR.name} {RADAR.version}</p>
+      <h2>群消息很多，<br />重要的只有几条。</h2>
+      <p class="radar-lede">
+        把班级群、学院群、社团群的通知变成待办：谁发的、什么时候截止、原文在哪。你自己跑，数据只留在本机。
+      </p>
+
+      <ul class="radar-points">
+        <li>
+          <strong>只读群消息</strong>
+          <span>白名单 5–10 个群，不发言、不拉人</span>
+        </li>
+        <li>
+          <strong>截止前 7-3-1 天</strong>
+          <span>待办按紧迫度浮上来，不再刷屏</span>
+        </li>
+        <li>
+          <strong>数据只在本机</strong>
+          <span>SQLite 本地存储，不上传服务器</span>
+        </li>
+        <li>
+          <strong>Windows 双击即用</strong>
+          <span>浏览器打开 127.0.0.1，无需部署</span>
+        </li>
+      </ul>
+
+      <div class="radar-band-actions">
+        <a class="btn" href={url('/radar#demo')}>看界面演示</a>
+        <a class="btn ghost" href={url('/radar#install')}>三步安装</a>
+      </div>
+    </div>
+
+    <div class="radar-stage">
+      <PhoneFrame small>
+        <RadarMockCard />
+      </PhoneFrame>
+      <p class="radar-caption">
+        界面示意 · 演示数据均为虚构 ·
+        <a href={url('/radar/demo')}>打开可交互演示 →</a>
+      </p>
+    </div>
+  </div>
+</section>

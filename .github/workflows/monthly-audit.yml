@@ -1,0 +1,44 @@
+# D3 月度巡检：每月 1 号跑 scripts/audit.mjs，有超期条目才自动开 issue
+# cron 为 UTC 时间；02:17 UTC = 北京时间 10:17
+name: Monthly Entry Audit
+
+on:
+  schedule:
+    - cron: '17 2 1 * *' # 每月 1 号
+  workflow_dispatch:
+
+permissions:
+  issues: write
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22 # audit.mjs 用了 import.meta.dirname，需 Node >= 20.11
+
+      - name: 跑巡检脚本
+        run: node scripts/audit.mjs > audit-report.md
+
+      - name: 无超期则丢弃报告
+        run: |
+          if grep -q '✅' audit-report.md; then
+            rm audit-report.md
+          else
+            COUNT=$(grep -oP '共 \K[0-9]+' audit-report.md | tail -1)
+            echo "COUNT=${COUNT:-?}" >> "$GITHUB_ENV"
+          fi
+
+      - name: 开 issue（脚本无超期时不生成报告文件，本步静默跳过）
+        if: env.COUNT != ''
+        uses: peter-evans/create-issue-from-file@v6
+        with:
+          title: 条目月度巡检：${{ env.COUNT }} 条待核对
+          content-filepath: audit-report.md
+          labels: |
+            audit
+            automated issue

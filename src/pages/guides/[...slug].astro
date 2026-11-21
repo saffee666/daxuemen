@@ -1,0 +1,72 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Breadcrumb from '../../components/entries/Breadcrumb.astro';
+import RelatedEntries from '../../components/entries/RelatedEntries.astro';
+import RadarCta from '../../components/entries/RadarCta.astro';
+import { getCollection, render } from 'astro:content';
+import { ALL_PILLARS, resolvePillarKey } from '../../lib/pillars';
+
+export async function getStaticPaths() {
+  const guides = await getCollection('guides');
+  return guides.map((g) => ({ params: { slug: g.id }, props: { guide: g } }));
+}
+
+const { guide } = Astro.props;
+const { Content, headings } = await render(guide);
+const toc = headings.filter((h) => h.depth === 2 || h.depth === 3);
+
+const guidePillarKeys = guide.data.pillars
+  .map((label) => resolvePillarKey(label))
+  .filter((key): key is string => Boolean(key));
+
+const [money, dao] = await Promise.all([getCollection('money'), getCollection('dao')]);
+const related = [...money, ...dao]
+  .filter((entry) => guidePillarKeys.includes(entry.data.pillar))
+  .sort((a, b) => b.data.verified_date.localeCompare(a.data.verified_date))
+  .slice(0, 4);
+---
+
+<Layout title={guide.data.title} description={guide.data.summary}>
+  <Breadcrumb
+    items={[
+      { label: '首页', href: '/' },
+      { label: '攻略库', href: '/guides' },
+      { label: guide.data.title },
+    ]}
+  />
+
+  <div class="guide-layout">
+    <article class="detail-main">
+      <header class="detail-head">
+        <div class="badges">
+          {guide.data.stage.map((s: string) => <span class="badge">{s}</span>)}
+          {guide.data.pillars.map((p: string) => {
+            const key = resolvePillarKey(p);
+            return <span class="badge ghost">{key ? `${ALL_PILLARS[key].num} ${ALL_PILLARS[key].name}` : p}</span>;
+          })}
+          <span class="badge">更新 {guide.data.updated}</span>
+        </div>
+        <h1>{guide.data.title}</h1>
+        <p class="detail-summary">{guide.data.summary}</p>
+      </header>
+
+      <div class="guide-body prose">
+        <Content />
+      </div>
+
+      <RelatedEntries entries={related} title="攻略里提到的条目" />
+      <RadarCta />
+    </article>
+
+    {toc.length > 0 && (
+      <aside class="toc" aria-label="本文目录">
+        <h2>本文目录</h2>
+        {toc.map((heading) => (
+          <a class={heading.depth === 3 ? 'toc-h3' : ''} href={`#${heading.slug}`}>
+            {heading.text}
+          </a>
+        ))}
+      </aside>
+    )}
+  </div>
+</Layout>

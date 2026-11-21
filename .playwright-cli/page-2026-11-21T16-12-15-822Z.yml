@@ -1,0 +1,456 @@
+- generic [ref=e1]:
+  - link "跳到正文" [ref=e2] [cursor=pointer]:
+    - /url: "#main"
+  - banner [ref=e3]:
+    - generic [ref=e4]:
+      - link "大学补给站首页" [ref=e5] [cursor=pointer]:
+        - /url: /
+        - generic [ref=e12]: 大学补给站
+      - navigation "主导航" [ref=e13]:
+        - group [ref=e14]:
+          - generic "校园门道" [ref=e15] [cursor=pointer]
+        - group [ref=e18]:
+          - generic "社会支持" [ref=e19] [cursor=pointer]
+        - group [ref=e22]:
+          - generic "信息差工具" [ref=e23] [cursor=pointer]
+        - link "攻略" [ref=e26] [cursor=pointer]:
+          - /url: /guides
+        - link "关于" [ref=e27] [cursor=pointer]:
+          - /url: /about
+        - link "搜索全站" [ref=e28] [cursor=pointer]:
+          - /url: /search
+  - main [ref=e32]:
+    - generic [ref=e33]:
+      - paragraph [ref=e34]: 工具 01 · 约 1 分钟
+      - heading "我能领什么" [level=1] [ref=e35]
+      - paragraph [ref=e36]:
+        - text: 三步问完，出一份你可能符合的清单。
+        - strong [ref=e37]: 本工具不覆盖所有资助与优惠
+        - text: ——只筛库内核对过的条目，按月更新；
+        - strong [ref=e38]: 全程本地计算
+        - text: ：你的选择不上传、不保存，关掉页面就没了。
+      - generic [ref=e44]: 第 2 步，共 4 步
+      - group [ref=e109]:
+        - heading "主要在哪座城市？" [active] [level=2] [ref=e110]
+        - generic [ref=e111] [cursor=pointer]:
+          - radio "不确定 / 多地跑" [ref=e112]
+          - text: 不确定 / 多地跑
+        - paragraph [ref=e113]:
+          - searchbox "筛选城市列表" [ref=e114]
+        - paragraph [ref=e115]:
+          - generic [ref=e116]: 热门：
+          - generic [ref=e117] [cursor=pointer]:
+            - radio "深圳18" [ref=e118]
+            - text: 深圳18
+          - generic [ref=e119] [cursor=pointer]:
+            - radio "上海15" [ref=e120]
+            - text: 上海15
+          - generic [ref=e121] [cursor=pointer]:
+            - radio "泉州11" [ref=e122]
+            - text: 泉州11
+          - generic [ref=e123] [cursor=pointer]:
+            - radio "青岛11" [ref=e124]
+            - text: 青岛11
+          - generic [ref=e125] [cursor=pointer]:
+            - radio "重庆9" [ref=e126]
+            - text: 重庆9
+          - generic [ref=e127] [cursor=pointer]:
+            - radio "台州8" [ref=e128]
+            - text: 台州8
+          - generic [ref=e129] [cursor=pointer]:
+            - radio "太原8" [ref=e130]
+            - text: 太原8
+          - generic [ref=e131] [cursor=pointer]:
+            - radio "福州8" [ref=e132]
+            - text: 福州8
+          - generic [ref=e133] [cursor=pointer]:
+            - radio "郑州8" [ref=e134]
+            - text: 郑州8
+          - generic [ref=e135] [cursor=pointer]:
+            - radio "吉林8" [ref=e136]
+            - text: 吉林8
+        - generic [ref=e137]:
+          - generic [ref=e138] [cursor=pointer]:
+            - radio "三亚2 条" [ref=e139]
+            - text: 三亚2 条
+          - generic [ref=e140] [cursor=pointer]:
+            - radio "上海15 条" [ref=e141]
+            - text: 上海15 条
+          - generic [ref=e142] [cursor=pointer]:
+            - radio "东莞3 条" [ref=e143]
+            - text: 东莞3 条
+          - generic [ref=e144] [cursor=pointer]:
+            - radio "中山2 条" [ref=e145]
+            - text: 中山2 条
+          - generic [ref=e146] [cursor=pointer]:
+            - radio "临沂2 条" [ref=e147]
+            - text: 临沂2 条
+          - generic [ref=e148] [cursor=pointer]:
+            - radio "乌鲁木齐3 条" [ref=e149]
+            - text: 乌鲁木齐3 条
+          - generic [ref=e150] [cursor=pointer]:
+            - radio "九江3 条" [ref=e151]
+            - text: 九江3 条
+          - generic [ref=e152] [cursor=pointer]:
+            - radio "亳州1 条" [ref=e153]
+            - text: 亳州1 条
+          - generic [ref=e154] [cursor=pointer]:
+            - radio "保定3 条" [ref=e155]
+            - text: 保定3 条
+          - generic [ref=e156] [cursor=pointer]:
+            - radio "六安3 条" [ref=e157]
+            - text: 六安3 条
+          - generic [ref=e158] [cursor=pointer]:
+            - radio "兰州2 条" [ref=e159]
+            - text: 兰州2 条
+          - generic [ref=e160] [cursor=pointer]:
+            - radio "北京7 条" [ref=e161]
+            - text: 北京7 条
+          - generic [ref=e162] [cursor=pointer]:
+            - radio "南京5 条" [ref=e163]
+            - text: 南京5 条
+          - generic [ref=e164] [cursor=pointer]:
+            - radio "南宁2 条" [ref=e165]
+            - text: 南宁2 条
+          - generic [ref=e166] [cursor=pointer]:
+            - radio "南昌2 条" [ref=e167]
+            - text: 南昌2 条
+          - generic [ref=e168] [cursor=pointer]:
+            - radio "南通3 条" [ref=e169]
+            - text: 南通3 条
+          - generic [ref=e170] [cursor=pointer]:
+            - radio "南阳8 条" [ref=e171]
+            - text: 南阳8 条
+          - generic [ref=e172] [cursor=pointer]:
+            - radio "厦门4 条" [ref=e173]
+            - text: 厦门4 条
+          - generic [ref=e174] [cursor=pointer]:
+            - radio "台州8 条" [ref=e175]
+            - text: 台州8 条
+          - generic [ref=e176] [cursor=pointer]:
+            - radio "合肥2 条" [ref=e177]
+            - text: 合肥2 条
+          - generic [ref=e178] [cursor=pointer]:
+            - radio "吉林8 条" [ref=e179]
+            - text: 吉林8 条
+          - generic [ref=e180] [cursor=pointer]:
+            - radio "周口1 条" [ref=e181]
+            - text: 周口1 条
+          - generic [ref=e182] [cursor=pointer]:
+            - radio "哈尔滨3 条" [ref=e183]
+            - text: 哈尔滨3 条
+          - generic [ref=e184] [cursor=pointer]:
+            - radio "嘉兴5 条" [ref=e185]
+            - text: 嘉兴5 条
+          - generic [ref=e186] [cursor=pointer]:
+            - radio "大庆3 条" [ref=e187]
+            - text: 大庆3 条
+          - generic [ref=e188] [cursor=pointer]:
+            - radio "大连7 条" [ref=e189]
+            - text: 大连7 条
+          - generic [ref=e190] [cursor=pointer]:
+            - radio "天津1 条" [ref=e191]
+            - text: 天津1 条
+          - generic [ref=e192] [cursor=pointer]:
+            - radio "太原8 条" [ref=e193]
+            - text: 太原8 条
+          - generic [ref=e194] [cursor=pointer]:
+            - radio "威海5 条" [ref=e195]
+            - text: 威海5 条
+          - generic [ref=e196] [cursor=pointer]:
+            - radio "宁德2 条" [ref=e197]
+            - text: 宁德2 条
+          - generic [ref=e198] [cursor=pointer]:
+            - radio "宁波3 条" [ref=e199]
+            - text: 宁波3 条
+          - generic [ref=e200] [cursor=pointer]:
+            - radio "安庆4 条" [ref=e201]
+            - text: 安庆4 条
+          - generic [ref=e202] [cursor=pointer]:
+            - radio "宜昌2 条" [ref=e203]
+            - text: 宜昌2 条
+          - generic [ref=e204] [cursor=pointer]:
+            - radio "宣城5 条" [ref=e205]
+            - text: 宣城5 条
+          - generic [ref=e206] [cursor=pointer]:
+            - radio "宿州3 条" [ref=e207]
+            - text: 宿州3 条
+          - generic [ref=e208] [cursor=pointer]:
+            - radio "宿迁1 条" [ref=e209]
+            - text: 宿迁1 条
+          - generic [ref=e210] [cursor=pointer]:
+            - radio "岳阳4 条" [ref=e211]
+            - text: 岳阳4 条
+          - generic [ref=e212] [cursor=pointer]:
+            - radio "常州5 条" [ref=e213]
+            - text: 常州5 条
+          - generic [ref=e214] [cursor=pointer]:
+            - radio "广州5 条" [ref=e215]
+            - text: 广州5 条
+          - generic [ref=e216] [cursor=pointer]:
+            - radio "开封2 条" [ref=e217]
+            - text: 开封2 条
+          - generic [ref=e218] [cursor=pointer]:
+            - radio "徐州2 条" [ref=e219]
+            - text: 徐州2 条
+          - generic [ref=e220] [cursor=pointer]:
+            - radio "惠州2 条" [ref=e221]
+            - text: 惠州2 条
+          - generic [ref=e222] [cursor=pointer]:
+            - radio "成都1 条" [ref=e223]
+            - text: 成都1 条
+          - generic [ref=e224] [cursor=pointer]:
+            - radio "拉萨2 条" [ref=e225]
+            - text: 拉萨2 条
+          - generic [ref=e226] [cursor=pointer]:
+            - radio "新乡2 条" [ref=e227]
+            - text: 新乡2 条
+          - generic [ref=e228] [cursor=pointer]:
+            - radio "无锡4 条" [ref=e229]
+            - text: 无锡4 条
+          - generic [ref=e230] [cursor=pointer]:
+            - radio "昆明1 条" [ref=e231]
+            - text: 昆明1 条
+          - generic [ref=e232] [cursor=pointer]:
+            - radio "杭州3 条" [ref=e233]
+            - text: 杭州3 条
+          - generic [ref=e234] [cursor=pointer]:
+            - radio "株洲2 条" [ref=e235]
+            - text: 株洲2 条
+          - generic [ref=e236] [cursor=pointer]:
+            - radio "桂林1 条" [ref=e237]
+            - text: 桂林1 条
+          - generic [ref=e238] [cursor=pointer]:
+            - radio "武汉3 条" [ref=e239]
+            - text: 武汉3 条
+          - generic [ref=e240] [cursor=pointer]:
+            - radio "汕头6 条" [ref=e241]
+            - text: 汕头6 条
+          - generic [ref=e242] [cursor=pointer]:
+            - radio "池州4 条" [ref=e243]
+            - text: 池州4 条
+          - generic [ref=e244] [cursor=pointer]:
+            - radio "沈阳6 条" [ref=e245]
+            - text: 沈阳6 条
+          - generic [ref=e246] [cursor=pointer]:
+            - radio "沧州5 条" [ref=e247]
+            - text: 沧州5 条
+          - generic [ref=e248] [cursor=pointer]:
+            - radio "泉州11 条" [ref=e249]
+            - text: 泉州11 条
+          - generic [ref=e250] [cursor=pointer]:
+            - radio "泰州1 条" [ref=e251]
+            - text: 泰州1 条
+          - generic [ref=e252] [cursor=pointer]:
+            - radio "洛阳1 条" [ref=e253]
+            - text: 洛阳1 条
+          - generic [ref=e254] [cursor=pointer]:
+            - radio "济南7 条" [ref=e255]
+            - text: 济南7 条
+          - generic [ref=e256] [cursor=pointer]:
+            - radio "济宁2 条" [ref=e257]
+            - text: 济宁2 条
+          - generic [ref=e258] [cursor=pointer]:
+            - radio "海口2 条" [ref=e259]
+            - text: 海口2 条
+          - generic [ref=e260] [cursor=pointer]:
+            - radio "淄博3 条" [ref=e261]
+            - text: 淄博3 条
+          - generic [ref=e262] [cursor=pointer]:
+            - radio "淮北6 条" [ref=e263]
+            - text: 淮北6 条
+          - generic [ref=e264] [cursor=pointer]:
+            - radio "淮南1 条" [ref=e265]
+            - text: 淮南1 条
+          - generic [ref=e266] [cursor=pointer]:
+            - radio "淮安1 条" [ref=e267]
+            - text: 淮安1 条
+          - generic [ref=e268] [cursor=pointer]:
+            - radio "深圳18 条" [ref=e269]
+            - text: 深圳18 条
+          - generic [ref=e270] [cursor=pointer]:
+            - radio "温州2 条" [ref=e271]
+            - text: 温州2 条
+          - generic [ref=e272] [cursor=pointer]:
+            - radio "湛江4 条" [ref=e273]
+            - text: 湛江4 条
+          - generic [ref=e274] [cursor=pointer]:
+            - radio "漳州1 条" [ref=e275]
+            - text: 漳州1 条
+          - generic [ref=e276] [cursor=pointer]:
+            - radio "烟台4 条" [ref=e277]
+            - text: 烟台4 条
+          - generic [ref=e278] [cursor=pointer]:
+            - radio "焦作2 条" [ref=e279]
+            - text: 焦作2 条
+          - generic [ref=e280] [cursor=pointer]:
+            - radio "珠海3 条" [ref=e281]
+            - text: 珠海3 条
+          - generic [ref=e282] [cursor=pointer]:
+            - radio "盐城1 条" [ref=e283]
+            - text: 盐城1 条
+          - generic [ref=e284] [cursor=pointer]:
+            - radio "盘锦2 条" [ref=e285]
+            - text: 盘锦2 条
+          - generic [ref=e286] [cursor=pointer]:
+            - radio "石家庄2 条" [ref=e287]
+            - text: 石家庄2 条
+          - generic [ref=e288] [cursor=pointer]:
+            - radio "福州8 条" [ref=e289]
+            - text: 福州8 条
+          - generic [ref=e290] [cursor=pointer]:
+            - radio "绍兴3 条" [ref=e291]
+            - text: 绍兴3 条
+          - generic [ref=e292] [cursor=pointer]:
+            - radio "绵阳1 条" [ref=e293]
+            - text: 绵阳1 条
+          - generic [ref=e294] [cursor=pointer]:
+            - radio "自贡4 条" [ref=e295]
+            - text: 自贡4 条
+          - generic [ref=e296] [cursor=pointer]:
+            - radio "苏州6 条" [ref=e297]
+            - text: 苏州6 条
+          - generic [ref=e298] [cursor=pointer]:
+            - radio "荆州5 条" [ref=e299]
+            - text: 荆州5 条
+          - generic [ref=e300] [cursor=pointer]:
+            - radio "荆门4 条" [ref=e301]
+            - text: 荆门4 条
+          - generic [ref=e302] [cursor=pointer]:
+            - radio "蚌埠5 条" [ref=e303]
+            - text: 蚌埠5 条
+          - generic [ref=e304] [cursor=pointer]:
+            - radio "衡阳2 条" [ref=e305]
+            - text: 衡阳2 条
+          - generic [ref=e306] [cursor=pointer]:
+            - radio "襄阳5 条" [ref=e307]
+            - text: 襄阳5 条
+          - generic [ref=e308] [cursor=pointer]:
+            - radio "西宁2 条" [ref=e309]
+            - text: 西宁2 条
+          - generic [ref=e310] [cursor=pointer]:
+            - radio "西安1 条" [ref=e311]
+            - text: 西安1 条
+          - generic [ref=e312] [cursor=pointer]:
+            - radio "贵阳1 条" [ref=e313]
+            - text: 贵阳1 条
+          - generic [ref=e314] [cursor=pointer]:
+            - radio "赣州2 条" [ref=e315]
+            - text: 赣州2 条
+          - generic [ref=e316] [cursor=pointer]:
+            - radio "连云港2 条" [ref=e317]
+            - text: 连云港2 条
+          - generic [ref=e318] [cursor=pointer]:
+            - radio "郑州8 条" [ref=e319]
+            - text: 郑州8 条
+          - generic [ref=e320] [cursor=pointer]:
+            - radio "鄂尔多斯7 条" [ref=e321]
+            - text: 鄂尔多斯7 条
+          - generic [ref=e322] [cursor=pointer]:
+            - radio "鄂州4 条" [ref=e323]
+            - text: 鄂州4 条
+          - generic [ref=e324] [cursor=pointer]:
+            - radio "重庆9 条" [ref=e325]
+            - text: 重庆9 条
+          - generic [ref=e326] [cursor=pointer]:
+            - radio "金华7 条" [ref=e327]
+            - text: 金华7 条
+          - generic [ref=e328] [cursor=pointer]:
+            - radio "铜陵1 条" [ref=e329]
+            - text: 铜陵1 条
+          - generic [ref=e330] [cursor=pointer]:
+            - radio "银川1 条" [ref=e331]
+            - text: 银川1 条
+          - generic [ref=e332] [cursor=pointer]:
+            - radio "镇江1 条" [ref=e333]
+            - text: 镇江1 条
+          - generic [ref=e334] [cursor=pointer]:
+            - radio "长春6 条" [ref=e335]
+            - text: 长春6 条
+          - generic [ref=e336] [cursor=pointer]:
+            - radio "长沙3 条" [ref=e337]
+            - text: 长沙3 条
+          - generic [ref=e338] [cursor=pointer]:
+            - radio "阜阳1 条" [ref=e339]
+            - text: 阜阳1 条
+          - generic [ref=e340] [cursor=pointer]:
+            - radio "青岛11 条" [ref=e341]
+            - text: 青岛11 条
+          - generic [ref=e342] [cursor=pointer]:
+            - radio "鞍山7 条" [ref=e343]
+            - text: 鞍山7 条
+          - generic [ref=e344] [cursor=pointer]:
+            - radio "马鞍山2 条" [ref=e345]
+            - text: 马鞍山2 条
+          - generic [ref=e346] [cursor=pointer]:
+            - radio "黄冈4 条" [ref=e347]
+            - text: 黄冈4 条
+          - generic [ref=e348] [cursor=pointer]:
+            - radio "黄山2 条" [ref=e349]
+            - text: 黄山2 条
+        - generic [ref=e350]:
+          - button "上一步" [ref=e351] [cursor=pointer]
+          - button "下一步" [ref=e352] [cursor=pointer]
+      - generic [ref=e57]:
+        - generic [ref=e58]:
+          - heading "怎么用" [level=2] [ref=e59]
+          - paragraph [ref=e60]: 三步全是单选/多选，选完出清单。清单按「阶段符合 + 地区能对上 + 场景命中」三个条件筛——是初筛，不是资格审定。
+        - generic [ref=e61]:
+          - heading "结果怎么解读" [level=2] [ref=e62]
+          - paragraph [ref=e63]: 每张卡片带了核对日期与可信度标：可信「高」=直达具体文件页，「中」=只到门户。先点开一两张最贴近你情况的，读「我符合吗」那一段，再顺官方链接核对。
+        - generic [ref=e64]:
+          - heading "注意事项与局限" [level=2] [ref=e65]
+          - paragraph [ref=e66]: 城市维度只覆盖我们已核对建条目的城市；「还不确定」按全国通用口径筛，会漏掉仅限个别城市的条目。条目库每月巡检一次，当月新政策可能未入库。本工具只整理公开信息，不构成申请建议。
+        - generic [ref=e67]:
+          - heading "常见问题" [level=2] [ref=e68]
+          - group [ref=e69]:
+            - generic "为什么我的城市筛不出东西？" [ref=e70] [cursor=pointer]
+          - group [ref=e71]:
+            - generic "我的选择会被记录吗？" [ref=e72] [cursor=pointer]
+  - contentinfo [ref=e73]:
+    - generic [ref=e74]:
+      - generic [ref=e75]:
+        - generic [ref=e76]:
+          - link "大学补给站" [ref=e77] [cursor=pointer]:
+            - /url: /
+          - paragraph [ref=e83]: 把大学四年的信息差，提前补给你。
+          - paragraph [ref=e84]: 552 条门道 · 12 篇攻略 · 最后核对 2026-11
+        - generic [ref=e85]:
+          - heading "社会支持" [level=3] [ref=e86]
+          - link "政府的钱" [ref=e87] [cursor=pointer]:
+            - /url: /money/gov
+          - link "企业的让利" [ref=e88] [cursor=pointer]:
+            - /url: /money/corporate
+          - link "平台的预算" [ref=e89] [cursor=pointer]:
+            - /url: /money/platform
+        - generic [ref=e90]:
+          - heading "校园门道" [level=3] [ref=e91]
+          - link "避坑" [ref=e92] [cursor=pointer]:
+            - /url: /dao/pits
+          - link "学习" [ref=e93] [cursor=pointer]:
+            - /url: /dao/learn
+          - link "生活" [ref=e94] [cursor=pointer]:
+            - /url: /dao/life
+          - link "开源挣钱" [ref=e95] [cursor=pointer]:
+            - /url: /dao/earn
+        - generic [ref=e96]:
+          - heading "更多" [level=3] [ref=e97]
+          - link "校园信息雷达" [ref=e98] [cursor=pointer]:
+            - /url: /radar
+          - link "攻略库" [ref=e99] [cursor=pointer]:
+            - /url: /guides
+          - link "搜索全站" [ref=e100] [cursor=pointer]:
+            - /url: /search
+          - link "关于 · 核对机制" [ref=e101] [cursor=pointer]:
+            - /url: /about
+          - link "纠错日志" [ref=e102] [cursor=pointer]:
+            - /url: /corrections
+          - link "编辑政策" [ref=e103] [cursor=pointer]:
+            - /url: /editorial
+          - link "目录方法论" [ref=e104] [cursor=pointer]:
+            - /url: /how-we-build
+          - link "隐私说明" [ref=e105] [cursor=pointer]:
+            - /url: /privacy
+      - generic [ref=e106]:
+        - generic [ref=e107]: © 2026 大学补给站
+        - generic [ref=e108]: 非官方信息整理 · 政策与价格以官方渠道为准 · 过期条目不删除，只标记

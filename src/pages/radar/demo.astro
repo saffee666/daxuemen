@@ -1,0 +1,64 @@
+---
+import BareLayout from '../../layouts/BareLayout.astro';
+import { RADAR } from '../../lib/radar';
+import { url } from '../../lib/url';
+
+const appSrc = url(RADAR.demoAppUrl);
+---
+
+<BareLayout
+  title="群务台 · 界面演示"
+  description="校园信息雷达的界面演示，所有群、账号与截止时间均为虚构，不产生任何网络请求。"
+  bodyClass="demo-page"
+>
+  <header class="demo-topbar">
+    <a class="demo-back" href={url('/radar')}>← 返回雷达</a>
+    <span class="demo-title">群务台 · 界面演示</span>
+    <span class="demo-chip">演示数据</span>
+    <div class="demo-top-actions">
+      <a href={appSrc} target="_blank" rel="noopener">新窗口</a>
+      <button type="button" data-demo-reload>重新加载</button>
+    </div>
+  </header>
+
+  <div class="demo-stage">
+    <div class="demo-shell" data-demo-frame data-state="loading">
+      <div class="phone-frame">
+        <div class="phone-notch" aria-hidden="true"></div>
+        <div class="phone-screen">
+          <iframe
+            src={appSrc}
+            title="群务台界面演示（虚构数据）"
+            loading="lazy"
+            referrerpolicy="no-referrer"
+            sandbox="allow-scripts allow-same-origin allow-forms allow-modals allow-popups"
+          ></iframe>
+          <div class="demo-loading" data-demo-loading>
+            <span class="spinner"></span>
+            <span data-demo-loading-text>正在加载界面演示…</span>
+          </div>
+        </div>
+      </div>
+      <p class="demo-fallback" data-demo-fallback hidden>
+        加载较慢？<a href={appSrc} target="_blank" rel="noopener">直接打开演示页</a>
+      </p>
+    </div>
+
+    <aside class="demo-hints">
+      <h2>试试这些</h2>
+      <ul>
+        <li><strong>勾一条待办</strong>看它从「今天」消失，计数与进度跟着变。</li>
+        <li><strong>切到收件箱</strong>按通知/疑似/非通知筛选，再把一条转成待办。</li>
+        <li><strong>打开设置</strong>改安静时段、提醒节奏，保存只在当前页面生效。</li>
+        <li><strong>看日历</strong>待办会变成日程；演示里不会真的订阅。</li>
+      </ul>
+      <p class="demo-note">
+        所有数据都是虚构的，刷新页面即还原。演示页的 CSP 已禁止联网，页面内也不会出现真实二维码。
+      </p>
+    </aside>
+  </div>
+
+  <script>
+    import '../../scripts/demo-frame';
+  </script>
+</BareLayout>

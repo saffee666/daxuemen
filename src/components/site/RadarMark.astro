@@ -1,0 +1,55 @@
+---
+interface Props {
+  class?: string;
+}
+const { class: className = 'radar-mark' } = Astro.props;
+---
+
+<svg
+  class={className}
+  viewBox="0 0 400 400"
+  fill="none"
+  aria-hidden="true"
+  focusable="false"
+>
+  <g stroke="currentColor" stroke-width="1.2">
+    <circle cx="200" cy="200" r="168" opacity="0.14" />
+    <circle cx="200" cy="200" r="128" opacity="0.22" stroke-dasharray="2 7" />
+    <circle cx="200" cy="200" r="88" opacity="0.32" />
+    <circle cx="200" cy="200" r="48" opacity="0.45" />
+    <path d="M200 20v360M20 200h360" opacity="0.1" />
+    <path d="M200 32a168 168 0 0 1 118.8 49.2" opacity="0.5" stroke-width="2" />
+  </g>
+
+  <g class="sweep" style="transform-origin: 200px 200px;">
+    <path d="M200 200 L200 32 A168 168 0 0 1 318 82 Z" fill="currentColor" opacity="0.055" />
+    <line x1="200" y1="200" x2="200" y2="32" stroke="currentColor" stroke-width="1.6" opacity="0.6" />
+  </g>
+
+  <g fill="currentColor">
+    <circle cx="286" cy="132" r="4.5" />
+    <circle cx="286" cy="132" r="11" opacity="0.16" />
+    <circle cx="132" cy="268" r="3.5" opacity="0.75" />
+    <circle cx="248" cy="286" r="3" opacity="0.55" />
+    <circle cx="112" cy="154" r="2.6" opacity="0.4" />
+    <circle cx="200" cy="200" r="5" />
+  </g>
+</svg>
+
+<style>
+  .sweep {
+    animation: radar-sweep 7s linear infinite;
+  }
+
+  @keyframes radar-sweep {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .sweep {
+      animation: none;
+    }
+  }
+</style>

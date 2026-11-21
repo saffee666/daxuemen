@@ -1,0 +1,213 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { url } from '../../lib/url';
+
+// Craft Read: tool pages for 预算敏感大学生, product 语言, 站 tokens（墨绿单 accent）,
+// variance 3, signature bet: 一屏一问的步进表单节奏；工具页四块解读为站级模板（研途式）。
+// 组织轴 = 信息差四型：每件工具对应消除一种差。
+
+const groups = [
+  {
+    gap: '不知道有',
+    hint: '资源和通知客观存在，只是没传到你耳朵里',
+    tools: [
+      {
+        href: url('/tools/wizard'),
+        num: '01',
+        name: '我能领什么',
+        desc: '勾阶段、选城市、挑场景——三步筛出你可能符合的补贴清单，直达条目页核对官方原文。',
+        minutes: '约 1 分钟',
+      },
+      {
+        href: url('/radar'),
+        num: '05',
+        name: '雷达 · 时间线提醒',
+        desc: '增量情报件：群消息里的截止日期变成待办，提前 7/3/1 天提醒；站点提供安装说明与演示。',
+        minutes: '装好即跑',
+      },
+    ],
+  },
+  {
+    gap: '不会用',
+    hint: '知道有这个优惠，卡在认证这一步过不去',
+    tools: [
+      {
+        href: url('/tools/auth'),
+        num: '02',
+        name: '认证导航',
+        desc: '各平台学生认证入口、降级链与失败兜底材料——认证总失败时按渠道卡逐项排查。',
+        minutes: '约 2 分钟',
+      },
+    ],
+  },
+  {
+    gap: '用不狠',
+    hint: '券和优惠都在手里，就是叠不出最低价',
+    tools: [
+      {
+        href: url('/tools/stacking'),
+        num: '03',
+        name: '叠加逻辑',
+        desc: '教育优惠 × 国补 × 平台券：法规算法、品牌条款、条目核对注记三层讲清能不能叠。',
+        minutes: '约 4 分钟',
+      },
+    ],
+  },
+  {
+    gap: '不会选',
+    hint: '信息都齐了，关键路口还是拿不定主意',
+    tools: [
+      {
+        href: url('/tools/decide'),
+        num: '04',
+        name: '留大城市还是回老家',
+        desc: '四个问题定方向：一版带口径的取舍框架，附五维对比与局限说明。它是框架，不是替你拍板。',
+        minutes: '约 3 分钟',
+      },
+    ],
+  },
+];
+---
+
+<Layout title="信息差工具 · 大学门道" description="按信息差类型组织的工具层：自查、认证、叠加、决策，外加时间线提醒。">
+  <div class="tools-page">
+    <p class="tools-eyebrow">信息差工具 · 4+1 件</p>
+    <h1>信息来找你，别再去找信息</h1>
+    <p class="tools-intro">
+      每件工具对应消除一种信息差。不注册、不联网提交、不上传任何输入——数据在你浏览器里算完就丢。结果仅供参考，每一步都能回到官方原文核对。
+    </p>
+
+    {groups.map((g) => (
+      <section class="gap-group">
+        <div class="gap-head">
+          <h2>{g.gap}</h2>
+          <p>{g.hint}</p>
+        </div>
+        <div class="tool-list">
+          {g.tools.map((t) => (
+            <a class="tool-row" href={t.href}>
+              <div class="tool-row-main">
+                <strong><span class="tool-num">{t.num}</span>{t.name}</strong>
+                <span class="tool-chip">{t.minutes}｜本地计算｜移动端可用</span>
+                <p>{t.desc}</p>
+              </div>
+              <span class="tool-go">开始 →</span>
+            </a>
+          ))}
+        </div>
+      </section>
+    ))}
+
+    <p class="tools-extra">
+      被动工具：全站条目的截止日期已生成 <a href="/calendar.ics">calendar.ics</a>（含分城市 <a href="/calendars/">日历订阅</a>），订阅后截止自动进你的日历；订阅后若日历未显示，检查系统是否拦截了 .ics 文件类型，或重新订阅一次。
+    </p>
+  </div>
+</Layout>
+
+<style>
+  .tools-page {
+    padding: clamp(48px, 8vw, 96px) 0 80px;
+    max-width: 760px;
+  }
+  .tools-eyebrow {
+    margin: 0;
+    color: var(--accent);
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.08em;
+  }
+  h1 {
+    margin: 6px 0 10px;
+    font-size: clamp(1.9rem, 4.5vw, 2.7rem);
+    letter-spacing: -0.03em;
+  }
+  .tools-intro {
+    margin: 0 0 34px;
+    color: var(--ink-soft);
+    max-width: 36em;
+    line-height: 1.75;
+  }
+  .gap-group {
+    margin-bottom: 26px;
+  }
+  .gap-head {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    margin-bottom: 10px;
+  }
+  .gap-head h2 {
+    margin: 0;
+    font-size: 1.05rem;
+    color: var(--accent);
+  }
+  .gap-head p {
+    margin: 0;
+    color: var(--ink-faint);
+    font-size: 0.82rem;
+  }
+  .tool-list {
+    display: grid;
+    gap: 12px;
+  }
+  .tool-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    padding: 20px 22px;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    background: var(--surface);
+    color: var(--ink);
+    transition: background 150ms var(--ease), border-color 150ms var(--ease);
+  }
+  .tool-row:hover {
+    border-color: var(--line-strong);
+    background: var(--surface-soft);
+  }
+  .tool-row strong {
+    font-size: 1.05rem;
+  }
+  .tool-num {
+    color: var(--ink-faint);
+    font-family: var(--mono);
+    font-size: 0.75rem;
+    margin-right: 8px;
+  }
+  .tool-chip {
+    display: block;
+    margin: 6px 0 8px;
+    color: var(--ink-faint);
+    font-size: 0.75rem;
+    font-family: var(--mono);
+  }
+  .tool-row p {
+    margin: 0;
+    color: var(--ink-soft);
+    font-size: 0.9rem;
+    max-width: 44em;
+  }
+  .tool-go {
+    flex-shrink: 0;
+    color: var(--accent);
+    font-size: 0.85rem;
+  }
+  .tools-extra {
+    margin: 26px 0 0;
+    padding-top: 16px;
+    border-top: 1px dashed var(--line);
+    color: var(--ink-faint);
+    font-size: 0.84rem;
+    line-height: 1.7;
+  }
+  .tools-extra a {
+    color: var(--accent);
+  }
+  @media (max-width: 640px) {
+    .tool-row {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+</style>

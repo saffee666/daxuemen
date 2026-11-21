@@ -1,0 +1,90 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import EntryCard from '../../components/EntryCard.astro';
+import { getCollection } from 'astro:content';
+import { cityPath } from '../../lib/url';
+import { freshness, latestVerified } from '../../lib/freshness';
+
+export async function getStaticPaths() {
+  const money = await getCollection('money');
+  const cities = [
+    ...new Set(
+      money
+        .map((e) => e.data.region)
+        .filter((r) => r.startsWith('城市:'))
+        .map((r) => r.slice(3))
+    ),
+  ];
+  return cities.map((city) => ({ params: { slug: city }, props: { city } }));
+}
+
+const { city } = Astro.props;
+const all = await getCollection('money');
+const entries = all
+  .filter((e) => e.data.region === `城市:${city}`)
+  .sort((a, b) => a.data.title.localeCompare(b.data.title, 'zh'));
+const national = all
+  .filter((e) => e.data.region === '全国' && e.data.status !== '已过期')
+  .sort((a, b) => b.data.verified_date.localeCompare(a.data.verified_date))
+  .slice(0, 6);
+const otherCities = [
+  ...new Set(
+    all
+      .map((e) => e.data.region)
+      .filter((r) => r.startsWith('城市:'))
+      .map((r) => r.slice(3))
+  ),
+].filter((name) => name !== city);
+
+// 状态三态汇总（freshness 徽标口径同条目卡：ok=近期核对 / warn=待核对 / stale=疑似过期）
+const statusCounts = { ok: 0, warn: 0, stale: 0 };
+for (const e of entries) statusCounts[freshness(e.data.verified_date).level]++;
+const lastVerified = latestVerified(entries.map((e) => e.data.verified_date));
+// 品类 TOP3 动态化 city-sub
+const catCount = new Map<string, number>();
+for (const e of entries) catCount.set(e.data.category, (catCount.get(e.data.category) ?? 0) + 1);
+const topCats = [...catCount.entries()].sort((a, b) => b[1] - a[1]).slice(0, 3).map(([c]) => c);
+// 日历件（build-calendar.mjs 按市聚合生成，市名做文件名成分）
+const calendarHref = `/calendars/city-${encodeURIComponent(city)}.ics`;
+---
+
+<Layout
+  title={`${city}补贴政策与办事指南（2026）`}
+  description={`${city}现有 ${entries.length} 条核对过的补贴与优惠条目${topCats.length ? `，覆盖${topCats.join('、')}等` : ''}；附全国通用条目与本市截止日历，最新核对 ${lastVerified}。`}
+>
+  <div class="city-hero">
+    <p class="eyebrow">城市 · {city} · 2026</p>
+    <h1>{city}的钱，只对本地生效</h1>
+    <p class="city-sub">
+      {topCats.length
+        ? `本市已核对 ${entries.length} 条：覆盖${topCats.join('、')}等 ${catCount.size} 类。`
+        : `本市已核对 ${entries.length} 条。`}
+      先看本市专属政策，再用全国通用条目兜底；每条都留了官方入口和核对日期。
+    </p>
+    <div class="page-meta">
+      <span><strong>{entries.length}</strong> 条本市</span>
+      <span>近期核对 <strong>{statusCounts.ok}</strong></span>
+      <span>待核对 <strong>{statusCounts.warn}</strong></span>
+      <span>疑似过期 <strong>{statusCounts.stale}</strong></span>
+      <span>最后核对 <strong>{lastVerified}</strong></span>
+      <a href={calendarHref}>📅 订阅本市截止日历</a>
+    </div>
+  </div>
+
+  <section class="city-split">
+    <h2>{city}专属</h2>
+    <div class="card-grid">{entries.map((e) => <EntryCard kind="money" entry={e} />)}</div>
+  </section>
+
+  <section class="city-split">
+    <h2>全国通用（不限城市）</h2>
+    <div class="card-grid">{national.map((e) => <EntryCard kind="money" entry={e} />)}</div>
+  </section>
+
+  <section class="city-split">
+    <h2>换城市</h2>
+    <div class="chip-row">
+      {otherCities.map((name) => <a class="chip" href={cityPath(name)}>{name}</a>)}
+    </div>
+  </section>
+</Layout>

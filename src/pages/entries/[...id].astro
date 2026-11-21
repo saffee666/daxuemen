@@ -1,0 +1,313 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Breadcrumb from '../../components/entries/Breadcrumb.astro';
+import VerifyStrip from '../../components/entries/VerifyStrip.astro';
+import SectionBlock from '../../components/entries/SectionBlock.astro';
+import RelatedEntries from '../../components/entries/RelatedEntries.astro';
+import RadarCta from '../../components/entries/RadarCta.astro';
+import PriceTrend from '../../components/entries/PriceTrend.astro';
+import FaqBlock from '../../components/entries/FaqBlock.astro';
+import { getCollection, render } from 'astro:content';
+import { freshness, nextReview, freshnessNote } from '../../lib/freshness';
+import { priceStats } from '../../lib/pricing';
+import { ALL_PILLARS } from '../../lib/pillars';
+import { correctionUrl } from '../../lib/site';
+import { relatedEntries } from '../../lib/content';
+import { cityPath, url } from '../../lib/url';
+
+export async function getStaticPaths() {
+  const money = await getCollection('money');
+  const dao = await getCollection('dao');
+  return [...money, ...dao].map((entry) => ({ params: { id: entry.id }, props: { entry } }));
+}
+
+const { entry } = Astro.props;
+const kind = entry.collection === 'money' ? 'money' : 'dao';
+const d = entry.data as any;
+const pillar = ALL_PILLARS[d.pillar];
+const f = freshness(d.verified_date);
+const corr = correctionUrl(entry.id);
+const correctionHref = corr ?? url('/about#correction');
+const { Content } = await render(entry);
+
+const [money, dao] = await Promise.all([getCollection('money'), getCollection('dao')]);
+const related = relatedEntries([...money, ...dao], entry, 4);
+
+const pillarHref = kind === 'money' ? `/money/${d.pillar}` : `/dao/${d.pillar}`;
+const city = d.region.startsWith('城市:') ? d.region.slice(3) : '';
+const summary = kind === 'money' ? d.eligibility : d.pitfall;
+---
+
+<Layout title={d.title} description={summary}>
+  <Breadcrumb
+    items={[
+      { label: '首页', href: '/' },
+      { label: pillar?.name ?? d.pillar, href: pillarHref },
+      ...(city ? [{ label: city, href: cityPath(city) }] : []),
+      { label: d.title },
+    ]}
+  />
+
+  {d.status !== '有效' && (
+    <div class="notice warn" role="status">此条目状态：{d.status}——保留供回溯，请勿按此执行。</div>
+  )}
+  {f.level !== 'ok' && d.status === '有效' && (
+    <div class="notice" role="status">
+      核对状态：{f.label}（最后核对 {d.verified_date}）——信息可能已变化，以官方渠道为准。
+    </div>
+  )}
+
+  <div class="detail-layout">
+    <div class="detail-main">
+      <header class="detail-head">
+        <div class="badges">
+          <span class={`badge ${kind === 'money' ? 'money' : 'ghost'}`}>{pillar?.num} {pillar?.name}</span>
+          <span class="badge">{d.region}</span>
+          <span class="badge">{d.value_level}</span>
+          <span class={`badge ${f.level}`}>{f.label} {d.verified_date}</span>
+          {kind === 'money' && d.difficulty && <span class="badge diff" title="申请难度（编辑评估，供排序参考）">难度 {d.difficulty}</span>}
+          {(d.risk_tags ?? []).map((t: string) => <span class="badge warn" title="风险提示">{t}</span>)}
+          {kind === 'money' && d.confidence && (
+            <span
+              class={`badge ${d.confidence === '高' ? 'ok' : 'warn'}`}
+              title="可信度=官方链接直达精度：直达具体活动/文件页为高，仅到门户为中（AGIHunt 语义）"
+            >
+              {d.confidence}可信
+            </span>
+          )}
+        </div>
+        <h1>{d.title}</h1>
+        <p class="detail-summary">{summary}</p>
+        <div class="detail-actions">
+          {kind === 'money' && (
+            <a class="btn" href={d.official_url} target="_blank" rel="noopener">前往官方入口 ↗</a>
+          )}
+          <a class="btn ghost" href={correctionHref} {...(corr ? { target: '_blank', rel: 'noopener noreferrer' } : {})}>
+            {corr ? '发现错误？纠错' : '怎么纠错'}
+          </a>
+          {city && <a class="btn ghost" href={cityPath(city)}>看 {city} 其他条目</a>}
+        </div>
+      </header>
+
+      <VerifyStrip
+        sourceName={d.source_name}
+        verifiedDate={d.verified_date}
+        nextReview={nextReview(d.verified_date)}
+        status={d.status}
+        freshnessLabel={f.label}
+        level={f.level}
+        correctionHref={correctionHref}
+      />
+
+      <div class="detail-body">
+        {kind === 'money' ? (
+          <>
+            <SectionBlock num="01" title="我符合吗（领取条件）">
+              <p>{d.eligibility}</p>
+            </SectionBlock>
+
+            <SectionBlock num="02" title="怎么领（步骤）">
+              <ol>{d.steps.map((s: string) => <li>{s}</li>)}</ol>
+            </SectionBlock>
+
+            <SectionBlock num="03" title="要准备什么（材料）">
+              {d.materials?.length > 0 ? (
+                <ul>{d.materials.map((m: string) => <li>{m}</li>)}</ul>
+              ) : (
+                <p>官方未列固定材料清单，以申报页面当期的要求为准。</p>
+              )}
+            </SectionBlock>
+
+            <SectionBlock num="04" title="何时截止 / 有效">
+              {d.tiers?.length > 0 && (
+                <dl class="tier-list">
+                  {d.tiers.map((t) => (
+                    <div class="tier-row">
+                      <dt>{t.label}</dt>
+                      <dd>
+                        <span class="tier-amount">{t.amount_min === t.amount_max ? `¥${t.amount_max.toLocaleString('zh-CN')}` : `¥${t.amount_min.toLocaleString('zh-CN')}–${t.amount_max.toLocaleString('zh-CN')}`}</span>
+                        {t.note && <span class="tier-note">{t.note}</span>}
+                      </dd>
+                    </div>
+                  ))}
+                </dl>
+              )}
+              <p>{d.deadline_or_validity}</p>
+              {d.offline_required && (
+                <p class="offline-note">此条需线下办理（窗口提交/原件核验）——预留跑一趟的时间，材料清单按官方当期要求带齐。</p>
+              )}
+              {d.deadline_dates?.length > 0 && (
+                <p class="cal-add">
+                  <a class="btn ghost small" href={url(`/calendars/${entry.id}.ics`)} download>
+                    加入日历（.ics）
+                  </a>
+                  <span class="cal-hint">日历快照含本条核对时点的截止日；以官方当期公告为准，订阅全站日历：<a href={url('/calendar.ics')}>calendar.ics</a></span>
+                </p>
+              )}
+            </SectionBlock>
+
+            <SectionBlock num="05" title="能和什么叠加">
+              <p>{d.stacking_tips || '暂无叠加说明；不同政策是否冲突，以主管部门口径为准。'}</p>
+              <p class="stacking-link">更多叠加规则与雷点 → <a href="/tools/stacking">叠加逻辑</a></p>
+            </SectionBlock>
+
+            {kind === 'money' && (d.price_history ?? []).length > 0 && (
+              <SectionBlock num="¥" title="价格记录（历次核对）">
+                <PriceTrend stats={priceStats(d.price_history)} />
+                <p class="detail-note">价格由历次复核时记录；「当前=最低」表示现价不高于本站任何一次记录。</p>
+              </SectionBlock>
+            )}
+
+            {kind === 'money' && (d.faq ?? []).length > 0 && (
+              <SectionBlock num="?" title="常见问题">
+                <FaqBlock faq={d.faq} />
+              </SectionBlock>
+            )}
+
+            <SectionBlock num="06" title="官方入口">
+              <p>
+                <a href={d.official_url} target="_blank" rel="noopener noreferrer">{d.official_url}</a>
+              </p>
+              {d.notes && <p class="detail-note">备注：{d.notes}</p>}
+            </SectionBlock>
+          </>
+        ) : (
+          <>
+            <SectionBlock num="01" title="适用场景">
+              <p>{d.scene}</p>
+            </SectionBlock>
+
+            <SectionBlock num="02" title="核心坑">
+              <p>{d.pitfall}</p>
+            </SectionBlock>
+
+            <SectionBlock num="03" title="正确姿势">
+              <p>{d.howto}</p>
+            </SectionBlock>
+
+            <SectionBlock num="04" title="关键时间">
+              <p>{d.key_timing || '以学校当年通知为准；关键节点通常集中在开学、期末和毕业季。'}</p>
+            </SectionBlock>
+
+            <SectionBlock num="05" title="来源">
+              <ul>
+                {d.source_refs.map((r: any) => (
+                  <li>
+                    {r.label}（{r.type}）
+                    {r.url && (
+                      <Fragment>
+                        {' · '}
+                        <a href={r.url} target="_blank" rel="noopener noreferrer">官方链接 ↗</a>
+                      </Fragment>
+                    )}
+                  </li>
+                ))}
+              </ul>
+              <p class="detail-note">信息来源：{d.source_name}{d.notes ? `；备注：${d.notes}` : ''}</p>
+            </SectionBlock>
+          </>
+        )}
+
+        {entry.body && (
+          <SectionBlock num="✎" title="补充说明">
+            <div class="prose"><Content /></div>
+          </SectionBlock>
+        )}
+
+        <RelatedEntries entries={related} title="相关条目" />
+      </div>
+
+      <RadarCta />
+    </div>
+
+    <aside class="detail-aside">
+      <div class="side-card">
+        <h2>核对状态</h2>
+        <div class={`trust-state ${f.level}`}>
+          <span class="dot" aria-hidden="true"></span>
+          {d.status === '有效' ? f.label : d.status}
+        </div>
+        <p>{freshnessNote(f.level)}</p>
+        <ul>
+          <li><span>来源</span><span>{d.source_name}</span></li>
+          <li><span>最后核对</span><span>{d.verified_date}</span></li>
+          <li><span>下次复核</span><span>{nextReview(d.verified_date)}</span></li>
+          <li><span>状态</span><span>{d.status}</span></li>
+          {d.confidence && <li><span>可信度</span><span>{d.confidence}（链接直达精度）</span></li>}
+        </ul>
+        <a class="btn ghost small" href={correctionHref}>纠错 / 补充线索</a>
+      </div>
+
+      <div class="side-card">
+        <h2>怎么用这条</h2>
+        <ul>
+          <li><span>适用阶段</span><span>{d.stage.join(' / ')}</span></li>
+          <li><span>地域</span><span>{d.region}</span></li>
+          <li><span>类别</span><span>{d.category}</span></li>
+          <li><span>支柱</span><span>{pillar?.name ?? d.pillar}</span></li>
+          {(d.auth_channel ?? []).length > 0 && (
+            <li>
+              <span>认证渠道</span>
+              <span>{d.auth_channel.join(' / ')}<br /><a href="/tools/auth">认证导航 →</a></span>
+            </li>
+          )}
+        </ul>
+      </div>
+
+      <div class="side-card">
+        <h2>记住</h2>
+        <p>先回官方原文核对资格和入口，再按步骤执行；本站不代办、不收费、不承诺结果。</p>
+      </div>
+    </aside>
+  </div>
+</Layout>
+
+<script>
+  // 信模板/代码块复制按钮：给正文里的 pre 块加「复制」角标（会员比比 copy 件模式的 vanilla 版）
+  document.querySelectorAll<HTMLElement>('.detail-body pre').forEach((pre) => {
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'copy-block';
+    btn.textContent = '复制';
+    btn.addEventListener('click', async () => {
+      const text = pre.querySelector('code')?.textContent ?? pre.textContent ?? '';
+      try {
+        await navigator.clipboard.writeText(text);
+        btn.textContent = '已复制';
+        setTimeout(() => (btn.textContent = '复制'), 1600);
+      } catch {
+        btn.textContent = '复制失败，请手选';
+        setTimeout(() => (btn.textContent = '复制'), 2400);
+      }
+    });
+    pre.style.position = 'relative';
+    pre.appendChild(btn);
+  });
+</script>
+
+<style is:global>
+  .detail-body .stacking-link {
+    margin: 8px 0 0;
+    color: var(--ink-faint);
+    font-size: 0.84rem;
+  }
+  .detail-body .stacking-link a {
+    color: var(--accent);
+  }
+  .detail-body .copy-block {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    padding: 3px 10px;
+    border: 1px solid var(--line-strong);
+    border-radius: var(--radius-sm);
+    background: var(--bg-elevated);
+    color: var(--ink-soft);
+    font-size: 0.72rem;
+    cursor: pointer;
+  }
+  .detail-body .copy-block:hover {
+    color: var(--ink);
+    border-color: var(--ink-faint);
+  }
+</style>

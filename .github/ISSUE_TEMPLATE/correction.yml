@@ -1,0 +1,35 @@
+name: 纠错上报
+description: 条目信息有误 / 已过期 / 已变更
+title: '[纠错] '
+labels: ['纠错']
+body:
+  - type: input
+    id: entry
+    attributes:
+      label: 条目名称或链接
+      description: 哪一条信息有问题（复制条目标题或页面链接）
+    validations:
+      required: true
+  - type: dropdown
+    id: problem
+    attributes:
+      label: 问题类型
+      options:
+        - 信息已过期（窗口关闭/活动结束）
+        - 条件或金额有误
+        - 官方链接失效
+        - 步骤/材料与实际不符
+        - 其他
+    validations:
+      required: true
+  - type: textarea
+    id: detail
+    attributes:
+      label: 具体说明
+      description: 最好附上官方来源链接（政策原文/通知页）
+    validations:
+      required: true
+  - type: input
+    id: city
+    attributes:
+      label: 涉及城市（如有）

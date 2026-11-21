@@ -1,0 +1,254 @@
+---
+// 认证导航（L3·不会用+不知道有）：把各平台「学生认证怎么过」汇成一页。
+// 每渠道固定六字段：资格/主路径/降级链/失败兜底材料/时效承诺/覆盖权益数（构建时统计）。
+// 数据源：benefits 条目的 auth_channel 字段（scripts/fill-auth-channel.mjs 补录 + 人工工单）。
+// 标准：UNiDAYS/Student Beans/阿里云认证降级链实证；本页只导航，不代认证。
+import Layout from '../../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+import { entryPath, url } from '../../lib/url';
+
+const all = await getCollection('money');
+const benefits = all.filter((e) => e.data.pillar === 'corporate' && e.data.status === '有效');
+const pick = (keys: string[]) => benefits.filter((e) => (e.data.auth_channel ?? []).some((k: string) => keys.includes(k)));
+
+const channels = [
+  {
+    name: '学信网系',
+    keys: ['学信网'],
+    officialUrl: 'https://www.chsi.com.cn/xlcx/bgcx.jsp',
+    officialName: '学信网 · 学籍学历查验（chsi.com.cn）',
+    elig: '在校生或已毕业学生，学籍信息已在学信网可查',
+    main: '品牌认证页跳转学信网授权，或提交学信网在线验证码',
+    chain: '自动学籍比对 → 学信网在线验证码 → 人工文档审核',
+    fallback: '学信网截图须包含：学信网标志、本人照片、姓名、身份证号、学籍状态；学信网无照片时，另附手持身份证照片',
+    timing: '在线验证码有效期 30 天；人工审核约 48 小时（阿里云学生通道承诺口径）',
+    note: '',
+    entries: pick(['学信网']),
+  },
+  {
+    name: 'edu 邮箱系',
+    keys: ['edu邮箱'],
+    officialUrl: '',
+    officialName: '',
+    elig: '持有 .edu.cn（或海外 .edu）教育邮箱的在校生',
+    main: '在品牌认证页填教育邮箱，收验证邮件点击确认',
+    chain: '教育邮箱即时验证 → 无教育邮箱时转证件人工审',
+    fallback: '学生证 / 在读证明 / 录取通知书清晰照（姓名须与身份证明一致）',
+    timing: '即时～人工约 3 天；认证多随学年过期，换学年要重验',
+    note: '',
+    entries: pick(['edu邮箱']),
+  },
+  {
+    name: '支付宝校园派',
+    keys: ['支付宝校园派'],
+    officialUrl: '',
+    officialName: '支付宝 App 内搜索「校园派」',
+    elig: '支付宝实名用户 + 在校学籍（口径待人工复核）',
+    main: '支付宝 App 内搜「校园派」，按提示完成学籍认证后领权益',
+    chain: 'App 内学籍比对 → 人工审核（流程细节待复核）',
+    fallback: '待人工取证——本渠道暂按线索建节，走查 App 后补齐',
+    timing: '待复核',
+    note: 'pending',
+    entries: pick(['支付宝校园派']),
+  },
+  {
+    name: '平台自有与人工审',
+    keys: ['平台自有', '证件人工审', 'SheerID'],
+    officialUrl: '',
+    officialName: '',
+    elig: '各品牌自建学生通道：证件照上传、自有学生中心，海外品牌多走 SheerID 通道',
+    main: '在品牌官方页 / 小程序上传证件照或选择学生身份验证；海外品牌在优惠页触发 SheerID',
+    chain: '自动初筛 → 证件照人工审核（一次验证可覆盖多品牌 offer）',
+    fallback: '学生证 + 带照片身份证（姓名一致）；部分品牌收录取通知书；Institution not listed 时走人工文档审',
+    timing: '人工审核 48 小时～3 天（UNiDAYS / Student Beans 公开口径）；每月提交次数常有限制',
+    note: '',
+    entries: pick(['平台自有', '证件人工审', 'SheerID']),
+  },
+  {
+    name: '待标注',
+    keys: [],
+    officialUrl: '',
+    officialName: '',
+    elig: '认证渠道尚未人工核完的条目',
+    main: '见各条目 steps',
+    chain: '—',
+    fallback: '—',
+    timing: '—',
+    note: 'pending',
+    entries: benefits.filter((e) => (e.data.auth_channel ?? []).length === 0),
+  },
+];
+---
+
+<Layout title="认证导航 · 工具" description="各平台学生认证入口、降级链与失败兜底材料——卡在认证这一步时来这里。">
+  <div class="tool-page">
+    <p class="tool-eyebrow">工具 02 · 约 2 分钟</p>
+    <h1 tabindex="-1">认证导航</h1>
+    <p class="tool-intro">
+      学生价的门槛不是找到优惠，是<strong>通过认证</strong>。这一页把常见认证渠道汇成一张卡：入口在哪、验证失败怎么办、要准备什么材料。<strong>本页只导航，不代认证</strong>——找闲鱼代开 edu 邮箱已有批量封号先例，认证请走官方渠道。
+    </p>
+
+    <div class="dark-hint">
+      <strong>搜索暗号（存在差信息）</strong>
+      <p>
+        部分平台的学生频道没有显性入口，藏在 App 搜索口令里：京东搜「学生认证」「教育优惠」，部分时段有「学生1234」「教育1234」「国补1234」口令直达（以京东官方 App 当期口径为准，口令有时效性）。阿里云学生认证走「支付宝扫码 → 学信网比对」。
+      </p>
+    </div>
+
+    {channels.map((c) => (
+      <section class="channel" data-channel>
+        <div class="channel-head">
+          <h2>{c.name}</h2>
+          <span class="badge">{c.entries.length} 条权益可用</span>
+          {c.note === 'pending' && <span class="badge warn">待人工复核</span>}
+        </div>
+        <dl class="channel-fields">
+          <div><dt>谁能用</dt><dd>{c.elig}</dd></div>
+          <div><dt>主路径</dt><dd>{c.main}{c.officialUrl && <a href={c.officialUrl} target="_blank" rel="noopener noreferrer">（{c.officialName}）</a>}{!c.officialUrl && c.officialName && `（${c.officialName}）`}</dd></div>
+          <div><dt>降级链</dt><dd>{c.chain}</dd></div>
+          <div><dt>失败兜底材料</dt><dd>{c.fallback}</dd></div>
+          <div><dt>时效</dt><dd>{c.timing}</dd></div>
+        </dl>
+        {c.entries.length > 0 && (
+          <div class="channel-entries">
+            {c.entries.map((e) => (
+              <a class="chip" href={url(entryPath(e))}>{e.data.title}</a>
+            ))}
+          </div>
+        )}
+      </section>
+    ))}
+
+    <section class="tool-blocks">
+      <section>
+        <h2>怎么用</h2>
+        <p>先看你手里有什么（教育邮箱？学信网可查？只有学生证？），对号入座选渠道；再看主路径，失败按降级链走，材料按「失败兜底」一栏准备。</p>
+      </section>
+      <section>
+        <h2>结果怎么解读</h2>
+        <p>「N 条权益可用」= 库内该渠道可认证的有效企业让利条目数，点进去每条都带官方入口与核对日期。渠道口径以品牌官方页面为准，本页是导航不是授权入口。</p>
+      </section>
+      <section>
+        <h2>注意事项与局限</h2>
+        <p>本页只导航，不代认证、不收费、不承诺通过率。「支付宝校园派」与「待标注」两组尚待人工走查复核。渠道规则常变（尤其人工审核时效与提交次数限制），以官方当期口径为准。</p>
+      </section>
+      <section>
+        <h2>常见问题</h2>
+        <details><summary>认证总失败怎么办？</summary><div>按降级链降级：自动比对失败 → 用验证码/邮箱 → 再失败按「失败兜底材料」人工提交，材料要素齐全是关键（姓名与身份证明一致）。</div></details>
+        <details><summary>能找人代认证吗？</summary><div>不要。代开邮箱/证件照已被多平台列入风控，批量封号有先例；认证绑定学籍，出问题连带影响名下账号。</div></details>
+      </section>
+    </section>
+  </div>
+</Layout>
+
+<style>
+  .tool-intro {
+    margin: 0 0 26px;
+    color: var(--ink-soft);
+    max-width: 38em;
+    line-height: 1.75;
+  }
+  .dark-hint {
+    margin: 0 0 30px;
+    padding: 14px 16px;
+    border: 1px dashed var(--line-strong);
+    border-radius: var(--radius);
+    background: var(--surface-soft);
+  }
+  .dark-hint strong {
+    display: block;
+    margin-bottom: 4px;
+    font-size: 0.9rem;
+  }
+  .dark-hint p {
+    margin: 0;
+    color: var(--ink-soft);
+    font-size: 0.88rem;
+    line-height: 1.7;
+  }
+  .channel {
+    margin-bottom: 26px;
+    padding: 22px;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    background: var(--surface);
+  }
+  .channel-head {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 12px;
+  }
+  .channel-head h2 {
+    margin: 0;
+    font-size: 1.15rem;
+  }
+  .channel-fields {
+    margin: 0;
+    display: grid;
+    gap: 8px;
+  }
+  .channel-fields > div {
+    display: grid;
+    grid-template-columns: 92px 1fr;
+    gap: 10px;
+  }
+  .channel-fields dt {
+    color: var(--ink-faint);
+    font-size: 0.8rem;
+    padding-top: 2px;
+    white-space: nowrap;
+  }
+  .channel-fields dd {
+    margin: 0;
+    color: var(--ink-soft);
+    font-size: 0.9rem;
+    line-height: 1.7;
+  }
+  .channel-fields dd a {
+    color: var(--accent);
+  }
+  .channel-entries {
+    margin-top: 14px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .channel-entries .chip {
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .tool-blocks {
+    display: grid;
+    gap: 22px;
+    margin-top: 44px;
+    max-width: 720px;
+  }
+  .tool-blocks h2 {
+    margin: 0 0 6px;
+    font-size: 1rem;
+  }
+  .tool-blocks p,
+  .tool-blocks details {
+    margin: 0;
+    color: var(--ink-soft);
+    font-size: 0.9rem;
+    line-height: 1.7;
+  }
+  .tool-blocks details summary {
+    cursor: pointer;
+    color: var(--ink);
+  }
+  .tool-blocks details div {
+    padding: 8px 0 4px;
+  }
+  @media (max-width: 560px) {
+    .channel-fields > div {
+      grid-template-columns: 1fr;
+      gap: 2px;
+    }
+  }
+</style>

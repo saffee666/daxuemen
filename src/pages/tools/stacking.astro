@@ -1,0 +1,233 @@
+---
+// 叠加逻辑（L3·不会选）：教育优惠 × 国补 × 平台券的互斥与叠加规则。
+// 结构=引用题三层（官方条款原文 / 法规算法 / 每条目叠加注记）+ 雷点区。
+// 红线：平台规则冲突时并列披露不裁决；本页是编辑整理，不是官方口径。
+// 法规锚点（as-of 2026-11）：商务部等5部门《手机、平板、智能手表（手环）购新补贴实施方案》
+//   及 2026 年版通知（mofcom.gov.cn）；Apple 教育优惠销售条款（apple.com.cn/cn-edu）。
+import Layout from '../../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+import { entryPath, url } from '../../lib/url';
+
+const all = await getCollection('money');
+const tips = all
+  .filter((e) => e.data.stacking_tips && e.data.status !== '已过期')
+  .sort((a, b) => a.data.pillar.localeCompare(b.data.pillar));
+---
+
+<Layout title="叠加逻辑 · 工具" description="教育优惠、国补、平台券能不能叠、怎么叠——规则出处与雷点一页讲清。">
+  <div class="tool-page">
+    <p class="tool-eyebrow">工具 03 · 约 4 分钟</p>
+    <h1 tabindex="-1">叠加逻辑</h1>
+    <p class="tool-intro">
+      优惠能不能叠，答案大多<strong>不在攻略里，在官方条款里</strong>。这一页只做结构化引用：法规怎么算、品牌条款怎么限、各条目核对到的注记是什么。<strong>冲突的口径并列披露，不替你裁决</strong>；最终以结算页实付价为准。
+    </p>
+
+    <section class="stack-block">
+      <h2>01 · 四条总原则</h2>
+      <ol class="principles">
+        <li><strong>只比结算页实付价。</strong>无论叠几层，最后看付款金额——「先涨价后补贴」就是要防这个。</li>
+        <li><strong>政府现金补贴与企业让利通常不互斥。</strong>国补按「减去所有优惠后的最终售价」计算，天然叠在商家优惠之上（法规原文见 02）。</li>
+        <li><strong>平台券看条款。</strong>「不可与直降/特价叠加」是常见限制，以结算页实际可勾选为准。</li>
+        <li><strong>国补看品类目录与资格次数。</strong>每类商品资格全国仅 1 次（含线上线下），跨省领过就没了。</li>
+      </ol>
+    </section>
+
+    <section class="stack-block">
+      <h2>02 · 国补怎么算（法规原文）</h2>
+      <blockquote>
+        「每件补贴比例为<strong>减去生产、流通环节及移动运营商所有优惠后</strong>最终销售价格的 15％，每件最高不超过 500 元。」
+        <cite>—— 商务部等 5 部门《手机、平板、智能手表（手环）购新补贴实施方案》（2025-01）</cite>
+      </blockquote>
+      <ul class="facts">
+        <li>2026 年起扩至 4 类数码（新增智能眼镜等），<strong>每人每类可补贴 1 件</strong>，价格须备案并显著标明「初始价 / 商家让利 / 补贴额 / 最终价」，不得「先涨价后补贴」。</li>
+        <li><strong>资格全国互斥</strong>：每类商品补贴资格全国（含线上线下）仅限使用 1 次；已在其他省市领用过的，无法再领（北京市实施细则口径）。</li>
+        <li>申领人、付款人、收货人须一致（各平台国补规则通用条款）。</li>
+      </ul>
+      <p class="refs">
+        出处：<a href="https://www.ndrc.gov.cn/xwdt/ztzl/tddgmsbgxhxfpyjhx/gzdt/202501/t20250116_1395730.html" target="_blank" rel="noopener noreferrer">实施方案（发改委转载）</a> ·
+        <a href="https://www.mofcom.gov.cn/zwgk/zcfb/art/2025/art_fca1a108eea64d0a858c6d6136455d45.html" target="_blank" rel="noopener noreferrer">2026 年版通知（商务部）</a> ·
+        <a href="https://www.beijing.gov.cn/zhengce/zhengcefagui/202501/t20250119_3992527.html" target="_blank" rel="noopener noreferrer">北京市实施细则</a>
+      </p>
+    </section>
+
+    <section class="stack-block">
+      <h2>03 · 品牌条款示例（Apple 教育优惠）</h2>
+      <ul class="facts">
+        <li><strong>限购（每年）</strong>：Mac 台式 1 / Mac mini 1 / MacBook 1 / 显示器 1 / <strong>iPad 2</strong> / Watch 1 / 配件 2。</li>
+        <li><strong>事后审查权</strong>：Apple 可在售后审查教育资格，不合格须补差价至公众价——教育优惠不是「过了就稳了」。</li>
+        <li><strong>到店取货</strong>：须出示学生证 / 录取通知书等，姓名须与政府颁发并附照片的有效身份证一致。</li>
+      </ul>
+      <p class="refs">
+        出处：<a href="https://www.apple.com.cn/cn-edu/shop/open/salespolicies" target="_blank" rel="noopener noreferrer">Apple 中国教育优惠销售条款</a>（as-of 2026-11，条款以官方当期版本为准）
+      </p>
+    </section>
+
+    <section class="stack-block">
+      <h2>04 · 条目里核对到的叠加注记</h2>
+      <p class="stack-note">
+        以下来自 {tips.length} 条有效条目的 <code>stacking_tips</code> 字段，每条都回官方口径核对过；点开看全文与来源。
+      </p>
+      <div class="tips-list">
+        {tips.map((e) => (
+          <a class="tip-row" href={url(entryPath(e))}>
+            <strong>{e.data.title}</strong>
+            <span>{e.data.stacking_tips}</span>
+          </a>
+        ))}
+      </div>
+    </section>
+
+    <section class="stack-block danger">
+      <h2>05 · 四个雷点（不知道就会亏）</h2>
+      <ol class="principles">
+        <li><strong>教育优惠可事后审查</strong>：资格不合格补差价至公众价（03 节 Apple 条款），转卖教育优惠机是重灾区。</li>
+        <li><strong>国补差价不保价</strong>：多数平台规则写明「国补/政府补贴导致的差价不支持价保」。</li>
+        <li><strong>资格全国只有一次</strong>：跨省重复领用会被系统拦截，别把外地资格先用了。</li>
+        <li><strong>「先涨价后补贴」是违规动作</strong>：补贴前先看价格记录（条目页有价格走势的看走势），发现先涨后补可举报。</li>
+      </ol>
+    </section>
+
+    <section class="tool-blocks">
+      <section>
+        <h2>怎么用</h2>
+        <p>买前按 01→02→03 过一遍原则与条款，再到 04 查具体条目的核对注记；结算时以页面实付价复核一遍。</p>
+      </section>
+      <section>
+        <h2>结果怎么解读</h2>
+        <p>本页规则全部给出处链接，注记逐条可点回条目。两个口径冲突时并列展示——你自己选信哪个，或问官方客服。</p>
+      </section>
+      <section>
+        <h2>注意事项与局限</h2>
+        <p>本页是编辑整理，不是官方口径；法规与品牌条款随时修订（本页 as-of 2026-11），执行前点出处链接核对当期版本。只覆盖大陆口径，海外品牌条款以各国官网为准。</p>
+      </section>
+      <section>
+        <h2>常见问题</h2>
+        <details><summary>教育优惠和国补到底能叠吗？</summary><div>按法规算法，国补按「减去所有优惠后的最终售价」计 15%——结构上不互斥。但具体品类是否在目录内、商家是否参与国补，以结算页实际展示为准；「部分优惠可能无法叠加，以页面展示为准」是平台通用句式。</div></details>
+        <details><summary>校园代理说「比官方叠加更便宜」可信吗？</summary><div>校园代理折扣不受品牌条款保护，且可能违反教育优惠资格条款（事后审查补差价风险自担）。本站不收录校园代理渠道。</div></details>
+      </section>
+    </section>
+  </div>
+</Layout>
+
+<style>
+  .tool-intro {
+    margin: 0 0 30px;
+    color: var(--ink-soft);
+    max-width: 38em;
+    line-height: 1.75;
+  }
+  .stack-block {
+    margin-bottom: 28px;
+    padding: 22px;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    background: var(--surface);
+  }
+  .stack-block h2 {
+    margin: 0 0 12px;
+    font-size: 1.1rem;
+  }
+  .stack-block.danger {
+    border-color: var(--stale);
+  }
+  .principles {
+    margin: 0;
+    padding-left: 20px;
+    display: grid;
+    gap: 8px;
+    color: var(--ink-soft);
+    font-size: 0.9rem;
+    line-height: 1.7;
+  }
+  .principles strong {
+    color: var(--ink);
+  }
+  blockquote {
+    margin: 0 0 12px;
+    padding: 12px 16px;
+    border-left: 3px solid var(--accent);
+    background: var(--surface-soft);
+    color: var(--ink);
+    font-size: 0.92rem;
+    line-height: 1.8;
+  }
+  blockquote cite {
+    display: block;
+    margin-top: 6px;
+    color: var(--ink-faint);
+    font-size: 0.8rem;
+    font-style: normal;
+  }
+  .facts {
+    margin: 0;
+    padding-left: 20px;
+    display: grid;
+    gap: 8px;
+    color: var(--ink-soft);
+    font-size: 0.9rem;
+    line-height: 1.7;
+  }
+  .refs {
+    margin: 12px 0 0;
+    color: var(--ink-faint);
+    font-size: 0.82rem;
+    line-height: 1.7;
+  }
+  .refs a {
+    color: var(--accent);
+  }
+  .stack-note {
+    margin: 0 0 12px;
+    color: var(--ink-faint);
+    font-size: 0.85rem;
+  }
+  .tips-list {
+    display: grid;
+    gap: 8px;
+  }
+  .tip-row {
+    display: grid;
+    gap: 2px;
+    padding: 10px 12px;
+    border: 1px solid var(--line);
+    border-radius: var(--radius-sm);
+    color: var(--ink);
+    transition: background 150ms var(--ease), border-color 150ms var(--ease);
+  }
+  .tip-row:hover {
+    border-color: var(--line-strong);
+    background: var(--surface-soft);
+  }
+  .tip-row strong {
+    font-size: 0.9rem;
+  }
+  .tip-row span {
+    color: var(--ink-soft);
+    font-size: 0.85rem;
+    line-height: 1.65;
+  }
+  .tool-blocks {
+    display: grid;
+    gap: 22px;
+    margin-top: 44px;
+    max-width: 720px;
+  }
+  .tool-blocks h2 {
+    margin: 0 0 6px;
+    font-size: 1rem;
+  }
+  .tool-blocks p,
+  .tool-blocks details {
+    margin: 0;
+    color: var(--ink-soft);
+    font-size: 0.9rem;
+    line-height: 1.7;
+  }
+  .tool-blocks details summary {
+    cursor: pointer;
+    color: var(--ink);
+  }
+  .tool-blocks details div {
+    padding: 8px 0 4px;
+  }
+</style>

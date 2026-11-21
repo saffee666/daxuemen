@@ -1,0 +1,96 @@
+# SiteDelta 政策页监控源清单 —— D2 种子配置，v1 未启用
+# 启用前提：先新增 .github/workflows/policy-watch.yml（当前不存在）
+# 格式参照 https://github.com/kiwamizamurai/SiteDelta README「Configuration Reference」
+# 状态文件自动落盘：data/sources-state.json、data/sources-history.csv（由工作流 git-auto-commit 提交）
+#
+# selector 统一用 css `a`：只盯锚点集合变化（新通知链接出现/消失），避开日期、轮播图等整页噪音。
+# 如某站点误报/漏报，按 SiteDelta README「How to Find Selectors」换成更精确的列表容器选择器。
+version: "1"
+
+monitors:
+  # ===== 8 城人社局 =====
+  - id: hangzhou-rsj-policy
+    name: "杭州人社局·政策文件及解读"
+    url: "https://hrss.hangzhou.gov.cn/col/col1229195006/index.html" # 2026-10-25 探活 200
+    selectors:
+      - name: list
+        type: css
+        value: "a"
+
+  - id: chengdu-rsj-notice
+    name: "成都人社局"
+    # TODO: 待人工确认 URL —— 通知公告列表页未确认，暂挂首页；
+    # 站点有 WAF（本机探活 412），静态抓取为空时 SiteDelta 会自动转 Playwright 动态模式
+    url: "https://cdhrss.chengdu.gov.cn/"
+    selectors:
+      - name: list
+        type: css
+        value: "a"
+
+  - id: wuhan-rsj-notice
+    name: "武汉人社局·通知公示公告"
+    url: "https://rsj.wuhan.gov.cn/zwgk_17/zc/qtzdgkwj/tzgsgg/" # 2026-10-25 探活 200
+    selectors:
+      - name: list
+        type: css
+        value: "a"
+
+  - id: suzhou-rsj-notice
+    name: "苏州人社局·通知公告"
+    url: "https://hrss.suzhou.gov.cn/jsszhrss/gsgg/list.shtml" # 2026-10-25 探活 200
+    selectors:
+      - name: list
+        type: css
+        value: "a"
+
+  - id: nanjing-rsj-notice
+    name: "南京人社局"
+    # TODO: 待人工确认 URL —— 通知公告列表页未确认，暂挂新版首页（探活 200）
+    url: "https://rsj.nanjing.gov.cn/pcnew/"
+    selectors:
+      - name: list
+        type: css
+        value: "a"
+
+  - id: shenzhen-rsj-notice
+    name: "深圳人社局·通知公告"
+    url: "https://hrss.sz.gov.cn/tzgg/" # 2026-10-25 探活 200
+    selectors:
+      - name: list
+        type: css
+        value: "a"
+
+  - id: xian-rsj-policy
+    name: "西安人社局·政策文件"
+    url: "https://xahrss.xa.gov.cn/xxgk/zcwj/1.html" # 2026-10-25 探活 200；通知公告页为 JS 加载故选政策文件页
+    selectors:
+      - name: list
+        type: css
+        value: "a"
+
+  - id: hefei-rsj-notice
+    name: "合肥人社局·通知公告"
+    # 2026-10-25 探活 521（临时故障或防护）；URL 由真实文章路径
+    # https://rsj.hefei.gov.cn/zxzx/tzgg/15181313.html 反推，可信度高
+    url: "https://rsj.hefei.gov.cn/zxzx/tzgg/"
+    selectors:
+      - name: list
+        type: css
+        value: "a"
+
+  # ===== 全国性 / 商业来源 =====
+  - id: moe-ncss-policy
+    name: "国家大学生就业服务平台·政策清单（教育部）"
+    url: "https://www.ncss.cn/ncss/gjjdfjyzc/gj/zczcqd.shtml" # 2026-10-25 探活 200
+    selectors:
+      - name: list
+        type: css
+        value: "a"
+
+  - id: apple-edu-store
+    name: "Apple 中国·教育优惠页"
+    url: "https://www.apple.com.cn/cn-edu/store/" # 2026-10-25 探活 200
+    selectors:
+      - name: list
+        type: css
+        value: "a"

@@ -1,0 +1,41 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+import { cityPath } from '../lib/url';
+
+const all = await getCollection('money');
+const counts = new Map<string, number>();
+for (const e of all) {
+  const r = e.data.region;
+  if (r.startsWith('城市:')) counts.set(r.slice(3), (counts.get(r.slice(3)) ?? 0) + 1);
+}
+const cities = [...counts.entries()].sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0], 'zh'));
+const total = cities.reduce((s, [, n]) => s + n, 0);
+---
+
+<Layout
+  title={`全部城市补贴索引（2026）`}
+  description={`已核对 ${cities.length} 个城市的 ${total} 条补贴与优惠条目，按条目量排序：深圳、上海、青岛等；每城一页，附截止日历订阅。`}
+>
+  <div class="page-head">
+    <p class="eyebrow">城市 · 全量索引 · 2026</p>
+    <h1>{cities.length} 个城市，本地政策逐城核对。</h1>
+    <p class="page-desc">
+      地区性的钱只对本地生效：每城一页，列出本市专属条目（附官方入口与核对日期），页内可订阅本市截止日历。按条目量排序，找你的城市直接点。
+    </p>
+    <div class="page-meta">
+      <span><strong>{cities.length}</strong> 个城市页</span>
+      <span><strong>{total}</strong> 条本市条目</span>
+      <span>另有全国通用条目兜底</span>
+    </div>
+  </div>
+
+  <div class="city-grid">
+    {cities.map(([city, n]) => (
+      <a class="city-card" href={cityPath(city)}>
+        <span>{city}</span>
+        <small>{n} 条</small>
+      </a>
+    ))}
+  </div>
+</Layout>

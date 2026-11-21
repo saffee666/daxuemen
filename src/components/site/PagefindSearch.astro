@@ -1,0 +1,72 @@
+---
+// 站内 Pagefind 搜索 UI 复用件（搜索页 + 404 内嵌）。
+// 加载兜底与主题变量桥取自原 search.astro 实现；支持多挂载点（本组件脚本全站去重）。
+import { url } from '../../lib/url';
+---
+
+<link rel="stylesheet" href={url('/pagefind/pagefind-ui.css')} />
+<div class="pf-ui" data-pf-mount></div>
+<p class="pf-fallback" hidden data-pf-fallback>
+  搜索索引尚未生成（开发模式常见）。请先运行一次 <code>npm run build</code>，再用
+  <code>npm run preview</code> 打开本站；线上版本不受影响。
+</p>
+
+<script>
+  import { url } from '../../lib/url';
+
+  function loadScript(src: string): Promise<void> {
+    return new Promise((resolve, reject) => {
+      const s = document.createElement('script');
+      s.src = src;
+      s.onload = () => resolve();
+      s.onerror = () => reject(new Error(`failed to load ${src}`));
+      document.head.append(s);
+    });
+  }
+
+  async function boot(mount: HTMLElement) {
+    const fallback = mount.parentElement?.querySelector<HTMLElement>('[data-pf-fallback]');
+    try {
+      await loadScript(url('/pagefind/pagefind-ui.js'));
+      const UI = (window as any).PagefindUI;
+      if (!UI) throw new Error('PagefindUI missing');
+      const ui = new UI({
+        element: mount,
+        bundlePath: url('/pagefind/'),
+        showSubResults: true,
+        showImages: false,
+        translations: {
+          placeholder: '搜条目、攻略、城市…',
+          zero_results: '没有找到「[SEARCH_TERM]」——换个更短的关键词试试。',
+        },
+      });
+      (window as any).__pagefindUI = ui;
+    } catch {
+      fallback?.removeAttribute('hidden');
+    }
+  }
+
+  document.querySelectorAll<HTMLElement>('[data-pf-mount]').forEach(boot);
+</script>
+
+<style>
+  .pf-ui {
+    --pagefind-ui-scale: 0.95;
+    --pagefind-ui-primary: var(--accent);
+    --pagefind-ui-text: var(--ink);
+    --pagefind-ui-background: var(--surface);
+    --pagefind-ui-border: var(--line-strong);
+    --pagefind-ui-tag: var(--surface-soft, #efece3);
+    --pagefind-ui-border-width: 1px;
+    --pagefind-ui-border-radius: 10px;
+    --pagefind-ui-font: var(--font);
+  }
+  .pf-fallback {
+    margin-top: 18px;
+    padding: 12px 14px;
+    border: 1px dashed var(--line-strong);
+    border-radius: var(--radius);
+    color: var(--ink-soft);
+    font-size: 0.86rem;
+  }
+</style>

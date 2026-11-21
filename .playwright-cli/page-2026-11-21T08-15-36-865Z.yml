@@ -1,0 +1,466 @@
+- generic [active] [ref=f4e1]:
+  - link "跳到正文" [ref=f4e2] [cursor=pointer]:
+    - /url: "#main"
+  - banner [ref=f4e3]:
+    - generic [ref=f4e4]:
+      - link "大学补给站首页" [ref=f4e5] [cursor=pointer]:
+        - /url: /
+        - generic [ref=f4e12]: 大学补给站
+      - navigation "主导航" [ref=f4e13]:
+        - group [ref=f4e14]:
+          - generic "校园门道" [ref=f4e15] [cursor=pointer]
+        - group [ref=f4e18]:
+          - generic "社会支持" [ref=f4e19] [cursor=pointer]
+        - group [ref=f4e22]:
+          - generic "信息差工具" [ref=f4e23] [cursor=pointer]
+        - link "攻略" [ref=f4e26] [cursor=pointer]:
+          - /url: /guides
+        - link "关于" [ref=f4e27] [cursor=pointer]:
+          - /url: /about
+        - link "搜索全站" [ref=f4e28] [cursor=pointer]:
+          - /url: /search
+  - main [ref=f4e32]:
+    - generic [ref=f4e33]:
+      - paragraph [ref=f4e34]: 工具 03 · 约 4 分钟
+      - heading "叠加逻辑" [level=1] [ref=f4e35]
+      - paragraph [ref=f4e36]:
+        - text: 优惠能不能叠，答案大多
+        - strong [ref=f4e37]: 不在攻略里，在官方条款里
+        - text: 。这一页只做结构化引用：法规怎么算、品牌条款怎么限、各条目核对到的注记是什么。
+        - strong [ref=f4e38]: 冲突的口径并列披露，不替你裁决
+        - text: ；最终以结算页实付价为准。
+      - generic [ref=f4e39]:
+        - heading "01 · 四条总原则" [level=2] [ref=f4e40]
+        - list [ref=f4e41]:
+          - listitem [ref=f4e42]:
+            - strong [ref=f4e43]: 只比结算页实付价。
+            - text: 无论叠几层，最后看付款金额——「先涨价后补贴」就是要防这个。
+          - listitem [ref=f4e44]:
+            - strong [ref=f4e45]: 政府现金补贴与企业让利通常不互斥。
+            - text: 国补按「减去所有优惠后的最终售价」计算，天然叠在商家优惠之上（法规原文见 02）。
+          - listitem [ref=f4e46]:
+            - strong [ref=f4e47]: 平台券看条款。
+            - text: 「不可与直降/特价叠加」是常见限制，以结算页实际可勾选为准。
+          - listitem [ref=f4e48]:
+            - strong [ref=f4e49]: 国补看品类目录与资格次数。
+            - text: 每类商品资格全国仅 1 次（含线上线下），跨省领过就没了。
+      - generic [ref=f4e50]:
+        - heading "02 · 国补怎么算（法规原文）" [level=2] [ref=f4e51]
+        - blockquote [ref=f4e52]:
+          - text: 「每件补贴比例为
+          - strong [ref=f4e53]: 减去生产、流通环节及移动运营商所有优惠后
+          - text: 最终销售价格的 15％，每件最高不超过 500 元。」
+          - generic [ref=f4e54]: —— 商务部等 5 部门《手机、平板、智能手表（手环）购新补贴实施方案》（2025-01）
+        - list [ref=f4e55]:
+          - listitem [ref=f4e56]:
+            - text: 2026 年起扩至 4 类数码（新增智能眼镜等），
+            - strong [ref=f4e57]: 每人每类可补贴 1 件
+            - text: ，价格须备案并显著标明「初始价 / 商家让利 / 补贴额 / 最终价」，不得「先涨价后补贴」。
+          - listitem [ref=f4e58]:
+            - strong [ref=f4e59]: 资格全国互斥
+            - text: ：每类商品补贴资格全国（含线上线下）仅限使用 1 次；已在其他省市领用过的，无法再领（北京市实施细则口径）。
+          - listitem [ref=f4e60]: 申领人、付款人、收货人须一致（各平台国补规则通用条款）。
+        - paragraph [ref=f4e61]:
+          - text: 出处：
+          - link "实施方案（发改委转载）" [ref=f4e62] [cursor=pointer]:
+            - /url: https://www.ndrc.gov.cn/xwdt/ztzl/tddgmsbgxhxfpyjhx/gzdt/202501/t20250116_1395730.html
+          - text: ·
+          - link "2026 年版通知（商务部）" [ref=f4e63] [cursor=pointer]:
+            - /url: https://www.mofcom.gov.cn/zwgk/zcfb/art/2025/art_fca1a108eea64d0a858c6d6136455d45.html
+          - text: ·
+          - link "北京市实施细则" [ref=f4e64] [cursor=pointer]:
+            - /url: https://www.beijing.gov.cn/zhengce/zhengcefagui/202501/t20250119_3992527.html
+      - generic [ref=f4e65]:
+        - heading "03 · 品牌条款示例（Apple 教育优惠）" [level=2] [ref=f4e66]
+        - list [ref=f4e67]:
+          - listitem [ref=f4e68]:
+            - strong [ref=f4e69]: 限购（每年）
+            - text: ：Mac 台式 1 / Mac mini 1 / MacBook 1 / 显示器 1 /
+            - strong [ref=f4e70]: iPad 2
+            - text: / Watch 1 / 配件 2。
+          - listitem [ref=f4e71]:
+            - strong [ref=f4e72]: 事后审查权
+            - text: ：Apple 可在售后审查教育资格，不合格须补差价至公众价——教育优惠不是「过了就稳了」。
+          - listitem [ref=f4e73]:
+            - strong [ref=f4e74]: 到店取货
+            - text: ：须出示学生证 / 录取通知书等，姓名须与政府颁发并附照片的有效身份证一致。
+        - paragraph [ref=f4e75]:
+          - text: 出处：
+          - link "Apple 中国教育优惠销售条款" [ref=f4e76] [cursor=pointer]:
+            - /url: https://www.apple.com.cn/cn-edu/shop/open/salespolicies
+          - text: （as-of 2026-11，条款以官方当期版本为准）
+      - generic [ref=f4e77]:
+        - heading "04 · 条目里核对到的叠加注记" [level=2] [ref=f4e78]
+        - paragraph [ref=f4e79]:
+          - text: 以下来自 74 条有效条目的
+          - code [ref=f4e80]: stacking_tips
+          - text: 字段，每条都回官方口径核对过；点开看全文与来源。
+        - generic [ref=f4e81]:
+          - link "铁路学生票（12306 学生资质核验） 与「支 | 异地求职路费补贴」（gov）互为补充：学生票覆盖家校往返，求职补贴覆盖实习面试" [ref=f4e82] [cursor=pointer]:
+            - /url: /entries/[object Object]
+            - strong [ref=f4e83]: 铁路学生票（12306 学生资质核验）
+            - generic [ref=f4e84]: 与「支 | 异地求职路费补贴」（gov）互为补充：学生票覆盖家校往返，求职补贴覆盖实习面试
+          - link "华住会学生折扣（酒店） 与华住会会员积分、连住促销叠加；比赛/考试季学校周边房紧，先用学生价锁房再比价其他平台。" [ref=f4e85] [cursor=pointer]:
+            - /url: /entries/[object Object]
+            - strong [ref=f4e86]: 华住会学生折扣（酒店）
+            - generic [ref=f4e87]: 与华住会会员积分、连住促销叠加；比赛/考试季学校周边房紧，先用学生价锁房再比价其他平台。
+          - link "WPS 超级会员学生价 已通过学校 edu 邮箱拿到微软 Office 教育版（见 Windows/Office 学生授权条目）的，WPS 只补「PDF 转换/排版模板」这些 Office 没有的能力，按需买月卡别囤年卡。" [ref=f4e88] [cursor=pointer]:
+            - /url: /entries/[object Object]
+            - strong [ref=f4e89]: WPS 超级会员学生价
+            - generic [ref=f4e90]: 已通过学校 edu 邮箱拿到微软 Office 教育版（见 Windows/Office 学生授权条目）的，WPS 只补「PDF 转换/排版模板」这些 Office 没有的能力，按需买月卡别囤年卡。
+          - link "夸克学生认证免费领会员 与阿里云高校计划（见企业让利条目）同属阿里系学生福利，可分别领取；权益挂在夸克账号上，电脑网页版登录同号也可用。" [ref=f4e91] [cursor=pointer]:
+            - /url: /entries/[object Object]
+            - strong [ref=f4e92]: 夸克学生认证免费领会员
+            - generic [ref=f4e93]: 与阿里云高校计划（见企业让利条目）同属阿里系学生福利，可分别领取；权益挂在夸克账号上，电脑网页版登录同号也可用。
+          - link "微软官方商店学生 9 折（硬件） 与 Apple 教育优惠（见企业让利条目）组合看：两家开学季返校促销叠加窗口都在 7-9 月，购机统一放这个窗口。" [ref=f4e94] [cursor=pointer]:
+            - /url: /entries/[object Object]
+            - strong [ref=f4e95]: 微软官方商店学生 9 折（硬件）
+            - generic [ref=f4e96]: 与 Apple 教育优惠（见企业让利条目）组合看：两家开学季返校促销叠加窗口都在 7-9 月，购机统一放这个窗口。
+          - link "Microsoft 365 个人版学生价 OneDrive 1TB 与手机端 Office 编辑权是核心增量；多人拼 Office 家庭版（人均更低）与学生价二选一即可。" [ref=f4e97] [cursor=pointer]:
+            - /url: /entries/[object Object]
+            - strong [ref=f4e98]: Microsoft 365 个人版学生价
+            - generic [ref=f4e99]: OneDrive 1TB 与手机端 Office 编辑权是核心增量；多人拼 Office 家庭版（人均更低）与学生价二选一即可。
+          - link "阿里云高校学生抵扣金（300 元） 与腾讯云学生机（轻量服务器学生档）不冲突，按课程/项目需求各领各的；抵扣金别浪费在按量付费小实例上，优先冲包月包年的课程作业机。" [ref=f4e100] [cursor=pointer]:
+            - /url: /entries/[object Object]
+            - strong [ref=f4e101]: 阿里云高校学生抵扣金（300 元）
+            - generic [ref=f4e102]: 与腾讯云学生机（轻量服务器学生档）不冲突，按课程/项目需求各领各的；抵扣金别浪费在按量付费小实例上，优先冲包月包年的课程作业机。
+          - link "宝塔面板砺行计划（学生免费授权） 与腾讯云「云+校园」学生机（见企业让利条目）配套用：学生机跑服务器，宝塔面板管运维，一套课设/毕设环境就齐了。" [ref=f4e103] [cursor=pointer]:
+            - /url: /entries/[object Object]
+            - strong [ref=f4e104]: 宝塔面板砺行计划（学生免费授权）
+            - generic [ref=f4e105]: 与腾讯云「云+校园」学生机（见企业让利条目）配套用：学生机跑服务器，宝塔面板管运维，一套课设/毕设环境就齐了。
+          - link "有道词典大学生认证免费解锁高阶功能 处理外文文献可与知网/学校图书馆数据库叠加用：数据库找原文，有道做整篇翻译和润色；已有 WPS 会员的先比对其内置翻译再决定要不要认证。" [ref=f4e106] [cursor=pointer]:
+            - /url: /entries/[object Object]
+            - strong [ref=f4e107]: 有道词典大学生认证免费解锁高阶功能
+            - generic [ref=f4e108]: 处理外文文献可与知网/学校图书馆数据库叠加用：数据库找原文，有道做整篇翻译和润色；已有 WPS 会员的先比对其内置翻译再决定要不要认证。
+          - link "网易 VIP 启航邮（大学生免费终身 VIP 邮箱） 邮箱地址带学校名与 VIP 标识，投简历、联系导师比普通邮箱正式；离校前把校园邮箱邮件一键迁移进启航邮，校友身份多一个凭证。" [ref=f4e109] [cursor=pointer]:
+            - /url: /entries/[object Object]
+            - strong [ref=f4e110]: 网易 VIP 启航邮（大学生免费终身 VIP 邮箱）
+            - generic [ref=f4e111]: 邮箱地址带学校名与 VIP 标识，投简历、联系导师比普通邮箱正式；离校前把校园邮箱邮件一键迁移进启航邮，校友身份多一个凭证。
+          - link "腾讯云「云+校园」学生认证优惠购机 与阿里云高校学生抵扣金（见企业让利条目）各领各的、按项目需求二选一或都开；与宝塔砺行计划（学生免费面板授权）配套做课设/毕设环境。" [ref=f4e112] [cursor=pointer]:
+            - /url: /entries/[object Object]
+            - strong [ref=f4e113]: 腾讯云「云+校园」学生认证优惠购机
+            - generic [ref=f4e114]: 与阿里云高校学生抵扣金（见企业让利条目）各领各的、按项目需求二选一或都开；与宝塔砺行计划（学生免费面板授权）配套做课设/毕设环境。
+          - link "滴答清单教育优惠（高级会员 7.5 折） 高级会员核心增量是日历视图、无限提醒和扩容（9 清单→299 清单）；轻度用户可先用免费版跑一学期再决定，别为打卡习惯这个单点功能付费。" [ref=f4e115] [cursor=pointer]:
+            - /url: /entries/[object Object]
+            - strong [ref=f4e116]: 滴答清单教育优惠（高级会员 7.5 折）
+            - generic [ref=f4e117]: 高级会员核心增量是日历视图、无限提醒和扩容（9 清单→299 清单）；轻度用户可先用免费版跑一学期再决定，别为打卡习惯这个单点功能付费。
+          - link "语雀公益计划（高校师生免费领会员） 小组作业建一个共享知识库当协作中枢（资料、分工、进度一页管）；与微软 Office 学生授权（见企业让利条目）不冲突，一个管文档排版一个管知识沉淀。" [ref=f4e118] [cursor=pointer]:
+            - /url: /entries/[object Object]
+            - strong [ref=f4e119]: 语雀公益计划（高校师生免费领会员）
+            - generic [ref=f4e120]: 小组作业建一个共享知识库当协作中枢（资料、分工、进度一页管）；与微软 Office 学生授权（见企业让利条目）不冲突，一个管文档排版一个管知识沉淀。
+          - link "FocuSee 教育礼遇（录屏软件 7 折） 做课程汇报视频、答辩演示、教程类自媒体的差异化工具：自动缩放跟鼠标走，省掉手动剪辑；录完可直接进剪映做二次加工。" [ref=f4e121] [cursor=pointer]:
+            - /url: /entries/[object Object]
+            - strong [ref=f4e122]: FocuSee 教育礼遇（录屏软件 7 折）
+            - generic [ref=f4e123]: 做课程汇报视频、答辩演示、教程类自媒体的差异化工具：自动缩放跟鼠标走，省掉手动剪辑；录完可直接进剪映做二次加工。
+          - link "联想教育优惠（学生教师专享券） 购机窗口放 7-9 月开学季与 618/双 11（服务须知确认不同周期券内容不同）；与拯救者笔记本 4 年保值换新等官网服务可同店对比，最终比「结算页实付价」。" [ref=f4e124] [cursor=pointer]:
+            - /url: /entries/[object Object]
+            - strong [ref=f4e125]: 联想教育优惠（学生教师专享券）
+            - generic [ref=f4e126]: 购机窗口放 7-9 月开学季与 618/双 11（服务须知确认不同周期券内容不同）；与拯救者笔记本 4 年保值换新等官网服务可同店对比，最终比「结算页实付价」。
+          - link "华为商城教育购（学生教师专属优惠券） 买 MateBook/MatePad 前同时比 Apple 教育优惠与第三方电商价：华为教育券不可与直降叠加，先算「教育价」与「大促叠加价」哪个更低再下单。" [ref=f4e127] [cursor=pointer]:
+            - /url: /entries/[object Object]
+            - strong [ref=f4e128]: 华为商城教育购（学生教师专属优惠券）
+            - generic [ref=f4e129]: 买 MateBook/MatePad 前同时比 Apple 教育优惠与第三方电商价：华为教育券不可与直降叠加，先算「教育价」与「大促叠加价」哪个更低再下单。
+          - link "小米商城学生认证专属优惠 覆盖穿戴、智能家居、生活电器等品类（部分产品适用）；购机比价时与华为教育购、联想教育优惠一起看，三家券规则都是「部分机型+不可叠直降」，比结算页实付价。" [ref=f4e130] [cursor=pointer]:
+            - /url: /entries/[object Object]
+            - strong [ref=f4e131]: 小米商城学生认证专属优惠
+            - generic [ref=f4e132]: 覆盖穿戴、智能家居、生活电器等品类（部分产品适用）；购机比价时与华为教育购、联想教育优惠一起看，三家券规则都是「部分机型+不可叠直降」，比结算页实付价。
+          - link "Bohrium 学术认证（每日免费光子） 光子主要用于学术搜索、文献分析、科研绘图等 AI 消耗场景，做文献综述时每天固定来领，一个月下来额度可观。" [ref=f4e133] [cursor=pointer]:
+            - /url: /entries/[object Object]
+            - strong [ref=f4e134]: Bohrium 学术认证（每日免费光子）
+            - generic [ref=f4e135]: 光子主要用于学术搜索、文献分析、科研绘图等 AI 消耗场景，做文献综述时每天固定来领，一个月下来额度可观。
+          - link "TI 德州仪器大学计划（免费样片 / 电赛资源 / 开发板教育价） 电赛备赛季（暑期）样片申请通过率与发货速度最友好；实验室立项后以课程/竞赛名义申请，比纯个人名义额度更宽。" [ref=f4e136] [cursor=pointer]:
+            - /url: /entries/[object Object]
+            - strong [ref=f4e137]: TI 德州仪器大学计划（免费样片 / 电赛资源 / 开发板教育价）
+            - generic [ref=f4e138]: 电赛备赛季（暑期）样片申请通过率与发货速度最友好；实验室立项后以课程/竞赛名义申请，比纯个人名义额度更宽。
+          - link "三星教育优惠（学生购小程序 / 校园优惠通道） 叠加三星商城星钻抵扣、以旧换新与领券中心的券，结算前三价比一下；开学季和 Samsung Week 期间活动力度通常更大。" [ref=f4e139] [cursor=pointer]:
+            - /url: /entries/[object Object]
+            - strong [ref=f4e140]: 三星教育优惠（学生购小程序 / 校园优惠通道）
+            - generic [ref=f4e141]: 叠加三星商城星钻抵扣、以旧换新与领券中心的券，结算前三价比一下；开学季和 Samsung Week 期间活动力度通常更大。
+          - link "Manus 校园计划（edu 邮箱验证） credits 按任务复杂度扣减（单次 5-100），轻量任务省着用；先把邀请名额用掉再上量。" [ref=f4e142] [cursor=pointer]:
+            - /url: /entries/[object Object]
+            - strong [ref=f4e143]: Manus 校园计划（edu 邮箱验证）
+            - generic [ref=f4e144]: credits 按任务复杂度扣减（单次 5-100），轻量任务省着用；先把邀请名额用掉再上量。
+          - link "Wispr Flow 学生计划（Pro 免费 3 个月后续订 5 折） 语音输入的价值在写论文初稿和记录灵感，先把 3 个月免费期用满再决定要不要按年续。" [ref=f4e145] [cursor=pointer]:
+            - /url: /entries/[object Object]
+            - strong [ref=f4e146]: Wispr Flow 学生计划（Pro 免费 3 个月后续订 5 折）
+            - generic [ref=f4e147]: 语音输入的价值在写论文初稿和记录灵感，先把 3 个月免费期用满再决定要不要按年续。
+          - link "Dify for Education（年付专业版费用全免） 只是想跑课程作业的话，先评估免费 Community 自托管够不够，不用急着走认证流程。" [ref=f4e148] [cursor=pointer]:
+            - /url: /entries/[object Object]
+            - strong [ref=f4e149]: Dify for Education（年付专业版费用全免）
+            - generic [ref=f4e150]: 只是想跑课程作业的话，先评估免费 Community 自托管够不够，不用急着走认证流程。
+          - link "Typeless Pro 学生 5 折 AI 语音转录类工具先试免费额度，确认识别准确率对你常用语言够用再上 5 折订阅。" [ref=f4e151] [cursor=pointer]:
+            - /url: /entries/[object Object]
+            - strong [ref=f4e152]: Typeless Pro 学生 5 折
+            - generic [ref=f4e153]: AI 语音转录类工具先试免费额度，确认识别准确率对你常用语言够用再上 5 折订阅。
+          - link "Perplexity Pro 学生价（$10/月） 做文献综述和资料检索用 Pro Search 的带引用回答最值；先在免费版确认答案质量再订阅。" [ref=f4e154] [cursor=pointer]:
+            - /url: /entries/[object Object]
+            - strong [ref=f4e155]: Perplexity Pro 学生价（$10/月）
+            - generic [ref=f4e156]: 做文献综述和资料检索用 Pro Search 的带引用回答最值；先在免费版确认答案质量再订阅。
+          - link "Consensus 学生/教师 6 折 写文献综述时先用免费额度试搜索质量，确认覆盖你的学科再上 6 折订阅。" [ref=f4e157] [cursor=pointer]:
+            - /url: /entries/[object Object]
+            - strong [ref=f4e158]: Consensus 学生/教师 6 折
+            - generic [ref=f4e159]: 写文献综述时先用免费额度试搜索质量，确认覆盖你的学科再上 6 折订阅。
+          - link "Mathpix 教育计划（免费额度提升） 处理整本 PDF 讲义时用 Convert（按页计费）比 Snip 截图更划算；公式识别是它最强场景，先试免费额度。" [ref=f4e160] [cursor=pointer]:
+            - /url: /entries/[object Object]
+            - strong [ref=f4e161]: Mathpix 教育计划（免费额度提升）
+            - generic [ref=f4e162]: 处理整本 PDF 讲义时用 Convert（按页计费）比 Snip 截图更划算；公式识别是它最强场景，先试免费额度。
+          - link "InterServer 学生免费虚拟主机（1 年） 做个人作品集站、课程项目部署够用；和 GitHub Student Pack（在库）里的域名/SSL 权益搭配能近乎零成本上线。" [ref=f4e163] [cursor=pointer]:
+            - /url: /entries/[object Object]
+            - strong [ref=f4e164]: InterServer 学生免费虚拟主机（1 年）
+            - generic [ref=f4e165]: 做个人作品集站、课程项目部署够用；和 GitHub Student Pack（在库）里的域名/SSL 权益搭配能近乎零成本上线。
+          - link "AWS Educate 免费云学习 与 Azure for Students（在库）互补——一个学 AWS 生态一个学微软生态，云方向简历两边都覆盖。" [ref=f4e166] [cursor=pointer]:
+            - /url: /entries/[object Object]
+            - strong [ref=f4e167]: AWS Educate 免费云学习
+            - generic [ref=f4e168]: 与 Azure for Students（在库）互补——一个学 AWS 生态一个学微软生态，云方向简历两边都覆盖。
+          - link "Zed 学生计划（Pro 免费 1 年） 协作写小组作业是它的强项（多光标/共享终端/内置语音）；与在库 GitHub Student Developer Pack 用同一套账号体系，顺手一起领。" [ref=f4e169] [cursor=pointer]:
+            - /url: /entries/[object Object]
+            - strong [ref=f4e170]: Zed 学生计划（Pro 免费 1 年）
+            - generic [ref=f4e171]: 协作写小组作业是它的强项（多光标/共享终端/内置语音）；与在库 GitHub Student Developer Pack 用同一套账号体系，顺手一起领。
+          - link "Qt 教育许可证（免费 1 年可续） 课程要求做跨平台桌面应用（车机/工控/嵌入式上位机）时直接用它，商业级全功能免费用；纯课程作业也可评估开源 LGPL 版。" [ref=f4e172] [cursor=pointer]:
+            - /url: /entries/[object Object]
+            - strong [ref=f4e173]: Qt 教育许可证（免费 1 年可续）
+            - generic [ref=f4e174]: 课程要求做跨平台桌面应用（车机/工控/嵌入式上位机）时直接用它，商业级全功能免费用；纯课程作业也可评估开源 LGPL 版。
+          - link "Sketch 教育版（学生/教师免费 1 年） UI 课作业和作品集排版用 Sketch + Figma 双开很常见——Figma 协作强、Sketch 本地流畅，按课程要求选主工具。" [ref=f4e175] [cursor=pointer]:
+            - /url: /entries/[object Object]
+            - strong [ref=f4e176]: Sketch 教育版（学生/教师免费 1 年）
+            - generic [ref=f4e177]: UI 课作业和作品集排版用 Sketch + Figma 双开很常见——Figma 协作强、Sketch 本地流畅，按课程要求选主工具。
+          - link "Navicat 学生免费许可证（1 年 NFR） 数据库课设/毕设主力工具，一套许可覆盖 MySQL/PostgreSQL/Oracle/MongoDB 全家；一生一次的额度留给真正要用的学年。" [ref=f4e178] [cursor=pointer]:
+            - /url: /entries/[object Object]
+            - strong [ref=f4e179]: Navicat 学生免费许可证（1 年 NFR）
+            - generic [ref=f4e180]: 数据库课设/毕设主力工具，一套许可覆盖 MySQL/PostgreSQL/Oracle/MongoDB 全家；一生一次的额度留给真正要用的学年。
+          - link "Framer 学生免费（12 个月） 求职季把作品集站做起来，学生期免费托管正好覆盖校招投递期；模板起步 + AI credits 辅助改版最快。" [ref=f4e181] [cursor=pointer]:
+            - /url: /entries/[object Object]
+            - strong [ref=f4e182]: Framer 学生免费（12 个月）
+            - generic [ref=f4e183]: 求职季把作品集站做起来，学生期免费托管正好覆盖校招投递期；模板起步 + AI credits 辅助改版最快。
+          - link "Miro 教育版（学生免费 2 年） 小组作业头脑风暴、答辩流程图、毕设时间线规划都是白板强场景；和 Notion Education（在库）分工——Notion 管文档、Miro 管发散。" [ref=f4e184] [cursor=pointer]:
+            - /url: /entries/[object Object]
+            - strong [ref=f4e185]: Miro 教育版（学生免费 2 年）
+            - generic [ref=f4e186]: 小组作业头脑风暴、答辩流程图、毕设时间线规划都是白板强场景；和 Notion Education（在库）分工——Notion 管文档、Miro 管发散。
+          - link "SmartGit 学生免费许可 课程要求用 Git 但命令行不熟时，SmartGit 的图形化冲突解决比 Tower 更轻量；两工具都白嫖，选顺手的装。" [ref=f4e187] [cursor=pointer]:
+            - /url: /entries/[object Object]
+            - strong [ref=f4e188]: SmartGit 学生免费许可
+            - generic [ref=f4e189]: 课程要求用 Git 但命令行不熟时，SmartGit 的图形化冲突解决比 Tower 更轻量；两工具都白嫖，选顺手的装。
+          - link "Axure RP 学生免费订阅（1 年可续） 交互课的高保真原型作业用它最对味（条件逻辑/变量/动态面板）；与 Figma 原型分工——Axure 管复杂交互逻辑、Figma 管视觉稿。" [ref=f4e190] [cursor=pointer]:
+            - /url: /entries/[object Object]
+            - strong [ref=f4e191]: Axure RP 学生免费订阅（1 年可续）
+            - generic [ref=f4e192]: 交互课的高保真原型作业用它最对味（条件逻辑/变量/动态面板）；与 Figma 原型分工——Axure 管复杂交互逻辑、Figma 管视觉稿。
+          - link "Setapp 教育折扣（8 折） Mac 生产力工具合集订阅，一套顶多款（CleanMyMac、Bartender、Paste 等）；先列刚需工具清单再算年付 8 折划不划算。" [ref=f4e193] [cursor=pointer]:
+            - /url: /entries/[object Object]
+            - strong [ref=f4e194]: Setapp 教育折扣（8 折）
+            - generic [ref=f4e195]: Mac 生产力工具合集订阅，一套顶多款（CleanMyMac、Bartender、Paste 等）；先列刚需工具清单再算年付 8 折划不划算。
+          - link "Tower Git 学生免费 与在库 GitHub Student Developer Pack 天然叠加——Pack 里直接勾选 Tower 权益，一步到位。" [ref=f4e196] [cursor=pointer]:
+            - /url: /entries/[object Object]
+            - strong [ref=f4e197]: Tower Git 学生免费
+            - generic [ref=f4e198]: 与在库 GitHub Student Developer Pack 天然叠加——Pack 里直接勾选 Tower 权益，一步到位。
+          - link "iLovePDF 教育版（学生/教师免费 1 年） 合并课件 PDF、OCR 扫描讲义、压缩作业上传件是高频三件套；与 WPS 学生版（在库）互补——WPS 管文档编辑、iLovePDF 管格式处理。" [ref=f4e199] [cursor=pointer]:
+            - /url: /entries/[object Object]
+            - strong [ref=f4e200]: iLovePDF 教育版（学生/教师免费 1 年）
+            - generic [ref=f4e201]: 合并课件 PDF、OCR 扫描讲义、压缩作业上传件是高频三件套；与 WPS 学生版（在库）互补——WPS 管文档编辑、iLovePDF 管格式处理。
+          - link "MATLAB 学生版（校园授权免费 / Student Suite $99 买断） 先试校园授权通道（大概率免费），确认没有再考虑 $99 买断；控制类/信号类课程直接用 Simulink 仿真。" [ref=f4e202] [cursor=pointer]:
+            - /url: /entries/[object Object]
+            - strong [ref=f4e203]: MATLAB 学生版（校园授权免费 / Student Suite $99 买断）
+            - generic [ref=f4e204]: 先试校园授权通道（大概率免费），确认没有再考虑 $99 买断；控制类/信号类课程直接用 Simulink 仿真。
+          - link "Mobbin Student Pro（学生价 $5/月） 做 App 设计作业前先刷同类头部产品的 Flow 截图库，比凭空画快得多；与 Figma Education（在库）配套——Mobbin 找参考、Figma 落地。" [ref=f4e205] [cursor=pointer]:
+            - /url: /entries/[object Object]
+            - strong [ref=f4e206]: Mobbin Student Pro（学生价 $5/月）
+            - generic [ref=f4e207]: 做 App 设计作业前先刷同类头部产品的 Flow 截图库，比凭空画快得多；与 Figma Education（在库）配套——Mobbin 找参考、Figma 落地。
+          - link "Kickresume 学生 Premium 免费（180 天） 秋招/春招季激活最划算——180 天覆盖一个完整投递周期；简历模板 + AI Rewriter 组合先把中英文两版都出掉。" [ref=f4e208] [cursor=pointer]:
+            - /url: /entries/[object Object]
+            - strong [ref=f4e209]: Kickresume 学生 Premium 免费（180 天）
+            - generic [ref=f4e210]: 秋招/春招季激活最划算——180 天覆盖一个完整投递周期；简历模板 + AI Rewriter 组合先把中英文两版都出掉。
+          - link "think-cell 学生免费许可证 与 Office 学生授权（在库）叠加使用——PowerPoint 本体学生拿，think-cell 插件学生白嫖；先看本校商学院有没有组织认证渠道。" [ref=f4e211] [cursor=pointer]:
+            - /url: /entries/[object Object]
+            - strong [ref=f4e212]: think-cell 学生免费许可证
+            - generic [ref=f4e213]: 与 Office 学生授权（在库）叠加使用——PowerPoint 本体学生拿，think-cell 插件学生白嫖；先看本校商学院有没有组织认证渠道。
+          - link "Gurobi 学术许可证（求解器免费 / 商业版万美元级） 运筹/供应链/机器学习课程作业直接用；和 MATLAB 优化工具箱、Python PuLP 搭配时，Gurobi 负责求解核心，论文里引用它是加分项。" [ref=f4e214] [cursor=pointer]:
+            - /url: /entries/[object Object]
+            - strong [ref=f4e215]: Gurobi 学术许可证（求解器免费 / 商业版万美元级）
+            - generic [ref=f4e216]: 运筹/供应链/机器学习课程作业直接用；和 MATLAB 优化工具箱、Python PuLP 搭配时，Gurobi 负责求解核心，论文里引用它是加分项。
+          - link "Ansys 学生版（CAE 仿真全家桶免费下载 / SheerID 验证） 结构课设用 Mechanical，流体用 Fluent，电磁天线方向直接下 Electronics Desktop Student（含 HFSS/Maxwell/Icepak）；验证一次管一年，换电脑不用重验。" [ref=f4e217] [cursor=pointer]:
+            - /url: /entries/[object Object]
+            - strong [ref=f4e218]: Ansys 学生版（CAE 仿真全家桶免费下载 / SheerID 验证）
+            - generic [ref=f4e219]: 结构课设用 Mechanical，流体用 Fluent，电磁天线方向直接下 Electronics Desktop Student（含 HFSS/Maxwell/Icepak）；验证一次管一年，换电脑不用重验。
+          - link "CST Studio Suite 学习版（电磁仿真免费 / 3DEXPERIENCE ID 即领） 天线/EMC 方向课设直接用它对照官方教程复现；与 Ansys Electronics Desktop Student（HFSS 路线）二选一先上手，求职简历按目标公司工具栈补另一家。" [ref=f4e220] [cursor=pointer]:
+            - /url: /entries/[object Object]
+            - strong [ref=f4e221]: CST Studio Suite 学习版（电磁仿真免费 / 3DEXPERIENCE ID 即领）
+            - generic [ref=f4e222]: 天线/EMC 方向课设直接用它对照官方教程复现；与 Ansys Electronics Desktop Student（HFSS 路线）二选一先上手，求职简历按目标公司工具栈补另一家。
+          - link "Overleaf 高校订阅（校内免费 Pro） 写毕业论文/竞赛论文先查本校名单——在列则零成本拿 Pro；不在列再用免费版硬写，别急着买 Pro 年费。" [ref=f4e223] [cursor=pointer]:
+            - /url: /entries/[object Object]
+            - strong [ref=f4e224]: Overleaf 高校订阅（校内免费 Pro）
+            - generic [ref=f4e225]: 写毕业论文/竞赛论文先查本校名单——在列则零成本拿 Pro；不在列再用免费版硬写，别急着买 Pro 年费。
+          - link "Altium Designer 学生版（Student Lab 免费 1 年 / 工业级 PCB） 电子类课设/电赛 PCB 直接用它画；配合 200,000+ 官方元件库省掉自建封装时间；课程模块含结业凭证，可写进简历。" [ref=f4e226] [cursor=pointer]:
+            - /url: /entries/[object Object]
+            - strong [ref=f4e227]: Altium Designer 学生版（Student Lab 免费 1 年 / 工业级 PCB）
+            - generic [ref=f4e228]: 电子类课设/电赛 PCB 直接用它画；配合 200,000+ 官方元件库省掉自建封装时间；课程模块含结业凭证，可写进简历。
+          - link "SQLPro Studio 教育许可（免费一年 / 全平台 Key） 数据库课设连 MySQL/PostgreSQL/SQL Server 都用它；iOS 端可以躺床上查库改数据，期末验收神器。" [ref=f4e229] [cursor=pointer]:
+            - /url: /entries/[object Object]
+            - strong [ref=f4e230]: SQLPro Studio 教育许可（免费一年 / 全平台 Key）
+            - generic [ref=f4e231]: 数据库课设连 MySQL/PostgreSQL/SQL Server 都用它；iOS 端可以躺床上查库改数据，期末验收神器。
+          - link "RoboForm Premium 学生版（首年免费 / 续期 $12 一年） GitHub Student Pack 里已有 1Password 的话可以两边都领；密码库定期导出 CSV 备份，迁移到哪家都无损。" [ref=f4e232] [cursor=pointer]:
+            - /url: /entries/[object Object]
+            - strong [ref=f4e233]: RoboForm Premium 学生版（首年免费 / 续期 $12 一年）
+            - generic [ref=f4e234]: GitHub Student Pack 里已有 1Password 的话可以两边都领；密码库定期导出 CSV 备份，迁移到哪家都无损。
+          - link "YNAB 记账学生版（大学生免费一年 / 仅一次） 免费年里把零基预算法跑熟（YNAB 方法论本身是主打价值）；到期后不想付费，可迁移到免费工具延续记账习惯，方法不锁在软件里。" [ref=f4e235] [cursor=pointer]:
+            - /url: /entries/[object Object]
+            - strong [ref=f4e236]: YNAB 记账学生版（大学生免费一年 / 仅一次）
+            - generic [ref=f4e237]: 免费年里把零基预算法跑熟（YNAB 方法论本身是主打价值）；到期后不想付费，可迁移到免费工具延续记账习惯，方法不锁在软件里。
+          - link "Dashlane Premium 学生版（免费一年 / 学生邮箱直领） 先用一分钟提交 edu 邮箱试水，过了就当一年备用密码库；和 GitHub Student Pack 的 1Password 二选一主力即可，别双开自动填充。" [ref=f4e238] [cursor=pointer]:
+            - /url: /entries/[object Object]
+            - strong [ref=f4e239]: Dashlane Premium 学生版（免费一年 / 学生邮箱直领）
+            - generic [ref=f4e240]: 先用一分钟提交 edu 邮箱试水，过了就当一年备用密码库；和 GitHub Student Pack 的 1Password 二选一主力即可，别双开自动填充。
+          - link "Shapr3D EDU 教育许可（Pro 教育版免费 1 年 / 可续） 工业设计/产品课的草模阶段用 iPad 版最快；导出 STEP 给 SolidWorks/Rhino 深化，工作流不冲突。" [ref=f4e241] [cursor=pointer]:
+            - /url: /entries/[object Object]
+            - strong [ref=f4e242]: Shapr3D EDU 教育许可（Pro 教育版免费 1 年 / 可续）
+            - generic [ref=f4e243]: 工业设计/产品课的草模阶段用 iPad 版最快；导出 STEP 给 SolidWorks/Rhino 深化，工作流不冲突。
+          - link "Capture One 学生折扣（SheerID 验证 75% off / 教师 65% off） 摄影社团/毕设作品集批量修图用它；已有 Lightroom 的话先把肤色还原和联机拍摄两个强项场景迁过来试。" [ref=f4e244] [cursor=pointer]:
+            - /url: /entries/[object Object]
+            - strong [ref=f4e245]: Capture One 学生折扣（SheerID 验证 75% off / 教师 65% off）
+            - generic [ref=f4e246]: 摄影社团/毕设作品集批量修图用它；已有 Lightroom 的话先把肤色还原和联机拍摄两个强项场景迁过来试。
+          - link "Divisare 学术会员（免费一年 / 建筑图库全档访问） 建筑学期设计前期案例研究用它圈定参照项目；配合本地库建索引，方案汇报的案例板一晚拼完。" [ref=f4e247] [cursor=pointer]:
+            - /url: /entries/[object Object]
+            - strong [ref=f4e248]: Divisare 学术会员（免费一年 / 建筑图库全档访问）
+            - generic [ref=f4e249]: 建筑学期设计前期案例研究用它圈定参照项目；配合本地库建索引，方案汇报的案例板一晚拼完。
+          - link "OriginPro 学习版（免费 6 个月 / 有效大学邮箱申领） 论文出图高峰期（毕设春季学期）再申请，6 个月正好覆盖； Python matplotlib 能替代的日常小图不必占用窗口额度。" [ref=f4e250] [cursor=pointer]:
+            - /url: /entries/[object Object]
+            - strong [ref=f4e251]: OriginPro 学习版（免费 6 个月 / 有效大学邮箱申领）
+            - generic [ref=f4e252]: 论文出图高峰期（毕设春季学期）再申请，6 个月正好覆盖； Python matplotlib 能替代的日常小图不必占用窗口额度。
+          - link "成都 · 人才与租房补贴 保障性租赁住房租金原则上不超市场租金90%、年涨幅不超5%，可与补贴叠加使用；青羊区一次性租房补贴与其余区级政策不重复享受（申报人未在本区享受过人才安居及住房保障政策）" [ref=f4e253] [cursor=pointer]:
+            - /url: /entries/[object Object]
+            - strong [ref=f4e254]: 成都 · 人才与租房补贴
+            - generic [ref=f4e255]: 保障性租赁住房租金原则上不超市场租金90%、年涨幅不超5%，可与补贴叠加使用；青羊区一次性租房补贴与其余区级政策不重复享受（申报人未在本区享受过人才安居及住房保障政策）
+          - link "杭州 · 人才与租房补贴 在富阳区、临安区、桐庐县、淳安县、建德市工作满3年，可再领一次同额度生活补贴；租房补贴3年期满后收入低于城镇居民人均可支配收入的可再享最长3年；毕业5年内创业者另有5万—20万元创业项目资助、3000元一次性创业补贴+5000元一次性创业社保补贴、3年内最高10万元经营场所房租补贴" [ref=f4e256] [cursor=pointer]:
+            - /url: /entries/[object Object]
+            - strong [ref=f4e257]: 杭州 · 人才与租房补贴
+            - generic [ref=f4e258]: 在富阳区、临安区、桐庐县、淳安县、建德市工作满3年，可再领一次同额度生活补贴；租房补贴3年期满后收入低于城镇居民人均可支配收入的可再享最长3年；毕业5年内创业者另有5万—20万元创业项目资助、3000元一次性创业补贴+5000元一次性创业社保补贴、3年内最高10万元经营场所房租补贴
+          - link "武汉 · 人才与租房补贴 来汉求职可先住青年人才之家（毕业6年以内，最长15天免费住宿，2025年7月起由7天延长）；毕业后走人才租赁房租金减免；在汉购房再叠购房补贴（副高级职称以上或博士5万元、硕士3万元、其他本科1万元）；毕业5年内初次创业另享5000元一次性创业补贴" [ref=f4e259] [cursor=pointer]:
+            - /url: /entries/[object Object]
+            - strong [ref=f4e260]: 武汉 · 人才与租房补贴
+            - generic [ref=f4e261]: 来汉求职可先住青年人才之家（毕业6年以内，最长15天免费住宿，2025年7月起由7天延长）；毕业后走人才租赁房租金减免；在汉购房再叠购房补贴（副高级职称以上或博士5万元、硕士3万元、其他本科1万元）；毕业5年内初次创业另享5000元一次性创业补贴
+          - link "西安 · 人才与租房补贴 见习期每月1700元生活补贴+30元人身意外伤害保险（期限3—12个月）可与求职帮扶「1131」服务叠加；创业青年可同时走创业担保贷款（最高30万元、贴息50%）与一次性创业补贴（1万元）" [ref=f4e262] [cursor=pointer]:
+            - /url: /entries/[object Object]
+            - strong [ref=f4e263]: 西安 · 人才与租房补贴
+            - generic [ref=f4e264]: 见习期每月1700元生活补贴+30元人身意外伤害保险（期限3—12个月）可与求职帮扶「1131」服务叠加；创业青年可同时走创业担保贷款（最高30万元、贴息50%）与一次性创业补贴（1万元）
+          - link "一次性求职创业补贴 与城市人才补贴不冲突，可同时申请" [ref=f4e265] [cursor=pointer]:
+            - /url: /entries/[object Object]
+            - strong [ref=f4e266]: 一次性求职创业补贴
+            - generic [ref=f4e267]: 与城市人才补贴不冲突，可同时申请
+          - link "一次性创业补贴 与自主创业税收优惠、创业担保贷款（个人）可同享——补贴是现金，税收是减免，贷款是低成本资金，三者不互斥" [ref=f4e268] [cursor=pointer]:
+            - /url: /entries/[object Object]
+            - strong [ref=f4e269]: 一次性创业补贴
+            - generic [ref=f4e270]: 与自主创业税收优惠、创业担保贷款（个人）可同享——补贴是现金，税收是减免，贷款是低成本资金，三者不互斥
+          - link "创业担保贷款（个人） 与一次性创业补贴、自主创业税收优惠并行不冲突；贴息后实际资金成本约为市场利率的一半" [ref=f4e271] [cursor=pointer]:
+            - /url: /entries/[object Object]
+            - strong [ref=f4e272]: 创业担保贷款（个人）
+            - generic [ref=f4e273]: 与一次性创业补贴、自主创业税收优惠并行不冲突；贴息后实际资金成本约为市场利率的一半
+          - link "自主创业税收优惠 与一次性创业补贴（现金）、创业担保贷款（低成本资金）三者叠加，覆盖\"启动资金+运营减负\"" [ref=f4e274] [cursor=pointer]:
+            - /url: /entries/[object Object]
+            - strong [ref=f4e275]: 自主创业税收优惠
+            - generic [ref=f4e276]: 与一次性创业补贴（现金）、创业担保贷款（低成本资金）三者叠加，覆盖"启动资金+运营减负"
+          - link "社会保险补贴（灵活就业） 与就业见习不冲突（不同时段）；与一次性求职创业补贴可同享；单位就业后即停止" [ref=f4e277] [cursor=pointer]:
+            - /url: /entries/[object Object]
+            - strong [ref=f4e278]: 社会保险补贴（灵活就业）
+            - generic [ref=f4e279]: 与就业见习不冲突（不同时段）；与一次性求职创业补贴可同享；单位就业后即停止
+          - link "应征入伍学费补偿与贷款代偿 清单同时列明退役后考研加分、研究生和专升本单列招生计划、服役经历视为基层工作经历、家庭享受军属待遇——服役与退役优待可形成组合" [ref=f4e280] [cursor=pointer]:
+            - /url: /entries/[object Object]
+            - strong [ref=f4e281]: 应征入伍学费补偿与贷款代偿
+            - generic [ref=f4e282]: 清单同时列明退役后考研加分、研究生和专升本单列招生计划、服役经历视为基层工作经历、家庭享受军属待遇——服役与退役优待可形成组合
+          - link "职业培训与技能评价补贴 培训补贴（练）与评价补贴（考）可分别申领；与一次性求职创业补贴、企业岗位技能培训不冲突" [ref=f4e283] [cursor=pointer]:
+            - /url: /entries/[object Object]
+            - strong [ref=f4e284]: 职业培训与技能评价补贴
+            - generic [ref=f4e285]: 培训补贴（练）与评价补贴（考）可分别申领；与一次性求职创业补贴、企业岗位技能培训不冲突
+          - link "就业见习补贴 见习经历可写进简历补空白；留用转正后单位可衔接企业吸纳社保补贴（单位侧政策）" [ref=f4e286] [cursor=pointer]:
+            - /url: /entries/[object Object]
+            - strong [ref=f4e287]: 就业见习补贴
+            - generic [ref=f4e288]: 见习经历可写进简历补空白；留用转正后单位可衔接企业吸纳社保补贴（单位侧政策）
+          - link "基层服务项目（三支一扶/西部计划/特岗教师） 到基层就业的，学费补偿、国家助学贷款代偿、高定工资、提前转正定级可按规定叠加享受" [ref=f4e289] [cursor=pointer]:
+            - /url: /entries/[object Object]
+            - strong [ref=f4e290]: 基层服务项目（三支一扶/西部计划/特岗教师）
+            - generic [ref=f4e291]: 到基层就业的，学费补偿、国家助学贷款代偿、高定工资、提前转正定级可按规定叠加享受
+          - link "异地求职火车票优惠（毕业生\"双惠\"政策） 与异地求职住宿优惠（青年驿站）构成\"双惠\"——车票打折+住宿免费，异地面试成本大幅下降" [ref=f4e292] [cursor=pointer]:
+            - /url: /entries/[object Object]
+            - strong [ref=f4e293]: 异地求职火车票优惠（毕业生"双惠"政策）
+            - generic [ref=f4e294]: 与异地求职住宿优惠（青年驿站）构成"双惠"——车票打折+住宿免费，异地面试成本大幅下降
+          - link "免费就业能力培训（宏志助航+双千计划） 培训成果证明直接写进简历；结业后可衔接求职创业补贴、职业培训补贴等现金类政策" [ref=f4e295] [cursor=pointer]:
+            - /url: /entries/[object Object]
+            - strong [ref=f4e296]: 免费就业能力培训（宏志助航+双千计划）
+            - generic [ref=f4e297]: 培训成果证明直接写进简历；结业后可衔接求职创业补贴、职业培训补贴等现金类政策
+          - link "顺丰学生会员（寄件券包） 与顺丰月度会员日活动可叠加；毕业季寄行李前把几个月的券攒到同一单使用。" [ref=f4e298] [cursor=pointer]:
+            - /url: /entries/[object Object]
+            - strong [ref=f4e299]: 顺丰学生会员（寄件券包）
+            - generic [ref=f4e300]: 与顺丰月度会员日活动可叠加；毕业季寄行李前把几个月的券攒到同一单使用。
+          - link "麦当劳麦金会员学生价 麦金会员折扣与当日平台券（App 首单券、群外卖拼单）可叠加；150 天档折合单价更低，常点才划算。" [ref=f4e301] [cursor=pointer]:
+            - /url: /entries/[object Object]
+            - strong [ref=f4e302]: 麦当劳麦金会员学生价
+            - generic [ref=f4e303]: 麦金会员折扣与当日平台券（App 首单券、群外卖拼单）可叠加；150 天档折合单价更低，常点才划算。
+      - generic [ref=f4e304]:
+        - heading "05 · 四个雷点（不知道就会亏）" [level=2] [ref=f4e305]
+        - list [ref=f4e306]:
+          - listitem [ref=f4e307]:
+            - strong [ref=f4e308]: 教育优惠可事后审查
+            - text: ：资格不合格补差价至公众价（03 节 Apple 条款），转卖教育优惠机是重灾区。
+          - listitem [ref=f4e309]:
+            - strong [ref=f4e310]: 国补差价不保价
+            - text: ：多数平台规则写明「国补/政府补贴导致的差价不支持价保」。
+          - listitem [ref=f4e311]:
+            - strong [ref=f4e312]: 资格全国只有一次
+            - text: ：跨省重复领用会被系统拦截，别把外地资格先用了。
+          - listitem [ref=f4e313]:
+            - strong [ref=f4e314]: 「先涨价后补贴」是违规动作
+            - text: ：补贴前先看价格记录（条目页有价格走势的看走势），发现先涨后补可举报。
+      - generic [ref=f4e315]:
+        - generic [ref=f4e316]:
+          - heading "怎么用" [level=2] [ref=f4e317]
+          - paragraph [ref=f4e318]: 买前按 01→02→03 过一遍原则与条款，再到 04 查具体条目的核对注记；结算时以页面实付价复核一遍。
+        - generic [ref=f4e319]:
+          - heading "结果怎么解读" [level=2] [ref=f4e320]
+          - paragraph [ref=f4e321]: 本页规则全部给出处链接，注记逐条可点回条目。两个口径冲突时并列展示——你自己选信哪个，或问官方客服。
+        - generic [ref=f4e322]:
+          - heading "注意事项与局限" [level=2] [ref=f4e323]
+          - paragraph [ref=f4e324]: 本页是编辑整理，不是官方口径；法规与品牌条款随时修订（本页 as-of 2026-11），执行前点出处链接核对当期版本。只覆盖大陆口径，海外品牌条款以各国官网为准。
+        - generic [ref=f4e325]:
+          - heading "常见问题" [level=2] [ref=f4e326]
+          - group [ref=f4e327]:
+            - generic "教育优惠和国补到底能叠吗？" [ref=f4e328] [cursor=pointer]
+          - group [ref=f4e329]:
+            - generic "校园代理说「比官方叠加更便宜」可信吗？" [ref=f4e330] [cursor=pointer]
+  - contentinfo [ref=f4e331]:
+    - generic [ref=f4e332]:
+      - generic [ref=f4e333]:
+        - generic [ref=f4e334]:
+          - link "大学补给站" [ref=f4e335] [cursor=pointer]:
+            - /url: /
+          - paragraph [ref=f4e341]: 把大学四年的信息差，提前补给你。
+          - paragraph [ref=f4e342]: 552 条门道 · 12 篇攻略 · 最后核对 2026-11
+        - generic [ref=f4e343]:
+          - heading "社会支持" [level=3] [ref=f4e344]
+          - link "政府的钱" [ref=f4e345] [cursor=pointer]:
+            - /url: /money/gov
+          - link "企业的让利" [ref=f4e346] [cursor=pointer]:
+            - /url: /money/corporate
+          - link "平台的预算" [ref=f4e347] [cursor=pointer]:
+            - /url: /money/platform
+        - generic [ref=f4e348]:
+          - heading "校园门道" [level=3] [ref=f4e349]
+          - link "避坑" [ref=f4e350] [cursor=pointer]:
+            - /url: /dao/pits
+          - link "学习" [ref=f4e351] [cursor=pointer]:
+            - /url: /dao/learn
+          - link "生活" [ref=f4e352] [cursor=pointer]:
+            - /url: /dao/life
+          - link "开源挣钱" [ref=f4e353] [cursor=pointer]:
+            - /url: /dao/earn
+        - generic [ref=f4e354]:
+          - heading "更多" [level=3] [ref=f4e355]
+          - link "校园信息雷达" [ref=f4e356] [cursor=pointer]:
+            - /url: /radar
+          - link "攻略库" [ref=f4e357] [cursor=pointer]:
+            - /url: /guides
+          - link "搜索全站" [ref=f4e358] [cursor=pointer]:
+            - /url: /search
+          - link "关于 · 核对机制" [ref=f4e359] [cursor=pointer]:
+            - /url: /about
+          - link "纠错与反馈" [ref=f4e360] [cursor=pointer]:
+            - /url: /about#correction
+      - generic [ref=f4e361]:
+        - generic [ref=f4e362]: © 2026 大学补给站
+        - generic [ref=f4e363]: 非官方信息整理 · 政策与价格以官方渠道为准 · 过期条目不删除，只标记

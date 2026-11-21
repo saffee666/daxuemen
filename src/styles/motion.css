@@ -1,0 +1,82 @@
+/* 主站动效层（Soft Modern · 丰富档）
+   作用域 body:not(.radar-page)：雷达页与 BareLayout（/radar/demo）不参与。
+   全部包 prefers-reduced-motion: no-preference；只动 transform / opacity。 */
+
+@media (prefers-reduced-motion: no-preference) {
+  /* —— 首屏入场：hero 子元素依次上浮 —— */
+  body:not(.radar-page) .hero .eyebrow,
+  body:not(.radar-page) .hero .hero-title,
+  body:not(.radar-page) .hero .hero-sub,
+  body:not(.radar-page) .hero .hero-actions,
+  body:not(.radar-page) .hero .hero-stats,
+  body:not(.radar-page) .hero .hero-art {
+    animation: rise-in 0.5s var(--ease) backwards;
+  }
+
+  body:not(.radar-page) .hero .eyebrow    { animation-delay: 0.02s; }
+  body:not(.radar-page) .hero .hero-title { animation-delay: 0.08s; }
+  body:not(.radar-page) .hero .hero-sub   { animation-delay: 0.14s; }
+  body:not(.radar-page) .hero .hero-actions { animation-delay: 0.2s; }
+  body:not(.radar-page) .hero .hero-stats { animation-delay: 0.26s; }
+  body:not(.radar-page) .hero .hero-art   { animation-delay: 0.12s; }
+
+  /* —— 滚动显现：html[data-motion] 由 JS 挂载，无 JS 时内容不隐藏 —— */
+  body:not(.radar-page) [data-reveal] {
+    opacity: 0;
+    transform: translateY(14px);
+    transition: opacity 0.45s var(--ease), transform 0.45s var(--ease);
+    will-change: opacity, transform;
+  }
+
+  body:not(.radar-page) [data-reveal].is-revealed {
+    opacity: 1;
+    transform: none;
+    will-change: auto;
+  }
+
+  /* —— 悬停：卡片轻微上浮 + 阴影过渡 —— */
+  body:not(.radar-page) .pillar-card,
+  body:not(.radar-page) .entry-card,
+  body:not(.radar-page) .guide-card,
+  body:not(.radar-page) .city-card,
+  body:not(.radar-page) .dual-card:not(.radar) {
+    transition:
+      transform 0.22s var(--ease-spring),
+      box-shadow 0.22s var(--ease),
+      border-color 0.22s var(--ease);
+  }
+
+  body:not(.radar-page) .pillar-card:hover,
+  body:not(.radar-page) .entry-card:hover,
+  body:not(.radar-page) .guide-card:hover,
+  body:not(.radar-page) .city-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow);
+  }
+
+  /* —— 按钮：transform 用 spring 曲线 —— */
+  body:not(.radar-page) .btn {
+    transition:
+      transform 0.22s var(--ease-spring),
+      opacity 0.16s,
+      background 0.16s,
+      border-color 0.16s;
+  }
+
+  /* —— 页面切换淡入（ClientRouter swap 后） —— */
+  body:not(.radar-page) main#main {
+    animation: rise-in 0.35s var(--ease);
+  }
+}
+
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}

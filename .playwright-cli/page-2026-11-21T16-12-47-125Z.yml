@@ -1,0 +1,506 @@
+- generic [active] [ref=f1e1]:
+  - link "跳到正文" [ref=f1e2] [cursor=pointer]:
+    - /url: "#main"
+  - banner [ref=f1e3]:
+    - generic [ref=f1e4]:
+      - link "大学补给站首页" [ref=f1e5] [cursor=pointer]:
+        - /url: /
+        - generic [ref=f1e12]: 大学补给站
+      - navigation "主导航" [ref=f1e13]:
+        - group [ref=f1e14]:
+          - generic "校园门道" [ref=f1e15] [cursor=pointer]
+        - group [ref=f1e18]:
+          - generic "社会支持" [ref=f1e19] [cursor=pointer]
+        - group [ref=f1e22]:
+          - generic "信息差工具" [ref=f1e23] [cursor=pointer]
+        - link "攻略" [ref=f1e26] [cursor=pointer]:
+          - /url: /guides
+        - link "关于" [ref=f1e27] [cursor=pointer]:
+          - /url: /about
+        - link "搜索全站" [ref=f1e28] [cursor=pointer]:
+          - /url: /search
+  - main [ref=f1e32]:
+    - generic [ref=f1e33]:
+      - paragraph [ref=f1e34]: 城市 · 全量索引 · 2026
+      - heading "106 个城市，本地政策逐城核对。" [level=1] [ref=f1e35]
+      - paragraph [ref=f1e36]: 地区性的钱只对本地生效：每城一页，列出本市专属条目（附官方入口与核对日期），页内可订阅本市截止日历。按条目量排序，找你的城市直接点。
+      - generic [ref=f1e37]:
+        - generic [ref=f1e38]:
+          - strong [ref=f1e39]: "106"
+          - text: 个城市页
+        - generic [ref=f1e40]:
+          - strong [ref=f1e41]: "400"
+          - text: 条本市条目
+        - generic [ref=f1e42]: 另有全国通用条目兜底
+    - generic [ref=f1e43]:
+      - link "深圳 18 条" [ref=f1e44] [cursor=pointer]:
+        - /url: /city/%E6%B7%B1%E5%9C%B3
+        - generic [ref=f1e45]: 深圳
+        - generic [ref=f1e46]: 18 条
+      - link "上海 15 条" [ref=f1e47] [cursor=pointer]:
+        - /url: /city/%E4%B8%8A%E6%B5%B7
+        - generic [ref=f1e48]: 上海
+        - generic [ref=f1e49]: 15 条
+      - link "青岛 11 条" [ref=f1e50] [cursor=pointer]:
+        - /url: /city/%E9%9D%92%E5%B2%9B
+        - generic [ref=f1e51]: 青岛
+        - generic [ref=f1e52]: 11 条
+      - link "泉州 11 条" [ref=f1e53] [cursor=pointer]:
+        - /url: /city/%E6%B3%89%E5%B7%9E
+        - generic [ref=f1e54]: 泉州
+        - generic [ref=f1e55]: 11 条
+      - link "重庆 9 条" [ref=f1e56] [cursor=pointer]:
+        - /url: /city/%E9%87%8D%E5%BA%86
+        - generic [ref=f1e57]: 重庆
+        - generic [ref=f1e58]: 9 条
+      - link "福州 8 条" [ref=f1e59] [cursor=pointer]:
+        - /url: /city/%E7%A6%8F%E5%B7%9E
+        - generic [ref=f1e60]: 福州
+        - generic [ref=f1e61]: 8 条
+      - link "吉林 8 条" [ref=f1e62] [cursor=pointer]:
+        - /url: /city/%E5%90%89%E6%9E%97
+        - generic [ref=f1e63]: 吉林
+        - generic [ref=f1e64]: 8 条
+      - link "南阳 8 条" [ref=f1e65] [cursor=pointer]:
+        - /url: /city/%E5%8D%97%E9%98%B3
+        - generic [ref=f1e66]: 南阳
+        - generic [ref=f1e67]: 8 条
+      - link "台州 8 条" [ref=f1e68] [cursor=pointer]:
+        - /url: /city/%E5%8F%B0%E5%B7%9E
+        - generic [ref=f1e69]: 台州
+        - generic [ref=f1e70]: 8 条
+      - link "太原 8 条" [ref=f1e71] [cursor=pointer]:
+        - /url: /city/%E5%A4%AA%E5%8E%9F
+        - generic [ref=f1e72]: 太原
+        - generic [ref=f1e73]: 8 条
+      - link "郑州 8 条" [ref=f1e74] [cursor=pointer]:
+        - /url: /city/%E9%83%91%E5%B7%9E
+        - generic [ref=f1e75]: 郑州
+        - generic [ref=f1e76]: 8 条
+      - link "鞍山 7 条" [ref=f1e77] [cursor=pointer]:
+        - /url: /city/%E9%9E%8D%E5%B1%B1
+        - generic [ref=f1e78]: 鞍山
+        - generic [ref=f1e79]: 7 条
+      - link "北京 7 条" [ref=f1e80] [cursor=pointer]:
+        - /url: /city/%E5%8C%97%E4%BA%AC
+        - generic [ref=f1e81]: 北京
+        - generic [ref=f1e82]: 7 条
+      - link "大连 7 条" [ref=f1e83] [cursor=pointer]:
+        - /url: /city/%E5%A4%A7%E8%BF%9E
+        - generic [ref=f1e84]: 大连
+        - generic [ref=f1e85]: 7 条
+      - link "鄂尔多斯 7 条" [ref=f1e86] [cursor=pointer]:
+        - /url: /city/%E9%84%82%E5%B0%94%E5%A4%9A%E6%96%AF
+        - generic [ref=f1e87]: 鄂尔多斯
+        - generic [ref=f1e88]: 7 条
+      - link "济南 7 条" [ref=f1e89] [cursor=pointer]:
+        - /url: /city/%E6%B5%8E%E5%8D%97
+        - generic [ref=f1e90]: 济南
+        - generic [ref=f1e91]: 7 条
+      - link "金华 7 条" [ref=f1e92] [cursor=pointer]:
+        - /url: /city/%E9%87%91%E5%8D%8E
+        - generic [ref=f1e93]: 金华
+        - generic [ref=f1e94]: 7 条
+      - link "淮北 6 条" [ref=f1e95] [cursor=pointer]:
+        - /url: /city/%E6%B7%AE%E5%8C%97
+        - generic [ref=f1e96]: 淮北
+        - generic [ref=f1e97]: 6 条
+      - link "汕头 6 条" [ref=f1e98] [cursor=pointer]:
+        - /url: /city/%E6%B1%95%E5%A4%B4
+        - generic [ref=f1e99]: 汕头
+        - generic [ref=f1e100]: 6 条
+      - link "沈阳 6 条" [ref=f1e101] [cursor=pointer]:
+        - /url: /city/%E6%B2%88%E9%98%B3
+        - generic [ref=f1e102]: 沈阳
+        - generic [ref=f1e103]: 6 条
+      - link "苏州 6 条" [ref=f1e104] [cursor=pointer]:
+        - /url: /city/%E8%8B%8F%E5%B7%9E
+        - generic [ref=f1e105]: 苏州
+        - generic [ref=f1e106]: 6 条
+      - link "长春 6 条" [ref=f1e107] [cursor=pointer]:
+        - /url: /city/%E9%95%BF%E6%98%A5
+        - generic [ref=f1e108]: 长春
+        - generic [ref=f1e109]: 6 条
+      - link "蚌埠 5 条" [ref=f1e110] [cursor=pointer]:
+        - /url: /city/%E8%9A%8C%E5%9F%A0
+        - generic [ref=f1e111]: 蚌埠
+        - generic [ref=f1e112]: 5 条
+      - link "沧州 5 条" [ref=f1e113] [cursor=pointer]:
+        - /url: /city/%E6%B2%A7%E5%B7%9E
+        - generic [ref=f1e114]: 沧州
+        - generic [ref=f1e115]: 5 条
+      - link "常州 5 条" [ref=f1e116] [cursor=pointer]:
+        - /url: /city/%E5%B8%B8%E5%B7%9E
+        - generic [ref=f1e117]: 常州
+        - generic [ref=f1e118]: 5 条
+      - link "广州 5 条" [ref=f1e119] [cursor=pointer]:
+        - /url: /city/%E5%B9%BF%E5%B7%9E
+        - generic [ref=f1e120]: 广州
+        - generic [ref=f1e121]: 5 条
+      - link "嘉兴 5 条" [ref=f1e122] [cursor=pointer]:
+        - /url: /city/%E5%98%89%E5%85%B4
+        - generic [ref=f1e123]: 嘉兴
+        - generic [ref=f1e124]: 5 条
+      - link "荆州 5 条" [ref=f1e125] [cursor=pointer]:
+        - /url: /city/%E8%8D%86%E5%B7%9E
+        - generic [ref=f1e126]: 荆州
+        - generic [ref=f1e127]: 5 条
+      - link "南京 5 条" [ref=f1e128] [cursor=pointer]:
+        - /url: /city/%E5%8D%97%E4%BA%AC
+        - generic [ref=f1e129]: 南京
+        - generic [ref=f1e130]: 5 条
+      - link "威海 5 条" [ref=f1e131] [cursor=pointer]:
+        - /url: /city/%E5%A8%81%E6%B5%B7
+        - generic [ref=f1e132]: 威海
+        - generic [ref=f1e133]: 5 条
+      - link "襄阳 5 条" [ref=f1e134] [cursor=pointer]:
+        - /url: /city/%E8%A5%84%E9%98%B3
+        - generic [ref=f1e135]: 襄阳
+        - generic [ref=f1e136]: 5 条
+      - link "宣城 5 条" [ref=f1e137] [cursor=pointer]:
+        - /url: /city/%E5%AE%A3%E5%9F%8E
+        - generic [ref=f1e138]: 宣城
+        - generic [ref=f1e139]: 5 条
+      - link "安庆 4 条" [ref=f1e140] [cursor=pointer]:
+        - /url: /city/%E5%AE%89%E5%BA%86
+        - generic [ref=f1e141]: 安庆
+        - generic [ref=f1e142]: 4 条
+      - link "池州 4 条" [ref=f1e143] [cursor=pointer]:
+        - /url: /city/%E6%B1%A0%E5%B7%9E
+        - generic [ref=f1e144]: 池州
+        - generic [ref=f1e145]: 4 条
+      - link "鄂州 4 条" [ref=f1e146] [cursor=pointer]:
+        - /url: /city/%E9%84%82%E5%B7%9E
+        - generic [ref=f1e147]: 鄂州
+        - generic [ref=f1e148]: 4 条
+      - link "黄冈 4 条" [ref=f1e149] [cursor=pointer]:
+        - /url: /city/%E9%BB%84%E5%86%88
+        - generic [ref=f1e150]: 黄冈
+        - generic [ref=f1e151]: 4 条
+      - link "荆门 4 条" [ref=f1e152] [cursor=pointer]:
+        - /url: /city/%E8%8D%86%E9%97%A8
+        - generic [ref=f1e153]: 荆门
+        - generic [ref=f1e154]: 4 条
+      - link "厦门 4 条" [ref=f1e155] [cursor=pointer]:
+        - /url: /city/%E5%8E%A6%E9%97%A8
+        - generic [ref=f1e156]: 厦门
+        - generic [ref=f1e157]: 4 条
+      - link "无锡 4 条" [ref=f1e158] [cursor=pointer]:
+        - /url: /city/%E6%97%A0%E9%94%A1
+        - generic [ref=f1e159]: 无锡
+        - generic [ref=f1e160]: 4 条
+      - link "烟台 4 条" [ref=f1e161] [cursor=pointer]:
+        - /url: /city/%E7%83%9F%E5%8F%B0
+        - generic [ref=f1e162]: 烟台
+        - generic [ref=f1e163]: 4 条
+      - link "岳阳 4 条" [ref=f1e164] [cursor=pointer]:
+        - /url: /city/%E5%B2%B3%E9%98%B3
+        - generic [ref=f1e165]: 岳阳
+        - generic [ref=f1e166]: 4 条
+      - link "湛江 4 条" [ref=f1e167] [cursor=pointer]:
+        - /url: /city/%E6%B9%9B%E6%B1%9F
+        - generic [ref=f1e168]: 湛江
+        - generic [ref=f1e169]: 4 条
+      - link "自贡 4 条" [ref=f1e170] [cursor=pointer]:
+        - /url: /city/%E8%87%AA%E8%B4%A1
+        - generic [ref=f1e171]: 自贡
+        - generic [ref=f1e172]: 4 条
+      - link "保定 3 条" [ref=f1e173] [cursor=pointer]:
+        - /url: /city/%E4%BF%9D%E5%AE%9A
+        - generic [ref=f1e174]: 保定
+        - generic [ref=f1e175]: 3 条
+      - link "大庆 3 条" [ref=f1e176] [cursor=pointer]:
+        - /url: /city/%E5%A4%A7%E5%BA%86
+        - generic [ref=f1e177]: 大庆
+        - generic [ref=f1e178]: 3 条
+      - link "东莞 3 条" [ref=f1e179] [cursor=pointer]:
+        - /url: /city/%E4%B8%9C%E8%8E%9E
+        - generic [ref=f1e180]: 东莞
+        - generic [ref=f1e181]: 3 条
+      - link "哈尔滨 3 条" [ref=f1e182] [cursor=pointer]:
+        - /url: /city/%E5%93%88%E5%B0%94%E6%BB%A8
+        - generic [ref=f1e183]: 哈尔滨
+        - generic [ref=f1e184]: 3 条
+      - link "杭州 3 条" [ref=f1e185] [cursor=pointer]:
+        - /url: /city/%E6%9D%AD%E5%B7%9E
+        - generic [ref=f1e186]: 杭州
+        - generic [ref=f1e187]: 3 条
+      - link "九江 3 条" [ref=f1e188] [cursor=pointer]:
+        - /url: /city/%E4%B9%9D%E6%B1%9F
+        - generic [ref=f1e189]: 九江
+        - generic [ref=f1e190]: 3 条
+      - link "六安 3 条" [ref=f1e191] [cursor=pointer]:
+        - /url: /city/%E5%85%AD%E5%AE%89
+        - generic [ref=f1e192]: 六安
+        - generic [ref=f1e193]: 3 条
+      - link "南通 3 条" [ref=f1e194] [cursor=pointer]:
+        - /url: /city/%E5%8D%97%E9%80%9A
+        - generic [ref=f1e195]: 南通
+        - generic [ref=f1e196]: 3 条
+      - link "宁波 3 条" [ref=f1e197] [cursor=pointer]:
+        - /url: /city/%E5%AE%81%E6%B3%A2
+        - generic [ref=f1e198]: 宁波
+        - generic [ref=f1e199]: 3 条
+      - link "绍兴 3 条" [ref=f1e200] [cursor=pointer]:
+        - /url: /city/%E7%BB%8D%E5%85%B4
+        - generic [ref=f1e201]: 绍兴
+        - generic [ref=f1e202]: 3 条
+      - link "宿州 3 条" [ref=f1e203] [cursor=pointer]:
+        - /url: /city/%E5%AE%BF%E5%B7%9E
+        - generic [ref=f1e204]: 宿州
+        - generic [ref=f1e205]: 3 条
+      - link "乌鲁木齐 3 条" [ref=f1e206] [cursor=pointer]:
+        - /url: /city/%E4%B9%8C%E9%B2%81%E6%9C%A8%E9%BD%90
+        - generic [ref=f1e207]: 乌鲁木齐
+        - generic [ref=f1e208]: 3 条
+      - link "武汉 3 条" [ref=f1e209] [cursor=pointer]:
+        - /url: /city/%E6%AD%A6%E6%B1%89
+        - generic [ref=f1e210]: 武汉
+        - generic [ref=f1e211]: 3 条
+      - link "长沙 3 条" [ref=f1e212] [cursor=pointer]:
+        - /url: /city/%E9%95%BF%E6%B2%99
+        - generic [ref=f1e213]: 长沙
+        - generic [ref=f1e214]: 3 条
+      - link "珠海 3 条" [ref=f1e215] [cursor=pointer]:
+        - /url: /city/%E7%8F%A0%E6%B5%B7
+        - generic [ref=f1e216]: 珠海
+        - generic [ref=f1e217]: 3 条
+      - link "淄博 3 条" [ref=f1e218] [cursor=pointer]:
+        - /url: /city/%E6%B7%84%E5%8D%9A
+        - generic [ref=f1e219]: 淄博
+        - generic [ref=f1e220]: 3 条
+      - link "赣州 2 条" [ref=f1e221] [cursor=pointer]:
+        - /url: /city/%E8%B5%A3%E5%B7%9E
+        - generic [ref=f1e222]: 赣州
+        - generic [ref=f1e223]: 2 条
+      - link "海口 2 条" [ref=f1e224] [cursor=pointer]:
+        - /url: /city/%E6%B5%B7%E5%8F%A3
+        - generic [ref=f1e225]: 海口
+        - generic [ref=f1e226]: 2 条
+      - link "合肥 2 条" [ref=f1e227] [cursor=pointer]:
+        - /url: /city/%E5%90%88%E8%82%A5
+        - generic [ref=f1e228]: 合肥
+        - generic [ref=f1e229]: 2 条
+      - link "衡阳 2 条" [ref=f1e230] [cursor=pointer]:
+        - /url: /city/%E8%A1%A1%E9%98%B3
+        - generic [ref=f1e231]: 衡阳
+        - generic [ref=f1e232]: 2 条
+      - link "黄山 2 条" [ref=f1e233] [cursor=pointer]:
+        - /url: /city/%E9%BB%84%E5%B1%B1
+        - generic [ref=f1e234]: 黄山
+        - generic [ref=f1e235]: 2 条
+      - link "惠州 2 条" [ref=f1e236] [cursor=pointer]:
+        - /url: /city/%E6%83%A0%E5%B7%9E
+        - generic [ref=f1e237]: 惠州
+        - generic [ref=f1e238]: 2 条
+      - link "济宁 2 条" [ref=f1e239] [cursor=pointer]:
+        - /url: /city/%E6%B5%8E%E5%AE%81
+        - generic [ref=f1e240]: 济宁
+        - generic [ref=f1e241]: 2 条
+      - link "焦作 2 条" [ref=f1e242] [cursor=pointer]:
+        - /url: /city/%E7%84%A6%E4%BD%9C
+        - generic [ref=f1e243]: 焦作
+        - generic [ref=f1e244]: 2 条
+      - link "开封 2 条" [ref=f1e245] [cursor=pointer]:
+        - /url: /city/%E5%BC%80%E5%B0%81
+        - generic [ref=f1e246]: 开封
+        - generic [ref=f1e247]: 2 条
+      - link "拉萨 2 条" [ref=f1e248] [cursor=pointer]:
+        - /url: /city/%E6%8B%89%E8%90%A8
+        - generic [ref=f1e249]: 拉萨
+        - generic [ref=f1e250]: 2 条
+      - link "兰州 2 条" [ref=f1e251] [cursor=pointer]:
+        - /url: /city/%E5%85%B0%E5%B7%9E
+        - generic [ref=f1e252]: 兰州
+        - generic [ref=f1e253]: 2 条
+      - link "连云港 2 条" [ref=f1e254] [cursor=pointer]:
+        - /url: /city/%E8%BF%9E%E4%BA%91%E6%B8%AF
+        - generic [ref=f1e255]: 连云港
+        - generic [ref=f1e256]: 2 条
+      - link "临沂 2 条" [ref=f1e257] [cursor=pointer]:
+        - /url: /city/%E4%B8%B4%E6%B2%82
+        - generic [ref=f1e258]: 临沂
+        - generic [ref=f1e259]: 2 条
+      - link "马鞍山 2 条" [ref=f1e260] [cursor=pointer]:
+        - /url: /city/%E9%A9%AC%E9%9E%8D%E5%B1%B1
+        - generic [ref=f1e261]: 马鞍山
+        - generic [ref=f1e262]: 2 条
+      - link "南昌 2 条" [ref=f1e263] [cursor=pointer]:
+        - /url: /city/%E5%8D%97%E6%98%8C
+        - generic [ref=f1e264]: 南昌
+        - generic [ref=f1e265]: 2 条
+      - link "南宁 2 条" [ref=f1e266] [cursor=pointer]:
+        - /url: /city/%E5%8D%97%E5%AE%81
+        - generic [ref=f1e267]: 南宁
+        - generic [ref=f1e268]: 2 条
+      - link "宁德 2 条" [ref=f1e269] [cursor=pointer]:
+        - /url: /city/%E5%AE%81%E5%BE%B7
+        - generic [ref=f1e270]: 宁德
+        - generic [ref=f1e271]: 2 条
+      - link "盘锦 2 条" [ref=f1e272] [cursor=pointer]:
+        - /url: /city/%E7%9B%98%E9%94%A6
+        - generic [ref=f1e273]: 盘锦
+        - generic [ref=f1e274]: 2 条
+      - link "三亚 2 条" [ref=f1e275] [cursor=pointer]:
+        - /url: /city/%E4%B8%89%E4%BA%9A
+        - generic [ref=f1e276]: 三亚
+        - generic [ref=f1e277]: 2 条
+      - link "石家庄 2 条" [ref=f1e278] [cursor=pointer]:
+        - /url: /city/%E7%9F%B3%E5%AE%B6%E5%BA%84
+        - generic [ref=f1e279]: 石家庄
+        - generic [ref=f1e280]: 2 条
+      - link "温州 2 条" [ref=f1e281] [cursor=pointer]:
+        - /url: /city/%E6%B8%A9%E5%B7%9E
+        - generic [ref=f1e282]: 温州
+        - generic [ref=f1e283]: 2 条
+      - link "西宁 2 条" [ref=f1e284] [cursor=pointer]:
+        - /url: /city/%E8%A5%BF%E5%AE%81
+        - generic [ref=f1e285]: 西宁
+        - generic [ref=f1e286]: 2 条
+      - link "新乡 2 条" [ref=f1e287] [cursor=pointer]:
+        - /url: /city/%E6%96%B0%E4%B9%A1
+        - generic [ref=f1e288]: 新乡
+        - generic [ref=f1e289]: 2 条
+      - link "徐州 2 条" [ref=f1e290] [cursor=pointer]:
+        - /url: /city/%E5%BE%90%E5%B7%9E
+        - generic [ref=f1e291]: 徐州
+        - generic [ref=f1e292]: 2 条
+      - link "宜昌 2 条" [ref=f1e293] [cursor=pointer]:
+        - /url: /city/%E5%AE%9C%E6%98%8C
+        - generic [ref=f1e294]: 宜昌
+        - generic [ref=f1e295]: 2 条
+      - link "中山 2 条" [ref=f1e296] [cursor=pointer]:
+        - /url: /city/%E4%B8%AD%E5%B1%B1
+        - generic [ref=f1e297]: 中山
+        - generic [ref=f1e298]: 2 条
+      - link "株洲 2 条" [ref=f1e299] [cursor=pointer]:
+        - /url: /city/%E6%A0%AA%E6%B4%B2
+        - generic [ref=f1e300]: 株洲
+        - generic [ref=f1e301]: 2 条
+      - link "亳州 1 条" [ref=f1e302] [cursor=pointer]:
+        - /url: /city/%E4%BA%B3%E5%B7%9E
+        - generic [ref=f1e303]: 亳州
+        - generic [ref=f1e304]: 1 条
+      - link "成都 1 条" [ref=f1e305] [cursor=pointer]:
+        - /url: /city/%E6%88%90%E9%83%BD
+        - generic [ref=f1e306]: 成都
+        - generic [ref=f1e307]: 1 条
+      - link "阜阳 1 条" [ref=f1e308] [cursor=pointer]:
+        - /url: /city/%E9%98%9C%E9%98%B3
+        - generic [ref=f1e309]: 阜阳
+        - generic [ref=f1e310]: 1 条
+      - link "贵阳 1 条" [ref=f1e311] [cursor=pointer]:
+        - /url: /city/%E8%B4%B5%E9%98%B3
+        - generic [ref=f1e312]: 贵阳
+        - generic [ref=f1e313]: 1 条
+      - link "桂林 1 条" [ref=f1e314] [cursor=pointer]:
+        - /url: /city/%E6%A1%82%E6%9E%97
+        - generic [ref=f1e315]: 桂林
+        - generic [ref=f1e316]: 1 条
+      - link "淮安 1 条" [ref=f1e317] [cursor=pointer]:
+        - /url: /city/%E6%B7%AE%E5%AE%89
+        - generic [ref=f1e318]: 淮安
+        - generic [ref=f1e319]: 1 条
+      - link "淮南 1 条" [ref=f1e320] [cursor=pointer]:
+        - /url: /city/%E6%B7%AE%E5%8D%97
+        - generic [ref=f1e321]: 淮南
+        - generic [ref=f1e322]: 1 条
+      - link "昆明 1 条" [ref=f1e323] [cursor=pointer]:
+        - /url: /city/%E6%98%86%E6%98%8E
+        - generic [ref=f1e324]: 昆明
+        - generic [ref=f1e325]: 1 条
+      - link "洛阳 1 条" [ref=f1e326] [cursor=pointer]:
+        - /url: /city/%E6%B4%9B%E9%98%B3
+        - generic [ref=f1e327]: 洛阳
+        - generic [ref=f1e328]: 1 条
+      - link "绵阳 1 条" [ref=f1e329] [cursor=pointer]:
+        - /url: /city/%E7%BB%B5%E9%98%B3
+        - generic [ref=f1e330]: 绵阳
+        - generic [ref=f1e331]: 1 条
+      - link "宿迁 1 条" [ref=f1e332] [cursor=pointer]:
+        - /url: /city/%E5%AE%BF%E8%BF%81
+        - generic [ref=f1e333]: 宿迁
+        - generic [ref=f1e334]: 1 条
+      - link "泰州 1 条" [ref=f1e335] [cursor=pointer]:
+        - /url: /city/%E6%B3%B0%E5%B7%9E
+        - generic [ref=f1e336]: 泰州
+        - generic [ref=f1e337]: 1 条
+      - link "天津 1 条" [ref=f1e338] [cursor=pointer]:
+        - /url: /city/%E5%A4%A9%E6%B4%A5
+        - generic [ref=f1e339]: 天津
+        - generic [ref=f1e340]: 1 条
+      - link "铜陵 1 条" [ref=f1e341] [cursor=pointer]:
+        - /url: /city/%E9%93%9C%E9%99%B5
+        - generic [ref=f1e342]: 铜陵
+        - generic [ref=f1e343]: 1 条
+      - link "西安 1 条" [ref=f1e344] [cursor=pointer]:
+        - /url: /city/%E8%A5%BF%E5%AE%89
+        - generic [ref=f1e345]: 西安
+        - generic [ref=f1e346]: 1 条
+      - link "盐城 1 条" [ref=f1e347] [cursor=pointer]:
+        - /url: /city/%E7%9B%90%E5%9F%8E
+        - generic [ref=f1e348]: 盐城
+        - generic [ref=f1e349]: 1 条
+      - link "银川 1 条" [ref=f1e350] [cursor=pointer]:
+        - /url: /city/%E9%93%B6%E5%B7%9D
+        - generic [ref=f1e351]: 银川
+        - generic [ref=f1e352]: 1 条
+      - link "漳州 1 条" [ref=f1e353] [cursor=pointer]:
+        - /url: /city/%E6%BC%B3%E5%B7%9E
+        - generic [ref=f1e354]: 漳州
+        - generic [ref=f1e355]: 1 条
+      - link "镇江 1 条" [ref=f1e356] [cursor=pointer]:
+        - /url: /city/%E9%95%87%E6%B1%9F
+        - generic [ref=f1e357]: 镇江
+        - generic [ref=f1e358]: 1 条
+      - link "周口 1 条" [ref=f1e359] [cursor=pointer]:
+        - /url: /city/%E5%91%A8%E5%8F%A3
+        - generic [ref=f1e360]: 周口
+        - generic [ref=f1e361]: 1 条
+  - contentinfo [ref=f1e362]:
+    - generic [ref=f1e363]:
+      - generic [ref=f1e364]:
+        - generic [ref=f1e365]:
+          - link "大学补给站" [ref=f1e366] [cursor=pointer]:
+            - /url: /
+          - paragraph [ref=f1e372]: 把大学四年的信息差，提前补给你。
+          - paragraph [ref=f1e373]: 552 条门道 · 12 篇攻略 · 最后核对 2026-11
+        - generic [ref=f1e374]:
+          - heading "社会支持" [level=3] [ref=f1e375]
+          - link "政府的钱" [ref=f1e376] [cursor=pointer]:
+            - /url: /money/gov
+          - link "企业的让利" [ref=f1e377] [cursor=pointer]:
+            - /url: /money/corporate
+          - link "平台的预算" [ref=f1e378] [cursor=pointer]:
+            - /url: /money/platform
+        - generic [ref=f1e379]:
+          - heading "校园门道" [level=3] [ref=f1e380]
+          - link "避坑" [ref=f1e381] [cursor=pointer]:
+            - /url: /dao/pits
+          - link "学习" [ref=f1e382] [cursor=pointer]:
+            - /url: /dao/learn
+          - link "生活" [ref=f1e383] [cursor=pointer]:
+            - /url: /dao/life
+          - link "开源挣钱" [ref=f1e384] [cursor=pointer]:
+            - /url: /dao/earn
+        - generic [ref=f1e385]:
+          - heading "更多" [level=3] [ref=f1e386]
+          - link "校园信息雷达" [ref=f1e387] [cursor=pointer]:
+            - /url: /radar
+          - link "攻略库" [ref=f1e388] [cursor=pointer]:
+            - /url: /guides
+          - link "搜索全站" [ref=f1e389] [cursor=pointer]:
+            - /url: /search
+          - link "关于 · 核对机制" [ref=f1e390] [cursor=pointer]:
+            - /url: /about
+          - link "纠错日志" [ref=f1e391] [cursor=pointer]:
+            - /url: /corrections
+          - link "编辑政策" [ref=f1e392] [cursor=pointer]:
+            - /url: /editorial
+          - link "目录方法论" [ref=f1e393] [cursor=pointer]:
+            - /url: /how-we-build
+          - link "隐私说明" [ref=f1e394] [cursor=pointer]:
+            - /url: /privacy
+      - generic [ref=f1e395]:
+        - generic [ref=f1e396]: © 2026 大学补给站
+        - generic [ref=f1e397]: 非官方信息整理 · 政策与价格以官方渠道为准 · 过期条目不删除，只标记

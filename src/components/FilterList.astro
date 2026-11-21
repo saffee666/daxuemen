@@ -1,0 +1,65 @@
+---
+// 列表页通用：服务端渲染全部卡片 + 客户端筛选（阶段/地域/类别）；无 JS 时全部可见
+import EntryCard from './EntryCard.astro';
+import { STAGES } from '../lib/pillars';
+
+interface Props {
+  kind: 'money' | 'dao';
+  entries: any[];
+  categories: string[];
+}
+const { kind, entries, categories } = Astro.props;
+const cities = [
+  ...new Set(
+    entries
+      .map((e) => (e.data.region.startsWith('城市:') ? e.data.region.slice(3) : ''))
+      .filter(Boolean)
+  ),
+].sort((a, b) => String(a).localeCompare(String(b), 'zh'));
+---
+
+<div class="filters" data-filters>
+  <label class="filter-field">
+    阶段
+    <select data-filter="stage">
+      <option value="">全部阶段</option>
+      {STAGES.map((s) => <option value={s}>{s}</option>)}
+    </select>
+  </label>
+
+  {kind === 'money' && (
+    <label class="filter-field">
+      地域
+      <select data-filter="region">
+        <option value="">全部地域</option>
+        <option value="全国">全国通用</option>
+        <option value="国际">国际</option>
+        {cities.map((city) => <option value={`城市:${city}`}>{city}</option>)}
+      </select>
+    </label>
+  )}
+
+  <label class="filter-field">
+    类别
+    <select data-filter="category">
+      <option value="">全部类别</option>
+      {categories.map((c) => <option value={c}>{c}</option>)}
+    </select>
+  </label>
+
+  <button class="filter-reset" type="button" data-filter-reset>清空筛选</button>
+  <span class="filter-count" data-count aria-live="polite">显示 <strong>{entries.length}</strong> 条</span>
+</div>
+
+<div class="card-grid" data-card-grid>
+  {entries.map((entry) => <EntryCard kind={kind} entry={entry} />)}
+</div>
+<p class="filter-empty" data-empty>没有匹配的条目——换个筛选试试。</p>
+
+<noscript>
+  <p class="filter-count">当前未启用 JavaScript，筛选不可用；下面显示全部条目。</p>
+</noscript>
+
+<script>
+  import '../scripts/filters';
+</script>

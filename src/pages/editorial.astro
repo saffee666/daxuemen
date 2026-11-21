@@ -1,0 +1,133 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { url } from '../lib/url';
+---
+
+<Layout title="编辑政策" description="大学补给站的条目编辑标准：四问、来源分级、核对节奏、评估值披露与红线。">
+  <div class="page-head">
+    <p class="eyebrow">关于 · 编辑政策</p>
+    <h1>每条条目，按同一套标准进站。</h1>
+    <p class="page-desc">
+      这页写清一条信息怎么才算「核对过」。标准只有一个目的：<strong>让你敢按条目行动</strong>——知道谁能用、怎么认证、什么时候截止、坑在哪，并且每一步都能回官方原文验证。
+    </p>
+  </div>
+
+  <section class="policy-block">
+    <h2>四问标准</h2>
+    <p>钱条目进站前必须答满四问，字段一一对应：</p>
+    <dl class="policy-list">
+      <div><dt>谁能用</dt><dd>领取条件写成可判断的句子；模糊条件列出官方认定口径</dd></div>
+      <div><dt>怎么认证</dt><dd>步骤从「去哪」到「到账」一步一个动作；材料按官方清单；企业优惠标注认证渠道</dd></div>
+      <div><dt>什么时候最划算</dt><dd>截止日期结构化（日历可订阅），叠加规则只引官方口径</dd></div>
+      <div><dt>有没有坑</dt><dd>风险标签逐条能在正文找到依据，不发明</dd></div>
+    </dl>
+    <p>道条目（避坑/学习/生活/开源挣钱）答三问：坑在哪、正确姿势、什么时间点。</p>
+  </section>
+
+  <section class="policy-block">
+    <h2>来源分级</h2>
+    <ul class="policy-plain">
+      <li><strong>官方原文</strong>：部委、市人社局、学校官网、官方活动页——钱条目的<strong>必填</strong>基准，没有官方入口不发。</li>
+      <li><strong>权威媒体</strong>：可溯源的报道，作佐证与背景。</li>
+      <li><strong>经验帖</strong>：必须 ≥2 个独立来源互证才可采用，且单源经验永远不替代官方口径。</li>
+    </ul>
+    <p>聚合清单（如全国政策清单页）只能作线索，<strong>逐条回官方原文核对后才入库</strong>；多源金额不一致时并列披露，不擅自取一个看起来更划算的。</p>
+  </section>
+
+  <section class="policy-block">
+    <h2>核对节奏</h2>
+    <ul class="policy-plain">
+      <li>官方补贴：按申报窗口核对；平台羊毛：按月；身份福利与避坑生活条目：按学期。</li>
+      <li>每条带「最后核对」年月。超 180 天标「待核对」，超 12 个月标「疑似过期」——由构建自动计算，不靠人记。</li>
+      <li>政策变了标「已变更」并写清变了什么；过期标「已过期」保留供回溯，<strong>绝不静默删除</strong>。</li>
+    </ul>
+  </section>
+
+  <section class="policy-block">
+    <h2>评估值披露</h2>
+    <p>两类标注是<strong>编辑评估值</strong>，不是官方口径，只帮你排序和避坑：</p>
+    <ul class="policy-plain">
+      <li><strong>申请难度（难/中/易）</strong>：按流程成本的编辑判断，不替代官方条件。</li>
+      <li><strong>可信度（高/中）</strong>：按官方链接直达精度——直达具体活动/文件页为高，只到门户为中。</li>
+    </ul>
+  </section>
+
+  <section class="policy-block">
+    <h2>红线</h2>
+    <ul class="policy-plain">
+      <li><strong>不接分销推广</strong>——条目里没有 affiliate 链接，羊毛条目以官方活动页为准。</li>
+      <li>不做资格代办与担保：输出语义是「大概率可申请」，最终以官方审核为准。</li>
+      <li>不编造金额、比例、截止时间；不确定就标「待复核」或暂不入库。</li>
+    </ul>
+    <p class="policy-foot">
+      发现条目有错？<a href={url('/corrections')}>纠错日志</a> 与 <a href={url('/about#correction')}>纠错入口</a> 都在——每一条被修正的记录都会公开留痕。
+    </p>
+  </section>
+</Layout>
+
+<style>
+  .page-head {
+    padding: clamp(48px, 8vw, 96px) 0 40px;
+    max-width: 860px;
+  }
+  .policy-block {
+    max-width: 860px;
+    margin-bottom: 30px;
+    padding: 22px;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    background: var(--surface);
+  }
+  .policy-block h2 {
+    margin: 0 0 12px;
+    font-size: 1.15rem;
+  }
+  .policy-block p {
+    margin: 0 0 10px;
+    color: var(--ink-soft);
+    line-height: 1.75;
+  }
+  .policy-list {
+    margin: 0 0 10px;
+    display: grid;
+    gap: 8px;
+  }
+  .policy-list > div {
+    display: grid;
+    grid-template-columns: 96px 1fr;
+    gap: 10px;
+  }
+  .policy-list dt {
+    color: var(--accent);
+    font-size: 0.88rem;
+    padding-top: 2px;
+    white-space: nowrap;
+  }
+  .policy-list dd {
+    margin: 0;
+    color: var(--ink-soft);
+    font-size: 0.9rem;
+    line-height: 1.7;
+  }
+  .policy-plain {
+    margin: 0;
+    padding-left: 20px;
+    display: grid;
+    gap: 8px;
+    color: var(--ink-soft);
+    font-size: 0.9rem;
+    line-height: 1.7;
+  }
+  .policy-foot {
+    margin-top: 6px;
+  }
+  .policy-foot a {
+    color: var(--accent);
+  }
+  @media (max-width: 560px) {
+    .policy-list > div {
+      grid-template-columns: 1fr;
+      gap: 2px;
+    }
+  }
+</style>

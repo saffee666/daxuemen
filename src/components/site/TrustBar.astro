@@ -1,0 +1,43 @@
+---
+interface Props {
+  entries: number;
+  guides: number;
+  pillars: number;
+  lastVerified: string;
+}
+const { entries, guides, pillars, lastVerified } = Astro.props;
+---
+
+<div class="trust-panel">
+  <div class="trust-stat">
+    <span class="trust-num">{entries}</span>
+    <span class="trust-label">条核对过的门道</span>
+  </div>
+  <div class="trust-stat">
+    <span class="trust-num">{guides}</span>
+    <span class="trust-label">篇跨支柱攻略</span>
+  </div>
+  <div class="trust-stat">
+    <span class="trust-num">{pillars}</span>
+    <span class="trust-label">个钱 / 道支柱</span>
+  </div>
+  <div class="trust-stat">
+    <span class="trust-num">{lastVerified}</span>
+    <span class="trust-label">全站最后核对</span>
+  </div>
+</div>
+
+<div class="trust-rules">
+  <div class="trust-rule">
+    <h3>只认官方入口</h3>
+    <p>每条钱/道都尽量给官方链接；没有官方来源的，明确标出是经验整理。</p>
+  </div>
+  <div class="trust-rule">
+    <h3>写清核对日期</h3>
+    <p>记录最后核对月份和下次复核时间，过期自动降级提示，不装作还新鲜。</p>
+  </div>
+  <div class="trust-rule">
+    <h3>过期只标记，不删除</h3>
+    <p>政策会变，但历史信息仍有参考价值；过期条目保留并标注，不静默消失。</p>
+  </div>
+</div>

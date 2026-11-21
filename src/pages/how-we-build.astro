@@ -1,0 +1,89 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { url } from '../lib/url';
+---
+
+<Layout title="目录是怎么建出来的" description="大学补给站的目录方法论：数据从哪来、怎么变成条目、怎么分类、多久更新一次。">
+  <div class="page-head">
+    <p class="eyebrow">关于 · 目录方法论</p>
+    <h1>记录怎么变成条目。</h1>
+    <p class="page-desc">
+      站上每一条都不是「抓来的」，是<strong>核出来的</strong>。这页写清整条流水线：数据从哪来、走什么工序进站、怎么分类、多久更新一次——让「最后核对」四个字有据可查。
+    </p>
+  </div>
+
+  <section class="policy-block">
+    <h2>一、数据从哪来（三个入口）</h2>
+    <ol class="policy-plain">
+      <li><strong>官方一手源</strong>：教育部全国政策清单、各市人社局官网与公众号、学校资助中心/教务处通知、品牌官方活动页。</li>
+      <li><strong>聚合源交叉</strong>：同类聚合站（补贴速查/学生优惠站）作为线索与对账源——只当线索，<strong>每条回官方原文复核后才入库</strong>，复核不了的标「待复核」。</li>
+      <li><strong>用户爆料</strong>：条目页「纠错/爆料」入口直达 Issue 表单；爆料通常触发对应条目提前复核。</li>
+    </ol>
+  </section>
+
+  <section class="policy-block">
+    <h2>二、一条记录怎么变成条目</h2>
+    <ol class="policy-plain">
+      <li><strong>草稿</strong>：按四问（谁能用/怎么认证/什么时候最划算/有没有坑）落字段，官方链接+核对日期必填。</li>
+      <li><strong>核对</strong>：人工回官方原文逐项抄——金额、资格、入口、日期；不自动抓取入库。</li>
+      <li><strong>发布</strong>：过发布硬约束（无官方入口不发、纯经验帖双源不发、不编造数据）。</li>
+      <li><strong>变更/过期</strong>：政策变了标「已变更」并写差异；过期标「已过期」保留供回溯，不删除。</li>
+    </ol>
+    <p>分类不是随手打的标签：全站条目按 43 个标准类目归档（按支柱分词表），分类写错会被构建期校验直接拦下——坏数据进不了站。</p>
+  </section>
+
+  <section class="policy-block">
+    <h2>三、更新节奏</h2>
+    <ul class="policy-plain">
+      <li><strong>月度巡检</strong>：脚本扫描全部条目的核对日期，超期自动打徽标。</li>
+      <li><strong>申报窗口驱动</strong>：官方补贴按申报窗口核对，不受日历约束。</li>
+      <li><strong>来源页监控</strong>：政策页变化走「网页 diff 监控 → 变更开单」流程，机器盯变化、人做核对。</li>
+      <li><strong>你也是传感器</strong>：<a href={url('/corrections')}>纠错日志</a>里每条已修正记录，起点都是有人发现「跟官方对不上」。</li>
+    </ul>
+  </section>
+
+  <section class="policy-block">
+    <h2>四、边界声明</h2>
+    <p>
+      本站是非官方信息整理：内容覆盖已核对的部分，<strong>不穷尽所有资助与优惠</strong>，按月更新。演示数据（雷达演示页）为虚构并已标注。任何差异以官方当期口径为准——这也是每条都给官方链接的原因。
+    </p>
+    <p class="policy-foot">编辑口径全文见 <a href={url('/editorial')}>编辑政策</a>；数据收集边界见 <a href={url('/privacy')}>隐私说明</a>。</p>
+  </section>
+</Layout>
+
+<style>
+  .page-head {
+    padding: clamp(48px, 8vw, 96px) 0 40px;
+    max-width: 860px;
+  }
+  .policy-block {
+    max-width: 860px;
+    margin-bottom: 30px;
+    padding: 22px;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    background: var(--surface);
+  }
+  .policy-block h2 {
+    margin: 0 0 12px;
+    font-size: 1.15rem;
+  }
+  .policy-block p {
+    margin: 8px 0 0;
+    color: var(--ink-soft);
+    line-height: 1.75;
+  }
+  .policy-plain {
+    margin: 0;
+    padding-left: 20px;
+    display: grid;
+    gap: 8px;
+    color: var(--ink-soft);
+    font-size: 0.9rem;
+    line-height: 1.7;
+  }
+  .policy-plain a,
+  .policy-foot a {
+    color: var(--accent);
+  }
+</style>

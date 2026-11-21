@@ -1,0 +1,149 @@
+- generic [active] [ref=f2e1]:
+  - link "跳到正文" [ref=f2e2] [cursor=pointer]:
+    - /url: "#main"
+  - banner [ref=f2e3]:
+    - generic [ref=f2e4]:
+      - link "大学补给站首页" [ref=f2e5] [cursor=pointer]:
+        - /url: /
+        - generic [ref=f2e12]: 大学补给站
+      - navigation "主导航" [ref=f2e13]:
+        - group [ref=f2e14]:
+          - generic "校园门道" [ref=f2e15] [cursor=pointer]
+        - group [ref=f2e18]:
+          - generic "社会支持" [ref=f2e19] [cursor=pointer]
+        - group [ref=f2e22]:
+          - generic "信息差工具" [ref=f2e23] [cursor=pointer]
+        - link "攻略" [ref=f2e26] [cursor=pointer]:
+          - /url: /guides
+        - link "关于" [ref=f2e27] [cursor=pointer]:
+          - /url: /about
+        - link "搜索全站" [ref=f2e28] [cursor=pointer]:
+          - /url: /search
+  - main [ref=f2e32]:
+    - generic [ref=f2e33]:
+      - paragraph [ref=f2e34]: 关于 · 编辑政策
+      - heading "每条条目，按同一套标准进站。" [level=1] [ref=f2e35]
+      - paragraph [ref=f2e36]:
+        - text: 这页写清一条信息怎么才算「核对过」。标准只有一个目的：
+        - strong [ref=f2e37]: 让你敢按条目行动
+        - text: ——知道谁能用、怎么认证、什么时候截止、坑在哪，并且每一步都能回官方原文验证。
+    - generic [ref=f2e38]:
+      - heading "四问标准" [level=2] [ref=f2e39]
+      - paragraph [ref=f2e40]: 钱条目进站前必须答满四问，字段一一对应：
+      - generic [ref=f2e41]:
+        - generic [ref=f2e42]:
+          - term [ref=f2e43]: 谁能用
+          - definition [ref=f2e44]: 领取条件写成可判断的句子；模糊条件列出官方认定口径
+        - generic [ref=f2e45]:
+          - term [ref=f2e46]: 怎么认证
+          - definition [ref=f2e47]: 步骤从「去哪」到「到账」一步一个动作；材料按官方清单；企业优惠标注认证渠道
+        - generic [ref=f2e48]:
+          - term [ref=f2e49]: 什么时候最划算
+          - definition [ref=f2e50]: 截止日期结构化（日历可订阅），叠加规则只引官方口径
+        - generic [ref=f2e51]:
+          - term [ref=f2e52]: 有没有坑
+          - definition [ref=f2e53]: 风险标签逐条能在正文找到依据，不发明
+      - paragraph [ref=f2e54]: 道条目（避坑/学习/生活/开源挣钱）答三问：坑在哪、正确姿势、什么时间点。
+    - generic [ref=f2e55]:
+      - heading "来源分级" [level=2] [ref=f2e56]
+      - list [ref=f2e57]:
+        - listitem [ref=f2e58]:
+          - strong [ref=f2e59]: 官方原文
+          - text: ：部委、市人社局、学校官网、官方活动页——钱条目的
+          - strong [ref=f2e60]: 必填
+          - text: 基准，没有官方入口不发。
+        - listitem [ref=f2e61]:
+          - strong [ref=f2e62]: 权威媒体
+          - text: ：可溯源的报道，作佐证与背景。
+        - listitem [ref=f2e63]:
+          - strong [ref=f2e64]: 经验帖
+          - text: ：必须 ≥2 个独立来源互证才可采用，且单源经验永远不替代官方口径。
+      - paragraph [ref=f2e65]:
+        - text: 聚合清单（如全国政策清单页）只能作线索，
+        - strong [ref=f2e66]: 逐条回官方原文核对后才入库
+        - text: ；多源金额不一致时并列披露，不擅自取一个看起来更划算的。
+    - generic [ref=f2e67]:
+      - heading "核对节奏" [level=2] [ref=f2e68]
+      - list [ref=f2e69]:
+        - listitem [ref=f2e70]: 官方补贴：按申报窗口核对；平台羊毛：按月；身份福利与避坑生活条目：按学期。
+        - listitem [ref=f2e71]: 每条带「最后核对」年月。超 180 天标「待核对」，超 12 个月标「疑似过期」——由构建自动计算，不靠人记。
+        - listitem [ref=f2e72]:
+          - text: 政策变了标「已变更」并写清变了什么；过期标「已过期」保留供回溯，
+          - strong [ref=f2e73]: 绝不静默删除
+          - text: 。
+    - generic [ref=f2e74]:
+      - heading "评估值披露" [level=2] [ref=f2e75]
+      - paragraph [ref=f2e76]:
+        - text: 两类标注是
+        - strong [ref=f2e77]: 编辑评估值
+        - text: ，不是官方口径，只帮你排序和避坑：
+      - list [ref=f2e78]:
+        - listitem [ref=f2e79]:
+          - strong [ref=f2e80]: 申请难度（难/中/易）
+          - text: ：按流程成本的编辑判断，不替代官方条件。
+        - listitem [ref=f2e81]:
+          - strong [ref=f2e82]: 可信度（高/中）
+          - text: ：按官方链接直达精度——直达具体活动/文件页为高，只到门户为中。
+    - generic [ref=f2e83]:
+      - heading "红线" [level=2] [ref=f2e84]
+      - list [ref=f2e85]:
+        - listitem [ref=f2e86]:
+          - strong [ref=f2e87]: 不接分销推广
+          - text: ——条目里没有 affiliate 链接，羊毛条目以官方活动页为准。
+        - listitem [ref=f2e88]: 不做资格代办与担保：输出语义是「大概率可申请」，最终以官方审核为准。
+        - listitem [ref=f2e89]: 不编造金额、比例、截止时间；不确定就标「待复核」或暂不入库。
+      - paragraph [ref=f2e90]:
+        - text: 发现条目有错？
+        - link "纠错日志" [ref=f2e91] [cursor=pointer]:
+          - /url: /corrections
+        - text: 与
+        - link "纠错入口" [ref=f2e92] [cursor=pointer]:
+          - /url: /about#correction
+        - text: 都在——每一条被修正的记录都会公开留痕。
+  - contentinfo [ref=f2e93]:
+    - generic [ref=f2e94]:
+      - generic [ref=f2e95]:
+        - generic [ref=f2e96]:
+          - link "大学补给站" [ref=f2e97] [cursor=pointer]:
+            - /url: /
+          - paragraph [ref=f2e103]: 把大学四年的信息差，提前补给你。
+          - paragraph [ref=f2e104]: 552 条门道 · 12 篇攻略 · 最后核对 2026-11
+        - generic [ref=f2e105]:
+          - heading "社会支持" [level=3] [ref=f2e106]
+          - link "政府的钱" [ref=f2e107] [cursor=pointer]:
+            - /url: /money/gov
+          - link "企业的让利" [ref=f2e108] [cursor=pointer]:
+            - /url: /money/corporate
+          - link "平台的预算" [ref=f2e109] [cursor=pointer]:
+            - /url: /money/platform
+        - generic [ref=f2e110]:
+          - heading "校园门道" [level=3] [ref=f2e111]
+          - link "避坑" [ref=f2e112] [cursor=pointer]:
+            - /url: /dao/pits
+          - link "学习" [ref=f2e113] [cursor=pointer]:
+            - /url: /dao/learn
+          - link "生活" [ref=f2e114] [cursor=pointer]:
+            - /url: /dao/life
+          - link "开源挣钱" [ref=f2e115] [cursor=pointer]:
+            - /url: /dao/earn
+        - generic [ref=f2e116]:
+          - heading "更多" [level=3] [ref=f2e117]
+          - link "校园信息雷达" [ref=f2e118] [cursor=pointer]:
+            - /url: /radar
+          - link "攻略库" [ref=f2e119] [cursor=pointer]:
+            - /url: /guides
+          - link "搜索全站" [ref=f2e120] [cursor=pointer]:
+            - /url: /search
+          - link "关于 · 核对机制" [ref=f2e121] [cursor=pointer]:
+            - /url: /about
+          - link "纠错日志" [ref=f2e122] [cursor=pointer]:
+            - /url: /corrections
+          - link "编辑政策" [ref=f2e123] [cursor=pointer]:
+            - /url: /editorial
+          - link "目录方法论" [ref=f2e124] [cursor=pointer]:
+            - /url: /how-we-build
+          - link "隐私说明" [ref=f2e125] [cursor=pointer]:
+            - /url: /privacy
+      - generic [ref=f2e126]:
+        - generic [ref=f2e127]: © 2026 大学补给站
+        - generic [ref=f2e128]: 非官方信息整理 · 政策与价格以官方渠道为准 · 过期条目不删除，只标记

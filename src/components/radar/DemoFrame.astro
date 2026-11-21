@@ -1,0 +1,40 @@
+---
+import PhoneFrame from './PhoneFrame.astro';
+import { RADAR } from '../../lib/radar';
+import { url } from '../../lib/url';
+
+interface Props {
+  small?: boolean;
+  src?: string;
+}
+const { small = false, src = RADAR.demoAppUrl } = Astro.props;
+const demoSrc = url(src);
+---
+
+<div class="demo-frame" data-demo-frame data-state="loading">
+  <PhoneFrame small={small}>
+    <iframe
+      src={demoSrc}
+      title="群务台界面演示（虚构数据）"
+      loading="lazy"
+      referrerpolicy="no-referrer"
+      sandbox="allow-scripts allow-same-origin allow-forms allow-modals allow-popups"
+    ></iframe>
+    <div class="demo-loading" data-demo-loading>
+      <span class="spinner"></span>
+      <span data-demo-loading-text>正在加载界面演示…</span>
+    </div>
+  </PhoneFrame>
+  <p class="demo-frame-note">
+    <span>演示数据 · 群与账号均为虚构</span>
+    <button type="button" data-demo-reload>重新加载</button>
+    <a href={demoSrc} target="_blank" rel="noopener">新窗口打开</a>
+  </p>
+  <p class="demo-fallback" data-demo-fallback hidden>
+    加载较慢？<a href={demoSrc} target="_blank" rel="noopener">直接打开演示页</a>
+  </p>
+</div>
+
+<script>
+  import '../../scripts/demo-frame';
+</script>

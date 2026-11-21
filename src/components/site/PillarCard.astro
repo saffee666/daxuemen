@@ -1,0 +1,20 @@
+---
+import type { PillarMeta } from '../../lib/pillars';
+
+interface Props {
+  pillar: PillarMeta;
+  count: number;
+  href: string;
+}
+const { pillar, count, href } = Astro.props;
+---
+
+<a class="pillar-card" href={href}>
+  <span class="pillar-num">{pillar.num}</span>
+  <span class="pillar-name">{pillar.name}</span>
+  <p class="pillar-desc">{pillar.desc}</p>
+  <span class="pillar-meta">
+    <span>{count} 条</span>
+    <span>{pillar.freq}</span>
+  </span>
+</a>

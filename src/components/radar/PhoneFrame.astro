@@ -1,0 +1,13 @@
+---
+interface Props {
+  small?: boolean;
+}
+const { small = false } = Astro.props;
+---
+
+<div class:list={['phone-frame', { small }]}>
+  <div class="phone-notch" aria-hidden="true"></div>
+  <div class="phone-screen">
+    <slot />
+  </div>
+</div>

@@ -1,0 +1,45 @@
+---
+interface Props {
+  sourceName: string;
+  verifiedDate: string;
+  nextReview: string;
+  status: string;
+  freshnessLabel: string;
+  level: 'ok' | 'warn' | 'stale';
+  correctionHref: string;
+}
+
+const { sourceName, verifiedDate, nextReview, status, freshnessLabel, level, correctionHref } =
+  Astro.props;
+---
+
+<div class="verify-strip">
+  <div class="verify-cell">
+    <span class="verify-label">来源</span>
+    <span class="verify-value">{sourceName}</span>
+  </div>
+  <div class="verify-cell">
+    <span class="verify-label">最后核对</span>
+    <span class="verify-value">{verifiedDate}</span>
+  </div>
+  <div class="verify-cell">
+    <span class="verify-label">下次复核</span>
+    <span class="verify-value">{nextReview}</span>
+  </div>
+  <div class="verify-cell">
+    <span class="verify-label">状态</span>
+    <span class="verify-value">
+      {status === '有效' ? freshnessLabel : status}
+    </span>
+    <a class="verify-link" href={correctionHref}>发现错误？</a>
+  </div>
+</div>
+
+<style>
+  .verify-link {
+    display: inline-block;
+    margin-top: 4px;
+    color: var(--accent);
+    font-size: 0.74rem;
+  }
+</style>

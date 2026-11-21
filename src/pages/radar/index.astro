@@ -1,0 +1,193 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import PhoneFrame from '../../components/radar/PhoneFrame.astro';
+import RadarMockCard from '../../components/radar/RadarMockCard.astro';
+import DemoFrame from '../../components/radar/DemoFrame.astro';
+import { RADAR } from '../../lib/radar';
+import { url } from '../../lib/url';
+
+const description =
+  '把 QQ 群通知变成待办、截止提醒和日历的本机工具。只读白名单群，数据不上云；先看界面演示，再按三步安装。';
+---
+
+<Layout
+  title="校园信息雷达"
+  description={description}
+  mode="radar"
+>
+  <section class="radar-hero">
+    <div class="radar-hero-grid">
+      <div>
+        <p class="radar-kicker">{RADAR.hero.eyebrow} · {RADAR.version}</p>
+        <h1 class="radar-title">群消息很多，<br />重要的只有<em>几条</em>。</h1>
+        <p class="radar-sub">{RADAR.hero.sub}</p>
+
+        <div class="radar-badges">
+          {RADAR.requirements.map((item) => <span class="radar-badge">{item}</span>)}
+        </div>
+
+        <div class="radar-actions">
+          <a class="btn" href="#demo">看界面演示 →</a>
+          <a class="btn ghost" href="#install">三步安装</a>
+        </div>
+
+        <div class="radar-statline">
+          <span>许可 <strong>{RADAR.license}</strong></span>
+          <span>演示数据 <strong>全部虚构</strong></span>
+          <span>本站 <strong>不托管安装包</strong></span>
+        </div>
+      </div>
+
+      <div class="radar-stage">
+        <PhoneFrame small>
+          <RadarMockCard />
+        </PhoneFrame>
+        <p class="radar-caption">界面示意 · 群与账号均为虚构</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="radar-section" aria-labelledby="what">
+    <div class="radar-section-head">
+      <h2 id="what">它是什么，不是什么</h2>
+      <p>先把边界说清楚：它只帮你整理消息，不替你做决定，也不碰你的账号。</p>
+    </div>
+    <div class="isnot-grid">
+      <div class="isnot-card yes">
+        <h3><span class="tag">是</span>一个本机工具</h3>
+        <ul>
+          {RADAR.is.map((item) => <li>{item}</li>)}
+        </ul>
+      </div>
+      <div class="isnot-card no">
+        <h3><span class="tag">不是</span>云端服务</h3>
+        <ul>
+          {RADAR.isNot.map((item) => <li>{item}</li>)}
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="radar-section" aria-labelledby="flow">
+    <div class="radar-section-head">
+      <h2 id="flow">从一条群消息，到一条可执行的待办</h2>
+      <p>机器负责不漏，人负责不错。雷达抓线索，门道做沉淀。</p>
+    </div>
+    <div class="radar-flow">
+      {RADAR.pipeline.map((step) => (
+        <div class="flow-step">
+          <h3>{step.step}</h3>
+          <p>{step.body}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="radar-section" aria-labelledby="features">
+    <div class="radar-section-head">
+      <h2 id="features">能做什么</h2>
+      <p>核心功能不依赖 AI；AI 摘要只是可选项，不配也能跑。</p>
+    </div>
+    <div class="feature-grid">
+      {RADAR.features.map((feature, index) => (
+        <div class="feature-card">
+          <div class="feature-icon">{String(index + 1).padStart(2, '0')}</div>
+          <h3>{feature.title}</h3>
+          <p>{feature.body}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="radar-section" id="install" aria-labelledby="install-title">
+    <div class="radar-section-head">
+      <h2 id="install-title">三步安装</h2>
+      <p>全程在本机完成；不需要服务器、域名或公网 IP。</p>
+    </div>
+    <div class="install-grid">
+      {RADAR.steps.map((step) => (
+        <div class="install-step">
+          <div class="install-top">
+            <span class="install-num">{step.num}</span>
+            <span class="install-time">{step.time}</span>
+          </div>
+          <h3>{step.title}</h3>
+          <p>{step.body}</p>
+          <p class="install-note">{step.note}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="radar-section" id="demo" aria-labelledby="demo-title">
+    <div class="radar-band-grid radar-demo-grid">
+      <div>
+        <p class="radar-kicker">Live demo</p>
+        <h2 id="demo-title">点两下，看看它长什么样</h2>
+        <p class="radar-lede">
+          这是把本机页面原样搬过来的界面演示：待办、收件箱、日历、设置都能点。所有群、账号、截止时间都是虚构的，也不会发出任何网络请求。
+        </p>
+        <ul class="radar-points">
+          <li><strong>可点</strong><span>勾选完成、切换标签、翻收件箱</span></li>
+          <li><strong>可改</strong><span>新建待办、改设置，只改内存</span></li>
+          <li><strong>不联网</strong><span>CSP 直接禁掉所有连接</span></li>
+        </ul>
+        <div class="radar-band-actions">
+          <a class="btn" href={url(RADAR.demoUrl)}>全屏打开演示 →</a>
+          <a class="btn ghost" href="#install">先看安装步骤</a>
+        </div>
+      </div>
+      <div class="radar-stage">
+        <DemoFrame />
+      </div>
+    </div>
+  </section>
+
+  <section class="radar-section" aria-labelledby="boundary">
+    <div class="radar-section-head">
+      <h2 id="boundary">边界与风险</h2>
+      <p>能做什么、不能做什么，以及你可能遇到什么问题，都在这里。</p>
+    </div>
+    <div class="boundary-grid">
+      {RADAR.boundaries.map((item, index) => (
+        <div class:list={['boundary-card', { risk: index >= 2 }]}>
+          <h3>{item.title}</h3>
+          <p>{item.body}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="radar-section" aria-labelledby="faq">
+    <div class="radar-section-head">
+      <h2 id="faq">常见问题</h2>
+      <p>没有营销话术，只有实际会发生的事。</p>
+    </div>
+    <div class="faq-list">
+      {RADAR.faqs.map((faq) => (
+        <details>
+          <summary>{faq.q}</summary>
+          <div class="faq-a"><p>{faq.a}</p></div>
+        </details>
+      ))}
+    </div>
+  </section>
+
+  <section class="radar-section" aria-labelledby="download">
+    <div class="download-card">
+      <div>
+        <h2 id="download">获取工具</h2>
+        <p>版本 {RADAR.version} · 本站不托管安装包，只指向项目主页；下载前请先读上面的风险说明。</p>
+        <div class="download-meta">
+          <span>{RADAR.requirements[0]}</span>
+          <span>{RADAR.license}</span>
+          <span>本地运行</span>
+        </div>
+      </div>
+      <div class="download-actions">
+        <a class="btn" href={RADAR.downloadUrl} target="_blank" rel="noopener noreferrer">打开项目主页 ↗</a>
+        <small>若链接失效，请在 GitHub 搜索 qq-live-digest</small>
+      </div>
+    </div>
+  </section>
+</Layout>

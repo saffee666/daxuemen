@@ -1,0 +1,45 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import FilterList from '../../components/FilterList.astro';
+import RadarCta from '../../components/entries/RadarCta.astro';
+import { getCollection } from 'astro:content';
+import { DAO_PILLARS } from '../../lib/pillars';
+
+export function getStaticPaths() {
+  return Object.keys(DAO_PILLARS).map((key) => ({ params: { pillar: key } }));
+}
+
+const { pillar } = Astro.params;
+const meta = DAO_PILLARS[pillar!];
+const all = await getCollection('dao');
+const entries = all
+  .filter((e) => e.data.pillar === pillar)
+  .sort((a, b) => a.data.title.localeCompare(b.data.title, 'zh'));
+const categories = [...new Set(entries.map((e) => e.data.category))].sort((a, b) =>
+  a.localeCompare(b, 'zh')
+);
+const lastVerified = entries.map((e) => e.data.verified_date).sort().at(-1) ?? '—';
+---
+
+<Layout title={meta.name} description={meta.desc}>
+  <div class="page-head">
+    <p class="eyebrow">{meta.line} · {meta.num}</p>
+    <h1>{meta.name}</h1>
+    <p class="page-desc">{meta.desc}</p>
+    <p class="page-desc">{meta.intro}</p>
+    <div class="page-meta">
+      <span><strong>{entries.length}</strong> 条</span>
+      <span>适合：{meta.audience}</span>
+      <span>核对节奏：{meta.freq}</span>
+      <span>最后核对 <strong>{lastVerified}</strong></span>
+    </div>
+    <div class="chip-row">
+      {categories.map((category) => (
+        <a class="chip" href={`?category=${encodeURIComponent(category)}`}>{category}</a>
+      ))}
+    </div>
+  </div>
+
+  <FilterList kind="dao" entries={entries} categories={categories} />
+  <RadarCta />
+</Layout>

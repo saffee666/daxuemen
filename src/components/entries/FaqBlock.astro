@@ -1,0 +1,18 @@
+---
+// FAQ 手风琴（details/summary，零客户端 JS）。
+// 零件来源：_素材/复刻/_原子/会员比比 faq 组件，Astro 化改写。
+// 类名用 faq-acc 前缀：radar.css 已占用 .faq-list（雷达深色主题），避免冲突。
+interface Props {
+  faq: { q: string; a: string }[];
+}
+const { faq } = Astro.props;
+---
+
+<div class="faq-acc">
+  {faq.map((item) => (
+    <details class="faq-item">
+      <summary>{item.q}</summary>
+      <p>{item.a}</p>
+    </details>
+  ))}
+</div>

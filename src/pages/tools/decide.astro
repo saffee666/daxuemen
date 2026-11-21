@@ -1,0 +1,296 @@
+---
+// L7 决策器「留大城市还是回老家」：4 题评分 → 三向推荐（大城市/新一线/回家乡）。
+// 评分规则全部公开在「结果怎么解读」（IPDAS 透明原则）；它是取舍框架，不是替人拍板。
+import Layout from '../../layouts/Layout.astro';
+import { url } from '../../lib/url';
+---
+
+<Layout title="留大城市还是回老家 · 工具" description="四个问题给一版带口径的去向取舍框架；本地计算，不上传任何输入。">
+  <div class="tool-page">
+    <p class="tool-eyebrow">工具 04 · 约 3 分钟</p>
+    <h1 tabindex="-1">留大城市还是回老家</h1>
+    <p class="tool-intro">四道单选，给你一版<strong>能说清理由</strong>的取舍框架：答案怎么变成推荐，规则全部摆在明面上。它管方向感，不替你拍板。</p>
+
+    <div class="steps-head" aria-hidden="true">
+      <span class="dot" data-dot></span><span class="dot" data-dot></span><span class="dot" data-dot></span><span class="dot" data-dot></span><span class="dot" data-dot></span>
+      <span class="steps-label" data-label>第 1 步，共 5 步</span>
+    </div>
+
+    <form id="steps" class="steps" onsubmit="return false">
+      <fieldset data-step hidden>
+        <h2 data-step-title tabindex="-1">你毕业最想进哪类行当？</h2>
+        <label><input type="radio" name="job" value="tech" required /> 互联网 / 新兴行业（岗位集中在头部城市）</label>
+        <label><input type="radio" name="job" value="stable" /> 体制内 / 事业编（老家和省会都有岗）</label>
+        <label><input type="radio" name="job" value="pro" /> 专业技术（医疗、教育、设计等，哪里都有岗）</label>
+        <label><input type="radio" name="job" value="unsure" /> 还没想好</label>
+        <p class="hint" data-hint hidden></p>
+        <button type="button" class="btn" data-next>下一步</button>
+      </fieldset>
+
+      <fieldset data-step hidden>
+        <h2 data-step-title tabindex="-1">头一年每月能接受花多少（房租+生活）？</h2>
+        <label><input type="radio" name="budget" value="tight" required /> 3000 以内，多一分都肉疼</label>
+        <label><input type="radio" name="budget" value="mid" /> 3000–5000</label>
+        <label><input type="radio" name="budget" value="loose" /> 5000 以上也能接受</label>
+        <p class="hint" data-hint hidden></p>
+        <div class="step-nav">
+          <button type="button" class="btn ghost small" data-back>上一步</button>
+          <button type="button" class="btn" data-next>下一步</button>
+        </div>
+      </fieldset>
+
+      <fieldset data-step hidden>
+        <h2 data-step-title tabindex="-1">家里那边，你怎么算这笔账？</h2>
+        <label><input type="radio" name="family" value="push" required /> 家里托不了底，还想让我补贴家里</label>
+        <label><input type="radio" name="family" value="neutral" /> 各过各的，互相不添负担</label>
+        <label><input type="radio" name="family" value="pull" /> 家里能托底，也盼我回去</label>
+        <p class="hint" data-hint hidden></p>
+        <div class="step-nav">
+          <button type="button" class="btn ghost small" data-back>上一步</button>
+          <button type="button" class="btn" data-next>下一步</button>
+        </div>
+      </fieldset>
+
+      <fieldset data-step hidden>
+        <h2 data-step-title tabindex="-1">头三年你更想要哪种活法？</h2>
+        <label><input type="radio" name="risk" value="rush" required /> 拼几年，赌一个上限</label>
+        <label><input type="radio" name="risk" value="steady" /> 求稳，把生活先安顿好</label>
+        <p class="hint" data-hint hidden></p>
+        <div class="step-nav">
+          <button type="button" class="btn ghost small" data-back>上一步</button>
+          <button type="button" class="btn" data-next>看结果</button>
+        </div>
+      </fieldset>
+
+      <fieldset data-step hidden data-result>
+        <h2 data-step-title tabindex="-1">你的框架结果</h2>
+        <div class="verdict" data-verdict hidden>
+          <p class="verdict-title" data-verdict-title></p>
+          <p class="verdict-why" data-verdict-why></p>
+        </div>
+        <div class="tally">
+          <p>你的答案把天平拨向了哪里（每题计 1 分，规则见下方「结果怎么解读」）：</p>
+          <div class="tally-row">
+            <span class="tally-item">头部城市 <strong data-tally="metro">0</strong></span>
+            <span class="tally-item">新一线折中 <strong data-tally="second">0</strong></span>
+            <span class="tally-item">回老家 <strong data-tally="home">0</strong></span>
+          </div>
+        </div>
+        <div class="step-nav">
+          <button type="button" class="btn ghost small" data-back>改答案重来</button>
+        </div>
+      </fieldset>
+    </form>
+
+    <section class="tool-blocks">
+      <section>
+        <h2>怎么用</h2>
+        <p>四道单选，答完出推荐与计分明细。推荐是「按你的答案，哪条路在框架里分更高」，不是「你必须走哪条」——家里人、对象、身体这些题目外的权重，框架不管，你自己加。</p>
+      </section>
+      <section>
+        <h2>结果怎么解读（评分规则全公开）</h2>
+        <p>
+          行当：互联网→头部城市；体制内→回老家；专业技术→新一线；没想好→各记 0.5 分新一线。预算：3000 内→回老家；3000–5000→新一线；5000 上→头部城市。家庭：托不了底→回老家；互相不添负担→新一线；家里盼回→回老家。活法：拼上限→头部城市；求稳→新一线。四个方向分数最高者为推荐，平分时按「新一线 > 头部 > 老家」排序——它最不吃答案组合。
+        </p>
+      </section>
+      <section>
+        <h2>注意事项与局限</h2>
+        <p>口径：五维对比整理于 2026-11，来源为公开统计与各市人社局政策页面，具体数值以当期为准。边界情况自家说明：老家本身是一线/新一线的，本题退化，按老家算；两口子分两地的，框架不处理。补贴力度一列只计我们已核对建条目的城市。</p>
+      </section>
+      <section>
+        <h2>五维对比（按城市档）</h2>
+        <div class="cmp-wrap">
+          <table class="cmp">
+            <thead>
+              <tr><th scope="col">维度</th><th scope="col">头部城市</th><th scope="col">新一线</th><th scope="col">老家（地级市）</th></tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">生活成本（单人月）</th><td>4000–7000</td><td>2500–4500</td><td>1500–2800</td></tr>
+              <tr><th scope="row">落户门槛</th><td>多数有社保年限要求</td><td>多数毕业生直接落</td><td>基本无门槛</td></tr>
+              <tr><th scope="row">毕业生补贴力度</th><td>安居/租房补贴普遍，竞争性名额多</td><td>一次性安家+生活补贴常见（见城市条目）</td><td>以就业创业补贴为主，量少门槛低</td></tr>
+              <tr><th scope="row">行业机会密度</th><td>互联网/金融/外企集中</td><td>制造/新能源/区域总部增长快</td><td>体制内与本地服务业为主</td></tr>
+              <tr><th scope="row">离家距离</th><td>远，探亲靠长假</td><td>省内或高铁 2 小时圈常见</td><td>在自家门口</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="tool-cta">
+          行动：<a href={url('/money/gov')}>看政府补贴条目</a>　·　知识：<a href={url('/guides')}>读租房与生活攻略</a>
+        </p>
+      </section>
+      <section>
+        <h2>常见问题</h2>
+        <details><summary>为什么我的两个方向分一样？</summary><div>说明你的答案本身就骑墙——框架给出「新一线」兜底，并把选择权还给你。这比硬推一边诚实。</div></details>
+        <details><summary>这工具凭什么替我决定？</summary><div>它不替你决定。它只把「钱、行当、家庭、活法」四个公开可谈的变量摆上桌，家务事和感情账不在它的管辖区。</div></details>
+      </section>
+    </section>
+  </div>
+</Layout>
+
+<script>
+  import { initSteps } from '../../scripts/tools.js';
+
+  // 评分表：每题答案 → 三向各计几分（规则公开于「结果怎么解读」，此处为同一规则的实现）
+  const SCORE: Record<string, Record<string, [number, number, number]>> = {
+    job: { tech: [1, 0, 0], stable: [0, 0, 1], pro: [0, 1, 0], unsure: [0, 0.5, 0] },
+    budget: { tight: [0, 0, 1], mid: [0, 1, 0], loose: [1, 0, 0] },
+    family: { push: [0, 0, 1], neutral: [0, 1, 0], pull: [0, 0, 1] },
+    risk: { rush: [1, 0, 0], steady: [0, 1, 0] },
+  };
+  const ORDER = ['metro', 'second', 'home'] as const;
+  const NAMES: Record<string, string> = {
+    metro: '往头部城市闯，用三年换一个高上限——预算压力是代价，把租房攻略读细一点再落地。',
+    second: '新一线折中：机会在涨、成本可控、落户不卡人——先落「毕业生补贴」这个便宜占稳。',
+    home: '回老家不是退：体制与本地生活圈都在家门口，用低成本把头两年攒出余量。',
+  };
+
+  const form = document.getElementById('steps') as HTMLElement;
+  const label = form.parentElement?.querySelector<HTMLElement>('[data-label]');
+  const verdict = form.querySelector<HTMLElement>('[data-verdict]');
+  const verdictTitle = form.querySelector<HTMLElement>('[data-verdict-title]');
+  const verdictWhy = form.querySelector<HTMLElement>('[data-verdict-why]');
+
+  const steps = initSteps(form);
+  if (steps) {
+    steps.onAdvance((cur) => {
+      if (label) label.textContent = `第 ${cur + 2} 步，共 5 步`;
+      return true;
+    });
+    steps.onDone((vals) => {
+      const tally = { metro: 0, second: 0, home: 0 };
+      for (const [q, table] of Object.entries(SCORE)) {
+        const v = String(vals[q] ?? '');
+        const s = table[v];
+        if (s) {
+          tally.metro += s[0];
+          tally.second += s[1];
+          tally.home += s[2];
+        }
+      }
+      for (const k of ORDER) {
+        const el = form.querySelector<HTMLElement>(`[data-tally="${k}"]`);
+        if (el) el.textContent = String(tally[k]);
+      }
+      // 平分兜底：最高分被 2 个及以上方向共享 → 推新一线（中立位兜底，与「结果怎么解读」「为什么两个方向分一样」同口径）
+      const sorted = ORDER.slice().sort((a, b) => tally[b] - tally[a]);
+      const tied = sorted.filter((k) => tally[k] === tally[sorted[0]]);
+      const win = tied.length > 1 ? 'second' : sorted[0];
+      if (verdict && verdictTitle && verdictWhy) {
+        verdict.removeAttribute('hidden');
+        verdictTitle.textContent = NAMES[win].split('：')[0];
+        verdictWhy.textContent = NAMES[win].split('：').slice(1).join('：');
+      }
+    });
+  }
+</script>
+
+<style>
+  fieldset {
+    padding: 24px;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    background: var(--surface);
+  }
+  fieldset h2 {
+    margin: 0 0 14px;
+    font-size: 1.15rem;
+  }
+  fieldset label {
+    display: block;
+    padding: 9px 12px;
+    border: 1px solid var(--line);
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+  }
+  fieldset label:hover {
+    border-color: var(--line-strong);
+    background: var(--surface-soft);
+  }
+  fieldset label + label {
+    margin-top: 8px;
+  }
+  .hint {
+    margin: 10px 0 0;
+    color: var(--stale);
+    font-size: 0.84rem;
+  }
+  .btn {
+    margin-top: 16px;
+  }
+  .step-nav {
+    display: flex;
+    gap: 10px;
+  }
+  .verdict {
+    margin: 0 0 16px;
+    padding: 18px 20px;
+    border: 1px solid var(--line);
+    border-left: 2px solid var(--accent);
+    border-radius: var(--radius);
+    background: var(--accent-soft);
+  }
+  .verdict-title {
+    margin: 0 0 6px;
+    font-size: 1.1rem;
+    font-weight: 600;
+  }
+  .verdict-why {
+    margin: 0;
+    color: var(--ink-soft);
+    font-size: 0.92rem;
+    line-height: 1.7;
+  }
+  .tally {
+    color: var(--ink-soft);
+    font-size: 0.88rem;
+  }
+  .tally p {
+    margin: 0 0 8px;
+  }
+  .tally-row {
+    display: flex;
+    gap: 18px;
+    flex-wrap: wrap;
+  }
+  .tally-item {
+    font-family: var(--mono);
+    font-size: 0.8rem;
+  }
+  .tally-item strong {
+    font-variant-numeric: tabular-nums;
+    color: var(--ink);
+    margin-left: 4px;
+  }
+  .cmp-wrap {
+    overflow-x: auto;
+  }
+  .cmp {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.85rem;
+  }
+  .cmp th,
+  .cmp td {
+    padding: 8px 10px;
+    border: 1px solid var(--line);
+    text-align: left;
+    vertical-align: top;
+  }
+  .cmp thead th {
+    background: var(--surface-soft);
+  }
+  .cmp tbody th {
+    color: var(--ink-soft);
+    font-weight: 500;
+    white-space: nowrap;
+  }
+  .cmp td {
+    font-variant-numeric: tabular-nums;
+  }
+  .tool-cta {
+    margin-top: 12px;
+  }
+  .tool-cta a {
+    color: var(--accent);
+    text-decoration: underline;
+  }
+</style>
