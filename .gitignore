@@ -4,3 +4,4 @@ dist/
 public/radar-demo/
 public/calendar.ics
 public/calendars/
+.playwright-cli/
