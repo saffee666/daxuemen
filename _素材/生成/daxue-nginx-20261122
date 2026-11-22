@@ -1,0 +1,28 @@
+# 大学门道 daxue.beichen.help — Astro 静态站（2026-11-22 缓存策略修正）
+server {
+    listen 80;
+    server_name daxue.beichen.help;
+    return 301 https://$host$request_uri;
+}
+server {
+    listen 443 ssl http2;
+    server_name daxue.beichen.help;
+    ssl_certificate /root/.acme.sh/daxue.beichen.help_ecc/fullchain.cer;
+    ssl_certificate_key /root/.acme.sh/daxue.beichen.help_ecc/daxue.beichen.help.key;
+    root /var/www/daxue;
+    index index.html;
+    error_page 404 /404.html;
+    gzip on;
+    gzip_types text/css application/javascript application/json image/svg+xml text/xml;
+
+    # HTML 与根级无哈希文件（og.png、calendar.ics、favicon）→ 协商缓存：每次更新即达，ETag 兜底省流量
+    location / { try_files $uri $uri/ =404; add_header Cache-Control "no-cache" always; }
+    # 内容哈希文件名 → 30 天 immutable
+    location /_astro/ { add_header Cache-Control "public, max-age=2592000, immutable"; }
+    # 搜索索引（pagefind 分片带哈希）→ 7 天
+    location /pagefind/ { add_header Cache-Control "public, max-age=604800"; }
+    # 雷达演示 → 7 天 + noindex
+    location /radar-demo/ { add_header Cache-Control "public, max-age=604800"; add_header X-Robots-Tag "noindex"; }
+    # 城市日历（ics 随内容更新再生）→ 1 小时
+    location /calendars/ { add_header Cache-Control "public, max-age=3600"; }
+}
